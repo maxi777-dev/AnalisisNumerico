@@ -1,0 +1,10 @@
+C:\Users\maxi\source\repos\AnalisisNumerico1\AnalisisNumerico1\bin\Debug\AnalisisNumerico1.exe.config
+C:\Users\maxi\source\repos\AnalisisNumerico1\AnalisisNumerico1\bin\Debug\AnalisisNumerico1.exe
+C:\Users\maxi\source\repos\AnalisisNumerico1\AnalisisNumerico1\bin\Debug\AnalisisNumerico1.pdb
+C:\Users\maxi\source\repos\AnalisisNumerico1\AnalisisNumerico1\obj\Debug\AnalisisNumerico1.csprojAssemblyReference.cache
+C:\Users\maxi\source\repos\AnalisisNumerico1\AnalisisNumerico1\obj\Debug\AnalisisNumerico1.Form1.resources
+C:\Users\maxi\source\repos\AnalisisNumerico1\AnalisisNumerico1\obj\Debug\AnalisisNumerico1.Properties.Resources.resources
+C:\Users\maxi\source\repos\AnalisisNumerico1\AnalisisNumerico1\obj\Debug\AnalisisNumerico1.csproj.GenerateResource.cache
+C:\Users\maxi\source\repos\AnalisisNumerico1\AnalisisNumerico1\obj\Debug\AnalisisNumerico1.csproj.CoreCompileInputs.cache
+C:\Users\maxi\source\repos\AnalisisNumerico1\AnalisisNumerico1\obj\Debug\AnalisisNumerico1.exe
+C:\Users\maxi\source\repos\AnalisisNumerico1\AnalisisNumerico1\obj\Debug\AnalisisNumerico1.pdb

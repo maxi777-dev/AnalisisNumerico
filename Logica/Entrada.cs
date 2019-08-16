@@ -8,10 +8,10 @@ namespace Logica
 {
     public class Entrada
     {
-        public string Func { get; set; }
+        public string Funcion { get; set; }
         public int Iter { get; set; }
         public double Tole { get; set; }
-        public double XL { get; set; }
-        public double XI { get; set; }
+        public float XD { get; set; }
+        public float XI { get; set; }
     }
 }

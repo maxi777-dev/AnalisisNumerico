@@ -44,6 +44,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.tabU1M2 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lbl_Solu_2 = new System.Windows.Forms.Label();
+            this.lbl_Tole_2 = new System.Windows.Forms.Label();
+            this.lbl_Ite_2 = new System.Windows.Forms.Label();
             this.btnObtener_2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -76,7 +79,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txt_LD = new System.Windows.Forms.TextBox();
             this.txt_LI = new System.Windows.Forms.TextBox();
             this.txt_Iter = new System.Windows.Forms.TextBox();
@@ -90,9 +92,7 @@
             this.tabUnidad2 = new System.Windows.Forms.TabPage();
             this.tabUnidad3 = new System.Windows.Forms.TabPage();
             this.tabUnidad4 = new System.Windows.Forms.TabPage();
-            this.lbl_Ite_2 = new System.Windows.Forms.Label();
-            this.lbl_Tole_2 = new System.Windows.Forms.Label();
-            this.lbl_Solu_2 = new System.Windows.Forms.Label();
+            this.txt_Funcion = new System.Windows.Forms.TextBox();
             this.Panel1.SuspendLayout();
             this.tabUnidad1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -257,12 +257,12 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(58, 47);
+            this.label9.Location = new System.Drawing.Point(84, 48);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(66, 13);
+            this.label9.Size = new System.Drawing.Size(38, 13);
             this.label9.TabIndex = 12;
-            this.label9.Text = "Tolerancia =";
+            this.label9.Text = "Error =";
             // 
             // label10
             // 
@@ -303,6 +303,36 @@
             this.groupBox3.TabIndex = 13;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos de salida";
+            // 
+            // lbl_Solu_2
+            // 
+            this.lbl_Solu_2.AutoSize = true;
+            this.lbl_Solu_2.Location = new System.Drawing.Point(122, 70);
+            this.lbl_Solu_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Solu_2.Name = "lbl_Solu_2";
+            this.lbl_Solu_2.Size = new System.Drawing.Size(13, 13);
+            this.lbl_Solu_2.TabIndex = 26;
+            this.lbl_Solu_2.Text = "--";
+            // 
+            // lbl_Tole_2
+            // 
+            this.lbl_Tole_2.AutoSize = true;
+            this.lbl_Tole_2.Location = new System.Drawing.Point(122, 47);
+            this.lbl_Tole_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Tole_2.Name = "lbl_Tole_2";
+            this.lbl_Tole_2.Size = new System.Drawing.Size(13, 13);
+            this.lbl_Tole_2.TabIndex = 25;
+            this.lbl_Tole_2.Text = "--";
+            // 
+            // lbl_Ite_2
+            // 
+            this.lbl_Ite_2.AutoSize = true;
+            this.lbl_Ite_2.Location = new System.Drawing.Point(122, 24);
+            this.lbl_Ite_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Ite_2.Name = "lbl_Ite_2";
+            this.lbl_Ite_2.Size = new System.Drawing.Size(13, 13);
+            this.lbl_Ite_2.TabIndex = 24;
+            this.lbl_Ite_2.Text = "--";
             // 
             // btnObtener_2
             // 
@@ -639,7 +669,7 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.label1);
+            this.groupBox7.Controls.Add(this.txt_Funcion);
             this.groupBox7.Controls.Add(this.txt_LD);
             this.groupBox7.Controls.Add(this.txt_LI);
             this.groupBox7.Controls.Add(this.txt_Iter);
@@ -658,17 +688,6 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Datos de entrada";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(122, 24);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(13, 13);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "0";
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
-            // 
             // txt_LD
             // 
             this.txt_LD.Location = new System.Drawing.Point(348, 45);
@@ -676,6 +695,8 @@
             this.txt_LD.Name = "txt_LD";
             this.txt_LD.Size = new System.Drawing.Size(104, 20);
             this.txt_LD.TabIndex = 20;
+            this.txt_LD.Click += new System.EventHandler(this.Txt_LD_Click);
+            this.txt_LD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_LD_KeyPress);
             // 
             // txt_LI
             // 
@@ -684,6 +705,8 @@
             this.txt_LI.Name = "txt_LI";
             this.txt_LI.Size = new System.Drawing.Size(104, 20);
             this.txt_LI.TabIndex = 19;
+            this.txt_LI.Click += new System.EventHandler(this.Txt_LI_Click);
+            this.txt_LI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_LI_KeyPress);
             // 
             // txt_Iter
             // 
@@ -692,6 +715,8 @@
             this.txt_Iter.Name = "txt_Iter";
             this.txt_Iter.Size = new System.Drawing.Size(104, 20);
             this.txt_Iter.TabIndex = 18;
+            this.txt_Iter.Click += new System.EventHandler(this.Txt_Iter_Click);
+            this.txt_Iter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Iter_KeyPress);
             // 
             // txt_Tole
             // 
@@ -700,6 +725,8 @@
             this.txt_Tole.Name = "txt_Tole";
             this.txt_Tole.Size = new System.Drawing.Size(104, 20);
             this.txt_Tole.TabIndex = 17;
+            this.txt_Tole.Click += new System.EventHandler(this.Txt_Tole_Click);
+            this.txt_Tole.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Tole_KeyPress);
             // 
             // label21
             // 
@@ -794,35 +821,14 @@
             this.tabUnidad4.Text = "Unidad 4";
             this.tabUnidad4.UseVisualStyleBackColor = true;
             // 
-            // lbl_Ite_2
+            // txt_Funcion
             // 
-            this.lbl_Ite_2.AutoSize = true;
-            this.lbl_Ite_2.Location = new System.Drawing.Point(122, 24);
-            this.lbl_Ite_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Ite_2.Name = "lbl_Ite_2";
-            this.lbl_Ite_2.Size = new System.Drawing.Size(13, 13);
-            this.lbl_Ite_2.TabIndex = 24;
-            this.lbl_Ite_2.Text = "--";
-            // 
-            // lbl_Tole_2
-            // 
-            this.lbl_Tole_2.AutoSize = true;
-            this.lbl_Tole_2.Location = new System.Drawing.Point(122, 47);
-            this.lbl_Tole_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Tole_2.Name = "lbl_Tole_2";
-            this.lbl_Tole_2.Size = new System.Drawing.Size(13, 13);
-            this.lbl_Tole_2.TabIndex = 25;
-            this.lbl_Tole_2.Text = "--";
-            // 
-            // lbl_Solu_2
-            // 
-            this.lbl_Solu_2.AutoSize = true;
-            this.lbl_Solu_2.Location = new System.Drawing.Point(122, 70);
-            this.lbl_Solu_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Solu_2.Name = "lbl_Solu_2";
-            this.lbl_Solu_2.Size = new System.Drawing.Size(13, 13);
-            this.lbl_Solu_2.TabIndex = 26;
-            this.lbl_Solu_2.Text = "--";
+            this.txt_Funcion.Location = new System.Drawing.Point(125, 21);
+            this.txt_Funcion.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Funcion.Name = "txt_Funcion";
+            this.txt_Funcion.Size = new System.Drawing.Size(104, 20);
+            this.txt_Funcion.TabIndex = 21;
+            this.txt_Funcion.Click += new System.EventHandler(this.Txt_Funcion_Click);
             // 
             // Form1
             // 
@@ -906,7 +912,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_LD;
         private System.Windows.Forms.TextBox txt_LI;
         private System.Windows.Forms.TextBox txt_Iter;
@@ -926,6 +931,7 @@
         private System.Windows.Forms.Label lbl_Solu_2;
         private System.Windows.Forms.Label lbl_Tole_2;
         private System.Windows.Forms.Label lbl_Ite_2;
+        private System.Windows.Forms.TextBox txt_Funcion;
     }
 }
 

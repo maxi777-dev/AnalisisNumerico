@@ -59,7 +59,8 @@ namespace Logica.Unidad1
                         error = 1;
                     else
                         error = Math.Abs((xr - xant) / xr);
-                    while (Math.Abs(Fx(func,xr)) >= tole && contador < citer && error > tole && band == false)
+                    while ((Math.Abs(Fx(func,xr)) >= tole || Math.Abs(Fx(func, xr)) == 0) && contador < citer && 
+                        error > tole && band == false)
                     {
                         contador += 1;
                         xr = (xi + xd) / 2;
@@ -71,7 +72,10 @@ namespace Logica.Unidad1
                         {
                             nuevo.Solucion = xr;
                             nuevo.Iter = contador;
-                            nuevo.Tole = error;
+                            if (Math.Abs(Fx(func, xr)) < tole)
+                                nuevo.Tole = Math.Abs(Fx(func, xr));
+                            else
+                                nuevo.Tole = error;
                             band = true;
                         }
                         else
@@ -109,68 +113,73 @@ namespace Logica.Unidad1
             return nuevo;
         }
 
-        public static Resultado ReglaFalsa(int citer, double tole, float xi, float xd)
+        public static Resultado ReglaFalsa(string func, int citer, double tole, float xi, float xd)
         {
-            Resultado nuevo = new Resultado(0, tole, 0, true, "");
+            Resultado nuevo = Analizador(func);
+            if (nuevo.SePudo)
+            {
+                double operacion = Fx(func,xi) * Fx(func,xd);
+                if (operacion < 0)
+                {
+                    bool band = false; float error = 0;
+                    int contador = 0;
+                    float xant = 0;
+                    float xr = ((-(Fx(func,xd)) * xi) + (Fx(func,xi) * xd)) / (Fx(func,xi) - Fx(func,xd));
+                    if ((xi + xd) == 0)
+                        error = 1;
+                    else
+                        error = Math.Abs((xr - xant) / xr);
+                    while ((Math.Abs(Fx(func, xr)) >= tole || Math.Abs(Fx(func, xr)) == 0) && contador < citer &&
+                        error > tole && band == false)
+                    {
+                        contador += 1;
+                        xr = ((-Fx(func,xd) * xi) + (Fx(func,xi) * xd)) / (Fx(func,xi) - Fx(func,xd));
+                        if ((xi + xd) == 0)
+                            error = 1;
+                        else
+                            error = Math.Abs((xr - xant) / xr);
+                        if (Math.Abs(Fx(func,xr)) < tole || contador > citer || error < tole)
+                        {
+                            nuevo.Solucion = xr;
+                            nuevo.Iter = contador;
+                            if (Math.Abs(Fx(func, xr)) < tole)
+                                nuevo.Tole = Math.Abs(Fx(func, xr));
+                            else
+                                nuevo.Tole = error;
+                            band = true;
+                        }
+                        else
+                        {
+                            //if (Fx(func, xi) * Fx(func, xr) < 0)
+                            //{
+                            //    xd = xr;
+                            //}
+                            //else
+                            //{
+                            //    xi = xr;
+                            //}
+                            xant = xr;
+                        }
+                    }
+                }
+                else
+                {
+                    if (operacion == 0)
+                    {
+                        if (Fx(func,xi) == 0)
+                            nuevo.Solucion = xi;
 
-            //double operacion = funcion(xi) * funcion(xd);
-            //if (operacion < 0)
-            //{
-            //    bool band = false; float error = 0;
-            //    int contador = 0;
-            //    float xant = 0;
-            //    float xr = ((-funcion(xd) * xi) + (funcion(xi) * xd)) / (funcion(xi) - funcion(xd));
-            //    if ((xi + xd) == 0)
-            //        error = 1;
-            //    else
-            //        error = Math.Abs((xr - xant) / xr);
-            //    while (Math.Abs(funcion(xr)) >= tole && contador < citer && error > tole && band == false)
-            //    {
-            //        contador += 1;
-            //        xr = ((-funcion(xd) * xi) + (funcion(xi) * xd)) / (funcion(xi) - funcion(xd));
-            //        if ((xi + xd) == 0)
-            //            error = 1;
-            //        else
-            //            error = Math.Abs((xr - xant) / xr);
-            //        if (Math.Abs(funcion(xr)) < tole || contador > citer || error < tole)
-            //        {
-            //            nuevo.Solucion = xr;
-            //            nuevo.Iter = contador;
-            //            nuevo.Tole = error;
-            //            band = true;
-            //        }
-            //        else
-            //        {
-            //            //if (funcion(xi) * funcion(xr) < 0)
-            //            //{
-            //            //    xd = xr;
-            //            //}
-            //            //else
-            //            //{
-            //            //    xi = xr;
-            //            //}
-            //            xant = xr;
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    if (operacion == 0)
-            //    {
-            //        if (funcion(xi) == 0)
-            //            nuevo.Solucion = xi;
+                        else
+                            nuevo.Solucion = xd;
+                    }
+                    else
+                    {
+                        nuevo.SePudo = false;
+                        nuevo.Mensaje = "Limite Derecho o Izquierdo incorrectos, por favor ingreselos nuevamente";
+                    }
 
-            //        else
-            //            nuevo.Solucion = xd;
-            //    }
-            //    else
-            //    {
-            //        nuevo.SePudo = false;
-            //        nuevo.Mensaje = "Limite Derecho o Izquierdo incorrectos, por favor ingreselos nuevamente";
-            //    }
-
-            //}
-
+                }
+            }
             return nuevo;
         }
     }

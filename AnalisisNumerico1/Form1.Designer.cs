@@ -79,6 +79,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.txt_Funcion = new System.Windows.Forms.TextBox();
             this.txt_LD = new System.Windows.Forms.TextBox();
             this.txt_LI = new System.Windows.Forms.TextBox();
             this.txt_Iter = new System.Windows.Forms.TextBox();
@@ -92,7 +93,7 @@
             this.tabUnidad2 = new System.Windows.Forms.TabPage();
             this.tabUnidad3 = new System.Windows.Forms.TabPage();
             this.tabUnidad4 = new System.Windows.Forms.TabPage();
-            this.txt_Funcion = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.Panel1.SuspendLayout();
             this.tabUnidad1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -148,6 +149,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.tabU1M3);
             this.tabPage2.Controls.Add(this.groupBox7);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -165,11 +167,11 @@
             this.tabU1M3.Controls.Add(this.tabPage1);
             this.tabU1M3.Controls.Add(this.tabU1M4);
             this.tabU1M3.Controls.Add(this.tabU1M5);
-            this.tabU1M3.Location = new System.Drawing.Point(5, 110);
+            this.tabU1M3.Location = new System.Drawing.Point(5, 151);
             this.tabU1M3.Margin = new System.Windows.Forms.Padding(2);
             this.tabU1M3.Name = "tabU1M3";
             this.tabU1M3.SelectedIndex = 0;
-            this.tabU1M3.Size = new System.Drawing.Size(614, 247);
+            this.tabU1M3.Size = new System.Drawing.Size(614, 215);
             this.tabU1M3.TabIndex = 13;
             // 
             // tabU1M1
@@ -385,7 +387,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(606, 221);
             this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "Metodo 3";
+            this.tabPage1.Text = "Newton - Raphson";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // groupBox4
@@ -480,7 +482,7 @@
             this.tabU1M4.Padding = new System.Windows.Forms.Padding(2);
             this.tabU1M4.Size = new System.Drawing.Size(606, 221);
             this.tabU1M4.TabIndex = 3;
-            this.tabU1M4.Text = "Metodo 4";
+            this.tabU1M4.Text = "Iteración de Punto Fijo";
             this.tabU1M4.UseVisualStyleBackColor = true;
             // 
             // groupBox5
@@ -573,9 +575,9 @@
             this.tabU1M5.Margin = new System.Windows.Forms.Padding(2);
             this.tabU1M5.Name = "tabU1M5";
             this.tabU1M5.Padding = new System.Windows.Forms.Padding(2);
-            this.tabU1M5.Size = new System.Drawing.Size(606, 221);
+            this.tabU1M5.Size = new System.Drawing.Size(606, 189);
             this.tabU1M5.TabIndex = 4;
-            this.tabU1M5.Text = "Metodo 5";
+            this.tabU1M5.Text = "Secante";
             this.tabU1M5.UseVisualStyleBackColor = true;
             // 
             // groupBox6
@@ -687,6 +689,15 @@
             this.groupBox7.TabIndex = 12;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Datos de entrada";
+            // 
+            // txt_Funcion
+            // 
+            this.txt_Funcion.Location = new System.Drawing.Point(125, 21);
+            this.txt_Funcion.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Funcion.Name = "txt_Funcion";
+            this.txt_Funcion.Size = new System.Drawing.Size(104, 20);
+            this.txt_Funcion.TabIndex = 21;
+            this.txt_Funcion.Click += new System.EventHandler(this.Txt_Funcion_Click);
             // 
             // txt_LD
             // 
@@ -821,14 +832,15 @@
             this.tabUnidad4.Text = "Unidad 4";
             this.tabUnidad4.UseVisualStyleBackColor = true;
             // 
-            // txt_Funcion
+            // label1
             // 
-            this.txt_Funcion.Location = new System.Drawing.Point(125, 21);
-            this.txt_Funcion.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_Funcion.Name = "txt_Funcion";
-            this.txt_Funcion.Size = new System.Drawing.Size(104, 20);
-            this.txt_Funcion.TabIndex = 21;
-            this.txt_Funcion.Click += new System.EventHandler(this.Txt_Funcion_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 122);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 13);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "METODOS:";
             // 
             // Form1
             // 
@@ -843,6 +855,7 @@
             this.tabUnidad1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.tabU1M3.ResumeLayout(false);
             this.tabU1M1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -932,6 +945,7 @@
         private System.Windows.Forms.Label lbl_Tole_2;
         private System.Windows.Forms.Label lbl_Ite_2;
         private System.Windows.Forms.TextBox txt_Funcion;
+        private System.Windows.Forms.Label label1;
     }
 }
 

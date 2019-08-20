@@ -77,7 +77,7 @@ namespace AnalisisNumerico1
             }
             else
             {
-                Resultado nuevo = Logica.Unidad1.Actividad1.ReglaFalsa(int.Parse(txt_Iter.Text), double.Parse(txt_Tole.Text),
+                Resultado nuevo = Logica.Unidad1.Actividad1.ReglaFalsa(txt_Funcion.Text, int.Parse(txt_Iter.Text), double.Parse(txt_Tole.Text),
                     float.Parse(txt_LI.Text), float.Parse(txt_LD.Text));
                 if (!nuevo.SePudo)
                 {

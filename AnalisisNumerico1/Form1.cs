@@ -91,8 +91,40 @@ namespace AnalisisNumerico1
                 }
             }      
         } //OBTENER CON EL METODO DE LA REGLA FALSA.
-
-
+        
+        private void BtnObtener_3_Click(object sender, EventArgs e)
+        {
+            if ((txt_Iter.Text.Trim() == string.Empty) || (txt_Tole.Text.Trim() == string.Empty) ||
+                (txt_LI.Text.Trim() == string.Empty) || (txt_Funcion.Text.Trim() == string.Empty))
+            {
+                if ((txt_Iter.Text.Trim() == string.Empty))
+                    txt_Iter.BackColor = Color.Red;
+                if ((txt_Tole.Text.Trim() == string.Empty))
+                    txt_Tole.BackColor = Color.Red;
+                if ((txt_LI.Text.Trim() == string.Empty))
+                    txt_LI.BackColor = Color.Red;
+                if ((txt_LD.Text.Trim() == string.Empty))
+                    txt_LD.BackColor = Color.Red;
+                if ((txt_Funcion.Text.Trim() == string.Empty))
+                    txt_Funcion.BackColor = Color.Red;
+                MessageBox.Show("Campos Vacios");
+            }
+            else
+            {
+                Resultado nuevo = Logica.Unidad1.Actividad1.Tangente(txt_Funcion.Text, int.Parse(txt_Iter.Text),
+                        double.Parse(txt_Tole.Text), float.Parse(txt_LI.Text));
+                if (!nuevo.SePudo)
+                {
+                    MessageBox.Show(nuevo.Mensaje);
+                }
+                else
+                {
+                    lbl_Ite_3.Text = nuevo.Iter.ToString();
+                    lbl_Tole_3.Text = nuevo.Tole.ToString();
+                    lbl_Solu_3.Text = nuevo.Solucion.ToString();
+                }
+            }
+        }//OBTENER CON EL METODO DE LA TANGENTE
 
         private void Txt_LI_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -114,7 +146,7 @@ namespace AnalisisNumerico1
         private void Txt_Tole_KeyPress(object sender, KeyPressEventArgs e)
         {
             Char chr = e.KeyChar;
-            if (!Char.IsDigit(chr) && chr != 8 && chr != 44)
+            if (!Char.IsDigit(chr) && chr != 8 && chr != 46)
             {
                 e.Handled = true;
             }

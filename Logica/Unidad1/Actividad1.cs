@@ -182,5 +182,44 @@ namespace Logica.Unidad1
             }
             return nuevo;
         }
+
+        public static Resultado Tangente(string func, int citer, double tole, float x)
+        {
+            Resultado nuevo = Analizador(func);
+            if (nuevo.SePudo)
+            {
+                double operacion = Fx(func, x);
+                if (operacion != 0)
+                {
+                    bool band = false; float error = 0;
+                    int contador = 0;
+                    float xant = 0;
+                    float xr = x;
+                    error = Math.Abs((xr - xant) / xr);
+                    while ((Math.Abs(Fx(func, xr)) >= tole || Math.Abs(Fx(func, xr)) == 0) && contador < citer &&
+                        error > tole && band == false)
+                    {
+                        contador += 1;
+                        xr = xr - (Fx(func, xr)/((Fx(func, xr + (float)tole) - Fx(func, xr))/ (float)tole));
+                        error = Math.Abs((xr - xant) / xr);
+                        if (Math.Abs(Fx(func, xr)) < tole || contador > citer || error < tole)
+                        {
+                            nuevo.Solucion = xr;
+                            nuevo.Iter = contador;
+                            if (Math.Abs(Fx(func, xr)) < tole)
+                                nuevo.Tole = Math.Abs(Fx(func, xr));
+                            else
+                                nuevo.Tole = error;
+                            band = true;
+                        }
+                        else
+                        { xant = xr; }
+                    }
+                }
+                else
+                { nuevo.Solucion = x; }
+            }
+            return nuevo;
+        }
     }
 }

@@ -26,40 +26,6 @@ namespace AnalisisNumerico1
        
         // ----------------------------------------------------------------------------------------------------//
 
-        private void BtnObtener_1_Click(object sender, EventArgs e)
-        {
-            if ((txt_Iter.Text.Trim() == string.Empty) || (txt_Tole.Text.Trim() == string.Empty) || 
-                (txt_LI.Text.Trim() == string.Empty) || (txt_LD.Text.Trim() == string.Empty) || (txt_Funcion.Text.Trim() == string.Empty))
-            {
-                if ((txt_Iter.Text.Trim() == string.Empty))
-                    txt_Iter.BackColor = Color.Red;
-                if ((txt_Tole.Text.Trim() == string.Empty))
-                    txt_Tole.BackColor = Color.Red;
-                if ((txt_LI.Text.Trim() == string.Empty))
-                    txt_LI.BackColor = Color.Red;
-                if ((txt_LD.Text.Trim() == string.Empty))
-                    txt_LD.BackColor = Color.Red;
-                if ((txt_Funcion.Text.Trim() == string.Empty))
-                    txt_Funcion.BackColor = Color.Red;
-                MessageBox.Show("Campos Vacios");
-            }
-            else
-            {
-                Resultado nuevo = Logica.Unidad1.Actividad1.Biseccion(txt_Funcion.Text,int.Parse(txt_Iter.Text), 
-                        double.Parse(txt_Tole.Text),float.Parse(txt_LI.Text), float.Parse(txt_LD.Text));
-                if (!nuevo.SePudo)
-                {
-                    MessageBox.Show(nuevo.Mensaje);
-                }
-                else
-                {
-                    lbl_Iter_1.Text = nuevo.Iter.ToString();
-                    lbl_Tole_1.Text = nuevo.Tole.ToString();
-                    lbl_Solucion_1.Text = nuevo.Solucion.ToString();
-                }
-            }
-        }// OBTENER CON EL METODO DE BISECCION
-
         private void BtnObtener_2_Click(object sender, EventArgs e)
         {
             if ((txt_Iter.Text.Trim() == string.Empty) || (txt_Tole.Text.Trim() == string.Empty) ||
@@ -126,6 +92,41 @@ namespace AnalisisNumerico1
             }
         }//OBTENER CON EL METODO DE LA TANGENTE
 
+        private void BtnObtener_4_Click(object sender, EventArgs e) //OBTENER CON EL METODO DE LA SECANTE
+        {
+            if ((txt_Iter.Text.Trim() == string.Empty) || (txt_Tole.Text.Trim() == string.Empty) ||
+                (txt_LI.Text.Trim() == string.Empty) || (txt_LD.Text.Trim() == string.Empty) || (txt_Funcion.Text.Trim() == string.Empty))
+            {
+                if ((txt_Iter.Text.Trim() == string.Empty))
+                    txt_Iter.BackColor = Color.Red;
+                if ((txt_Tole.Text.Trim() == string.Empty))
+                    txt_Tole.BackColor = Color.Red;
+                if ((txt_LI.Text.Trim() == string.Empty))
+                    txt_LI.BackColor = Color.Red;
+                if ((txt_LD.Text.Trim() == string.Empty))
+                    txt_LD.BackColor = Color.Red;
+                if ((txt_Funcion.Text.Trim() == string.Empty))
+                    txt_Funcion.BackColor = Color.Red;
+                MessageBox.Show("Campos Vacios");
+            }
+            else
+            {
+                Resultado nuevo = Logica.Unidad1.Actividad1.Secante(txt_Funcion.Text, int.Parse(txt_Iter.Text),
+                        double.Parse(txt_Tole.Text), float.Parse(txt_LI.Text), float.Parse(txt_LD.Text));
+                if (!nuevo.SePudo)
+                {
+                    MessageBox.Show(nuevo.Mensaje);
+                }
+                else
+                {
+                    lbl_Iter_4.Text = nuevo.Iter.ToString();
+                    lbl_Tole_4.Text = nuevo.Tole.ToString();
+                    lbl_Solucion_4.Text = nuevo.Solucion.ToString();
+                }
+            }
+        }
+
+
         private void Txt_LI_KeyPress(object sender, KeyPressEventArgs e)
         {
             Char chr = e.KeyChar;
@@ -146,7 +147,7 @@ namespace AnalisisNumerico1
         private void Txt_Tole_KeyPress(object sender, KeyPressEventArgs e)
         {
             Char chr = e.KeyChar;
-            if (!Char.IsDigit(chr) && chr != 8 && chr != 46)
+            if (!Char.IsDigit(chr) && chr != 8 && chr != 44) // Cambiar por el 44 por 46 para que sea un .
             {
                 e.Handled = true;
             }
@@ -182,5 +183,73 @@ namespace AnalisisNumerico1
         {
             txt_Funcion.BackColor = Color.White;
         }  // PONE EL TEXTBOX EN BLANCO
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnObtener_1_Click_1(object sender, EventArgs e)
+        {
+            if ((txt_Iter.Text.Trim() == string.Empty) || (txt_Tole.Text.Trim() == string.Empty) ||
+                (txt_LI.Text.Trim() == string.Empty) || (txt_LD.Text.Trim() == string.Empty) || (txt_Funcion.Text.Trim() == string.Empty))
+            {
+                if ((txt_Iter.Text.Trim() == string.Empty))
+                    txt_Iter.BackColor = Color.Red;
+                if ((txt_Tole.Text.Trim() == string.Empty))
+                    txt_Tole.BackColor = Color.Red;
+                if ((txt_LI.Text.Trim() == string.Empty))
+                    txt_LI.BackColor = Color.Red;
+                if ((txt_LD.Text.Trim() == string.Empty))
+                    txt_LD.BackColor = Color.Red;
+                if ((txt_Funcion.Text.Trim() == string.Empty))
+                    txt_Funcion.BackColor = Color.Red;
+                MessageBox.Show("Campos Vacios");
+            }
+            else
+            {
+                Resultado nuevo = Logica.Unidad1.Actividad1.Biseccion(txt_Funcion.Text, int.Parse(txt_Iter.Text),
+                        double.Parse(txt_Tole.Text), float.Parse(txt_LI.Text), float.Parse(txt_LD.Text));
+                if (!nuevo.SePudo)
+                {
+                    MessageBox.Show(nuevo.Mensaje);
+                }
+                else
+                {
+                    lbl_Iter_1.Text = nuevo.Iter.ToString();
+                    lbl_Tole_1.Text = nuevo.Tole.ToString();
+                    lbl_Solucion_1.Text = nuevo.Solucion.ToString();
+                }
+            }
+        }  // OBTENER CON EL METODO DE BISECCION
+
+        //private void TabU1M3_Click(object sender, EventArgs e)
+        //{
+        //    label21.Visible = false;
+        //    txt_LD.Visible = false;
+        //}
+
+        //private void TabU1M5_Click(object sender, EventArgs e)
+        //{
+        //    label21.Visible = true;
+        //    txt_LD.Visible = true;
+        //}
+
+        //private void TabPage1_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        //private void TabU1M2_Click(object sender, EventArgs e)
+        //{
+        //    label21.Visible = true;
+        //    txt_LD.Visible = true;
+        //}
+
+        //private void TabU1M1_Click(object sender, EventArgs e)
+        //{
+        //    label21.Visible = true;
+        //    txt_LD.Visible = true;
+        //}
     }
 }

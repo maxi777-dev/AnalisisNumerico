@@ -48,7 +48,7 @@ namespace Logica.Unidad1
             Resultado nuevo = Analizador(func);
             if (nuevo.SePudo)
             {
-                double operacion = Fx(func,xi) * Fx(func,xd);
+                double operacion = Fx(func, xi) * Fx(func, xd);
                 if (operacion < 0)
                 {
                     bool band = false; float error = 0;
@@ -59,7 +59,7 @@ namespace Logica.Unidad1
                         error = 1;
                     else
                         error = Math.Abs((xr - xant) / xr);
-                    while ((Math.Abs(Fx(func,xr)) >= tole || Math.Abs(Fx(func, xr)) == 0) && contador < citer && 
+                    while ((Math.Abs(Fx(func, xr)) >= tole || Math.Abs(Fx(func, xr)) == 0) && contador < citer &&
                         error > tole && band == false)
                     {
                         contador += 1;
@@ -68,7 +68,7 @@ namespace Logica.Unidad1
                             error = 1;
                         else
                             error = Math.Abs((xr - xant) / xr);
-                        if (Math.Abs(Fx(func,xr)) < tole || contador > citer || error < tole)
+                        if (Math.Abs(Fx(func, xr)) < tole || contador > citer || error < tole)
                         {
                             nuevo.Solucion = xr;
                             nuevo.Iter = contador;
@@ -80,7 +80,7 @@ namespace Logica.Unidad1
                         }
                         else
                         {
-                            if (Fx(func,xi) * Fx(func,xr) < 0)
+                            if (Fx(func, xi) * Fx(func, xr) < 0)
                             {
                                 xd = xr;
                             }
@@ -91,12 +91,21 @@ namespace Logica.Unidad1
                             xant = xr;
                         }
                     }
+                    if (!band)
+                    {
+                        nuevo.Solucion = xr;
+                        nuevo.Iter = contador + 1;
+                        if (Math.Abs(Fx(func, xr)) < tole)
+                            nuevo.Tole = Math.Abs(Fx(func, xr));
+                        else
+                            nuevo.Tole = error;
+                    }
                 }
                 else
                 {
                     if (operacion == 0)
                     {
-                        if (Fx(func,xi) == 0)
+                        if (Fx(func, xi) == 0)
                             nuevo.Solucion = xi;
 
                         else
@@ -118,13 +127,13 @@ namespace Logica.Unidad1
             Resultado nuevo = Analizador(func);
             if (nuevo.SePudo)
             {
-                double operacion = Fx(func,xi) * Fx(func,xd);
+                double operacion = Fx(func, xi) * Fx(func, xd);
                 if (operacion < 0)
                 {
                     bool band = false; float error = 0;
                     int contador = 0;
                     float xant = 0;
-                    float xr = ((-(Fx(func,xd)) * xi) + (Fx(func,xi) * xd)) / (Fx(func,xi) - Fx(func,xd));
+                    float xr = ((-(Fx(func, xd)) * xi) + (Fx(func, xi) * xd)) / (Fx(func, xi) - Fx(func, xd));
                     if ((xi + xd) == 0)
                         error = 1;
                     else
@@ -133,12 +142,12 @@ namespace Logica.Unidad1
                         error > tole && band == false)
                     {
                         contador += 1;
-                        xr = ((-Fx(func,xd) * xi) + (Fx(func,xi) * xd)) / (Fx(func,xi) - Fx(func,xd));
-                        if ((xi + xd) == 0)
+                        xr = ((-Fx(func, xd) * xi) + (Fx(func, xi) * xd)) / (Fx(func, xi) - Fx(func, xd));
+                        if ((xr - xant) == 0)
                             error = 1;
                         else
                             error = Math.Abs((xr - xant) / xr);
-                        if (Math.Abs(Fx(func,xr)) < tole || contador > citer || error < tole)
+                        if (Math.Abs(Fx(func, xr)) < tole || contador > citer || error < tole)
                         {
                             nuevo.Solucion = xr;
                             nuevo.Iter = contador;
@@ -150,23 +159,33 @@ namespace Logica.Unidad1
                         }
                         else
                         {
-                            //if (Fx(func, xi) * Fx(func, xr) < 0)
-                            //{
-                            //    xd = xr;
-                            //}
-                            //else
-                            //{
-                            //    xi = xr;
-                            //}
+                            if (Fx(func, xi) * Fx(func, xr) < 0)
+                            {
+                                xd = xr;
+                            }
+                            else
+                            {
+                                xi = xr;
+                            }
                             xant = xr;
                         }
+
+                    }
+                    if (!band)
+                    {
+                        nuevo.Solucion = xr;
+                        nuevo.Iter = contador + 1;
+                        if (Math.Abs(Fx(func, xr)) < tole)
+                            nuevo.Tole = Math.Abs(Fx(func, xr));
+                        else
+                            nuevo.Tole = error;
                     }
                 }
                 else
                 {
                     if (operacion == 0)
                     {
-                        if (Fx(func,xi) == 0)
+                        if (Fx(func, xi) == 0)
                             nuevo.Solucion = xi;
 
                         else
@@ -200,7 +219,7 @@ namespace Logica.Unidad1
                         error > tole && band == false)
                     {
                         contador += 1;
-                        xr = xr - (Fx(func, xr)/((Fx(func, xr + (float)tole) - Fx(func, xr))/ (float)tole));
+                        xr = xr - (Fx(func, xr) / ((Fx(func, xr + (float)tole) - Fx(func, xr)) / (float)tole));
                         error = Math.Abs((xr - xant) / xr);
                         if (Math.Abs(Fx(func, xr)) < tole || contador > citer || error < tole)
                         {
@@ -218,6 +237,86 @@ namespace Logica.Unidad1
                 }
                 else
                 { nuevo.Solucion = x; }
+            }
+            return nuevo;
+        }
+
+        public static Resultado Secante(string func, int citer, double tole, float xi, float xd)
+        {
+            Resultado nuevo = Analizador(func);
+            if (nuevo.SePudo)
+            {
+                double operacion = Fx(func, xi) * Fx(func, xd);
+                if (operacion < 0)
+                {
+                    bool band = false; float error = 0;
+                    int contador = 0;
+                    float xant = 0;
+                    float xr = (Fx(func,xi) * xd - Fx(func,xd) * xi) /(-Fx(func,xd) + Fx(func,xi));
+                    if ((xi + xd) == 0)
+                        error = 1;
+                    else
+                        error = Math.Abs((xr - xant) / xr);
+                    while ((Math.Abs(Fx(func, xr)) >= tole || Math.Abs(Fx(func, xr)) == 0) && contador < citer &&
+                        error > tole && band == false)
+                    {
+                        contador += 1;
+                        xr = (Fx(func, xi) * xd - Fx(func, xd) * xi) / (-Fx(func, xd) + Fx(func, xi));
+                        if ((xi + xd) == 0)
+                            error = 1;
+                        else
+                            error = Math.Abs((xr - xant) / xr);
+                        if (Math.Abs(Fx(func, xr)) < tole || contador > citer || error < tole)
+                        {
+                            nuevo.Solucion = xr;
+                            nuevo.Iter = contador;
+                            if (Math.Abs(Fx(func, xr)) < tole)
+                                nuevo.Tole = Math.Abs(Fx(func, xr));
+                            else
+                                nuevo.Tole = error;
+                            band = true;
+                        }
+                        else
+                        {
+                            if (Fx(func, xi) * Fx(func, xr) < 0)
+                            {
+                                xd = xr;
+                            }
+                            else
+                            {
+                                xi = xr;
+                            }
+                            xant = xr;                              
+                                
+                        }
+                    }
+                    if (!band)
+                    {
+                        nuevo.Solucion = xr;
+                        nuevo.Iter = contador + 1;
+                        if (Math.Abs(Fx(func, xr)) < tole)
+                            nuevo.Tole = Math.Abs(Fx(func, xr));
+                        else
+                            nuevo.Tole = error;
+                    }
+                }
+                else
+                {
+                    if (operacion == 0)
+                    {
+                        if (Fx(func, xi) == 0)
+                            nuevo.Solucion = xi;
+
+                        else
+                            nuevo.Solucion = xd;
+                    }
+                    else
+                    {
+                        nuevo.SePudo = false;
+                        nuevo.Mensaje = "Limite Derecho o Izquierdo incorrectos, por favor ingreselos nuevamente";
+                    }
+
+                }
             }
             return nuevo;
         }

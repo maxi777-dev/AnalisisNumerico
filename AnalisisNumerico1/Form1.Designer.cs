@@ -35,14 +35,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabU1M3 = new System.Windows.Forms.TabControl();
             this.tabU1M1 = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbl_Solucion_1 = new System.Windows.Forms.Label();
             this.lbl_Tole_1 = new System.Windows.Forms.Label();
             this.lbl_Iter_1 = new System.Windows.Forms.Label();
             this.btnObtener_1 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.tabU1M2 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lbl_Solu_2 = new System.Windows.Forms.Label();
@@ -54,25 +54,19 @@
             this.label11 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lbl_Solu_3 = new System.Windows.Forms.Label();
+            this.lbl_Tole_3 = new System.Windows.Forms.Label();
+            this.lbl_Ite_3 = new System.Windows.Forms.Label();
             this.btnObtener_3 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.tabU1M4 = new System.Windows.Forms.TabPage();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.btnObtener_4 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.tabU1M5 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.lbl_Solucion_5 = new System.Windows.Forms.Label();
-            this.lbl_Tole_5 = new System.Windows.Forms.Label();
-            this.lbl_Iter_5 = new System.Windows.Forms.Label();
-            this.btnObtener_5 = new System.Windows.Forms.Button();
+            this.lbl_Solucion_4 = new System.Windows.Forms.Label();
+            this.lbl_Tole_4 = new System.Windows.Forms.Label();
+            this.lbl_Iter_4 = new System.Windows.Forms.Label();
+            this.btnObtener_4 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -91,22 +85,17 @@
             this.tabUnidad2 = new System.Windows.Forms.TabPage();
             this.tabUnidad3 = new System.Windows.Forms.TabPage();
             this.tabUnidad4 = new System.Windows.Forms.TabPage();
-            this.lbl_Ite_3 = new System.Windows.Forms.Label();
-            this.lbl_Tole_3 = new System.Windows.Forms.Label();
-            this.lbl_Solu_3 = new System.Windows.Forms.Label();
             this.Panel1.SuspendLayout();
             this.tabUnidad1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabU1M3.SuspendLayout();
             this.tabU1M1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tabU1M2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.tabU1M4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.tabU1M5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -175,7 +164,6 @@
             this.tabU1M3.Controls.Add(this.tabU1M1);
             this.tabU1M3.Controls.Add(this.tabU1M2);
             this.tabU1M3.Controls.Add(this.tabPage1);
-            this.tabU1M3.Controls.Add(this.tabU1M4);
             this.tabU1M3.Controls.Add(this.tabU1M5);
             this.tabU1M3.Location = new System.Drawing.Point(5, 151);
             this.tabU1M3.Margin = new System.Windows.Forms.Padding(2);
@@ -186,7 +174,7 @@
             // 
             // tabU1M1
             // 
-            this.tabU1M1.Controls.Add(this.groupBox2);
+            this.tabU1M1.Controls.Add(this.groupBox1);
             this.tabU1M1.Location = new System.Drawing.Point(4, 22);
             this.tabU1M1.Margin = new System.Windows.Forms.Padding(2);
             this.tabU1M1.Name = "tabU1M1";
@@ -196,23 +184,23 @@
             this.tabU1M1.Text = "Biseccion";
             this.tabU1M1.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // groupBox1
             // 
-            this.groupBox2.Controls.Add(this.lbl_Solucion_1);
-            this.groupBox2.Controls.Add(this.lbl_Tole_1);
-            this.groupBox2.Controls.Add(this.lbl_Iter_1);
-            this.groupBox2.Controls.Add(this.btnObtener_1);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Location = new System.Drawing.Point(20, 4);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(608, 102);
-            this.groupBox2.TabIndex = 12;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Datos de salida";
+            this.groupBox1.Controls.Add(this.lbl_Solucion_1);
+            this.groupBox1.Controls.Add(this.lbl_Tole_1);
+            this.groupBox1.Controls.Add(this.lbl_Iter_1);
+            this.groupBox1.Controls.Add(this.btnObtener_1);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Location = new System.Drawing.Point(4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(608, 102);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Datos de salida";
             // 
             // lbl_Solucion_1
             // 
@@ -221,7 +209,7 @@
             this.lbl_Solucion_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Solucion_1.Name = "lbl_Solucion_1";
             this.lbl_Solucion_1.Size = new System.Drawing.Size(13, 13);
-            this.lbl_Solucion_1.TabIndex = 25;
+            this.lbl_Solucion_1.TabIndex = 26;
             this.lbl_Solucion_1.Text = "--";
             // 
             // lbl_Tole_1
@@ -231,7 +219,7 @@
             this.lbl_Tole_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Tole_1.Name = "lbl_Tole_1";
             this.lbl_Tole_1.Size = new System.Drawing.Size(13, 13);
-            this.lbl_Tole_1.TabIndex = 24;
+            this.lbl_Tole_1.TabIndex = 25;
             this.lbl_Tole_1.Text = "--";
             // 
             // lbl_Iter_1
@@ -241,50 +229,50 @@
             this.lbl_Iter_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Iter_1.Name = "lbl_Iter_1";
             this.lbl_Iter_1.Size = new System.Drawing.Size(13, 13);
-            this.lbl_Iter_1.TabIndex = 23;
+            this.lbl_Iter_1.TabIndex = 24;
             this.lbl_Iter_1.Text = "--";
             // 
             // btnObtener_1
             // 
             this.btnObtener_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnObtener_1.Location = new System.Drawing.Point(431, 40);
+            this.btnObtener_1.Location = new System.Drawing.Point(390, 39);
             this.btnObtener_1.Margin = new System.Windows.Forms.Padding(2);
             this.btnObtener_1.Name = "btnObtener_1";
             this.btnObtener_1.Size = new System.Drawing.Size(69, 26);
-            this.btnObtener_1.TabIndex = 21;
+            this.btnObtener_1.TabIndex = 6;
             this.btnObtener_1.Text = "Obtener";
             this.btnObtener_1.UseVisualStyleBackColor = true;
-            this.btnObtener_1.Click += new System.EventHandler(this.BtnObtener_1_Click);
+            this.btnObtener_1.Click += new System.EventHandler(this.BtnObtener_1_Click_1);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(65, 70);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Solucion =";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(65, 70);
+            this.label8.Location = new System.Drawing.Point(58, 47);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(57, 13);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Solucion =";
+            this.label8.Size = new System.Drawing.Size(66, 13);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Tolerancia =";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(84, 48);
+            this.label9.Location = new System.Drawing.Point(54, 24);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 13);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Error =";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(54, 24);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(68, 13);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Iteraciones =";
+            this.label9.Size = new System.Drawing.Size(68, 13);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Iteraciones =";
             // 
             // tabU1M2
             // 
@@ -418,6 +406,36 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Datos de salida";
             // 
+            // lbl_Solu_3
+            // 
+            this.lbl_Solu_3.AutoSize = true;
+            this.lbl_Solu_3.Location = new System.Drawing.Point(122, 70);
+            this.lbl_Solu_3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Solu_3.Name = "lbl_Solu_3";
+            this.lbl_Solu_3.Size = new System.Drawing.Size(13, 13);
+            this.lbl_Solu_3.TabIndex = 27;
+            this.lbl_Solu_3.Text = "--";
+            // 
+            // lbl_Tole_3
+            // 
+            this.lbl_Tole_3.AutoSize = true;
+            this.lbl_Tole_3.Location = new System.Drawing.Point(122, 47);
+            this.lbl_Tole_3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Tole_3.Name = "lbl_Tole_3";
+            this.lbl_Tole_3.Size = new System.Drawing.Size(13, 13);
+            this.lbl_Tole_3.TabIndex = 26;
+            this.lbl_Tole_3.Text = "--";
+            // 
+            // lbl_Ite_3
+            // 
+            this.lbl_Ite_3.AutoSize = true;
+            this.lbl_Ite_3.Location = new System.Drawing.Point(122, 24);
+            this.lbl_Ite_3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Ite_3.Name = "lbl_Ite_3";
+            this.lbl_Ite_3.Size = new System.Drawing.Size(13, 13);
+            this.lbl_Ite_3.TabIndex = 25;
+            this.lbl_Ite_3.Text = "--";
+            // 
             // btnObtener_3
             // 
             this.btnObtener_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -460,101 +478,6 @@
             this.label14.TabIndex = 11;
             this.label14.Text = "Iteraciones =";
             // 
-            // tabU1M4
-            // 
-            this.tabU1M4.Controls.Add(this.groupBox5);
-            this.tabU1M4.Location = new System.Drawing.Point(4, 22);
-            this.tabU1M4.Margin = new System.Windows.Forms.Padding(2);
-            this.tabU1M4.Name = "tabU1M4";
-            this.tabU1M4.Padding = new System.Windows.Forms.Padding(2);
-            this.tabU1M4.Size = new System.Drawing.Size(606, 189);
-            this.tabU1M4.TabIndex = 3;
-            this.tabU1M4.Text = "Iteración de Punto Fijo";
-            this.tabU1M4.UseVisualStyleBackColor = true;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.btnObtener_4);
-            this.groupBox5.Controls.Add(this.textBox7);
-            this.groupBox5.Controls.Add(this.textBox8);
-            this.groupBox5.Controls.Add(this.textBox9);
-            this.groupBox5.Controls.Add(this.label15);
-            this.groupBox5.Controls.Add(this.label16);
-            this.groupBox5.Controls.Add(this.label17);
-            this.groupBox5.Location = new System.Drawing.Point(11, 5);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Size = new System.Drawing.Size(608, 102);
-            this.groupBox5.TabIndex = 13;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Datos de salida";
-            // 
-            // btnObtener_4
-            // 
-            this.btnObtener_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnObtener_4.Location = new System.Drawing.Point(434, 34);
-            this.btnObtener_4.Margin = new System.Windows.Forms.Padding(2);
-            this.btnObtener_4.Name = "btnObtener_4";
-            this.btnObtener_4.Size = new System.Drawing.Size(69, 26);
-            this.btnObtener_4.TabIndex = 22;
-            this.btnObtener_4.Text = "Obtener";
-            this.btnObtener_4.UseVisualStyleBackColor = true;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(125, 67);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(104, 20);
-            this.textBox7.TabIndex = 18;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(125, 45);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(104, 20);
-            this.textBox8.TabIndex = 17;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(125, 21);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(104, 20);
-            this.textBox9.TabIndex = 16;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(65, 70);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(57, 13);
-            this.label15.TabIndex = 13;
-            this.label15.Text = "Solucion =";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(58, 47);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(66, 13);
-            this.label16.TabIndex = 12;
-            this.label16.Text = "Tolerancia =";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(54, 24);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(68, 13);
-            this.label17.TabIndex = 11;
-            this.label17.Text = "Iteraciones =";
-            // 
             // tabU1M5
             // 
             this.tabU1M5.Controls.Add(this.groupBox6);
@@ -569,10 +492,10 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.lbl_Solucion_5);
-            this.groupBox6.Controls.Add(this.lbl_Tole_5);
-            this.groupBox6.Controls.Add(this.lbl_Iter_5);
-            this.groupBox6.Controls.Add(this.btnObtener_5);
+            this.groupBox6.Controls.Add(this.lbl_Solucion_4);
+            this.groupBox6.Controls.Add(this.lbl_Tole_4);
+            this.groupBox6.Controls.Add(this.lbl_Iter_4);
+            this.groupBox6.Controls.Add(this.btnObtener_4);
             this.groupBox6.Controls.Add(this.label18);
             this.groupBox6.Controls.Add(this.label19);
             this.groupBox6.Controls.Add(this.label20);
@@ -585,46 +508,47 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Datos de salida";
             // 
-            // lbl_Solucion_5
+            // lbl_Solucion_4
             // 
-            this.lbl_Solucion_5.AutoSize = true;
-            this.lbl_Solucion_5.Location = new System.Drawing.Point(126, 70);
-            this.lbl_Solucion_5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Solucion_5.Name = "lbl_Solucion_5";
-            this.lbl_Solucion_5.Size = new System.Drawing.Size(13, 13);
-            this.lbl_Solucion_5.TabIndex = 24;
-            this.lbl_Solucion_5.Text = "--";
+            this.lbl_Solucion_4.AutoSize = true;
+            this.lbl_Solucion_4.Location = new System.Drawing.Point(126, 70);
+            this.lbl_Solucion_4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Solucion_4.Name = "lbl_Solucion_4";
+            this.lbl_Solucion_4.Size = new System.Drawing.Size(13, 13);
+            this.lbl_Solucion_4.TabIndex = 24;
+            this.lbl_Solucion_4.Text = "--";
             // 
-            // lbl_Tole_5
+            // lbl_Tole_4
             // 
-            this.lbl_Tole_5.AutoSize = true;
-            this.lbl_Tole_5.Location = new System.Drawing.Point(126, 47);
-            this.lbl_Tole_5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Tole_5.Name = "lbl_Tole_5";
-            this.lbl_Tole_5.Size = new System.Drawing.Size(13, 13);
-            this.lbl_Tole_5.TabIndex = 23;
-            this.lbl_Tole_5.Text = "--";
+            this.lbl_Tole_4.AutoSize = true;
+            this.lbl_Tole_4.Location = new System.Drawing.Point(126, 47);
+            this.lbl_Tole_4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Tole_4.Name = "lbl_Tole_4";
+            this.lbl_Tole_4.Size = new System.Drawing.Size(13, 13);
+            this.lbl_Tole_4.TabIndex = 23;
+            this.lbl_Tole_4.Text = "--";
             // 
-            // lbl_Iter_5
+            // lbl_Iter_4
             // 
-            this.lbl_Iter_5.AutoSize = true;
-            this.lbl_Iter_5.Location = new System.Drawing.Point(126, 24);
-            this.lbl_Iter_5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Iter_5.Name = "lbl_Iter_5";
-            this.lbl_Iter_5.Size = new System.Drawing.Size(13, 13);
-            this.lbl_Iter_5.TabIndex = 22;
-            this.lbl_Iter_5.Text = "--";
+            this.lbl_Iter_4.AutoSize = true;
+            this.lbl_Iter_4.Location = new System.Drawing.Point(126, 24);
+            this.lbl_Iter_4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Iter_4.Name = "lbl_Iter_4";
+            this.lbl_Iter_4.Size = new System.Drawing.Size(13, 13);
+            this.lbl_Iter_4.TabIndex = 22;
+            this.lbl_Iter_4.Text = "--";
             // 
-            // btnObtener_5
+            // btnObtener_4
             // 
-            this.btnObtener_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnObtener_5.Location = new System.Drawing.Point(425, 34);
-            this.btnObtener_5.Margin = new System.Windows.Forms.Padding(2);
-            this.btnObtener_5.Name = "btnObtener_5";
-            this.btnObtener_5.Size = new System.Drawing.Size(69, 26);
-            this.btnObtener_5.TabIndex = 22;
-            this.btnObtener_5.Text = "Obtener";
-            this.btnObtener_5.UseVisualStyleBackColor = true;
+            this.btnObtener_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnObtener_4.Location = new System.Drawing.Point(425, 34);
+            this.btnObtener_4.Margin = new System.Windows.Forms.Padding(2);
+            this.btnObtener_4.Name = "btnObtener_4";
+            this.btnObtener_4.Size = new System.Drawing.Size(69, 26);
+            this.btnObtener_4.TabIndex = 22;
+            this.btnObtener_4.Text = "Obtener";
+            this.btnObtener_4.UseVisualStyleBackColor = true;
+            this.btnObtener_4.Click += new System.EventHandler(this.BtnObtener_4_Click);
             // 
             // label18
             // 
@@ -683,7 +607,7 @@
             this.txt_Funcion.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Funcion.Name = "txt_Funcion";
             this.txt_Funcion.Size = new System.Drawing.Size(104, 20);
-            this.txt_Funcion.TabIndex = 21;
+            this.txt_Funcion.TabIndex = 1;
             this.txt_Funcion.Click += new System.EventHandler(this.Txt_Funcion_Click);
             // 
             // txt_LD
@@ -692,7 +616,7 @@
             this.txt_LD.Margin = new System.Windows.Forms.Padding(2);
             this.txt_LD.Name = "txt_LD";
             this.txt_LD.Size = new System.Drawing.Size(104, 20);
-            this.txt_LD.TabIndex = 20;
+            this.txt_LD.TabIndex = 5;
             this.txt_LD.Click += new System.EventHandler(this.Txt_LD_Click);
             this.txt_LD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_LD_KeyPress);
             // 
@@ -702,7 +626,7 @@
             this.txt_LI.Margin = new System.Windows.Forms.Padding(2);
             this.txt_LI.Name = "txt_LI";
             this.txt_LI.Size = new System.Drawing.Size(104, 20);
-            this.txt_LI.TabIndex = 19;
+            this.txt_LI.TabIndex = 4;
             this.txt_LI.Click += new System.EventHandler(this.Txt_LI_Click);
             this.txt_LI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_LI_KeyPress);
             // 
@@ -712,7 +636,7 @@
             this.txt_Iter.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Iter.Name = "txt_Iter";
             this.txt_Iter.Size = new System.Drawing.Size(104, 20);
-            this.txt_Iter.TabIndex = 18;
+            this.txt_Iter.TabIndex = 3;
             this.txt_Iter.Click += new System.EventHandler(this.Txt_Iter_Click);
             this.txt_Iter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Iter_KeyPress);
             // 
@@ -722,7 +646,7 @@
             this.txt_Tole.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Tole.Name = "txt_Tole";
             this.txt_Tole.Size = new System.Drawing.Size(104, 20);
-            this.txt_Tole.TabIndex = 17;
+            this.txt_Tole.TabIndex = 2;
             this.txt_Tole.Click += new System.EventHandler(this.Txt_Tole_Click);
             this.txt_Tole.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Tole_KeyPress);
             // 
@@ -819,36 +743,6 @@
             this.tabUnidad4.Text = "Unidad 4";
             this.tabUnidad4.UseVisualStyleBackColor = true;
             // 
-            // lbl_Ite_3
-            // 
-            this.lbl_Ite_3.AutoSize = true;
-            this.lbl_Ite_3.Location = new System.Drawing.Point(122, 24);
-            this.lbl_Ite_3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Ite_3.Name = "lbl_Ite_3";
-            this.lbl_Ite_3.Size = new System.Drawing.Size(13, 13);
-            this.lbl_Ite_3.TabIndex = 25;
-            this.lbl_Ite_3.Text = "--";
-            // 
-            // lbl_Tole_3
-            // 
-            this.lbl_Tole_3.AutoSize = true;
-            this.lbl_Tole_3.Location = new System.Drawing.Point(122, 47);
-            this.lbl_Tole_3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Tole_3.Name = "lbl_Tole_3";
-            this.lbl_Tole_3.Size = new System.Drawing.Size(13, 13);
-            this.lbl_Tole_3.TabIndex = 26;
-            this.lbl_Tole_3.Text = "--";
-            // 
-            // lbl_Solu_3
-            // 
-            this.lbl_Solu_3.AutoSize = true;
-            this.lbl_Solu_3.Location = new System.Drawing.Point(122, 70);
-            this.lbl_Solu_3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Solu_3.Name = "lbl_Solu_3";
-            this.lbl_Solu_3.Size = new System.Drawing.Size(13, 13);
-            this.lbl_Solu_3.TabIndex = 27;
-            this.lbl_Solu_3.Text = "--";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -858,6 +752,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.Panel1.ResumeLayout(false);
             this.tabUnidad1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
@@ -865,17 +760,14 @@
             this.tabPage2.PerformLayout();
             this.tabU1M3.ResumeLayout(false);
             this.tabU1M1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.tabU1M2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.tabU1M4.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.tabU1M5.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
@@ -894,40 +786,6 @@
         private System.Windows.Forms.TabPage tabUnidad4;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabControl tabU1M3;
-        private System.Windows.Forms.TabPage tabU1M1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnObtener_1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TabPage tabU1M2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button btnObtener_2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button btnObtener_3;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TabPage tabU1M4;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button btnObtener_4;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TabPage tabU1M5;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button btnObtener_5;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.TextBox txt_LD;
         private System.Windows.Forms.TextBox txt_LI;
@@ -939,20 +797,45 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Label lbl_Solucion_5;
-        private System.Windows.Forms.Label lbl_Tole_5;
-        private System.Windows.Forms.Label lbl_Iter_5;
-        private System.Windows.Forms.Label lbl_Solucion_1;
-        private System.Windows.Forms.Label lbl_Tole_1;
-        private System.Windows.Forms.Label lbl_Iter_1;
+        private System.Windows.Forms.TextBox txt_Funcion;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabControl tabU1M3;
+        private System.Windows.Forms.TabPage tabU1M1;
+        private System.Windows.Forms.TabPage tabU1M2;
+        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label lbl_Solu_2;
         private System.Windows.Forms.Label lbl_Tole_2;
         private System.Windows.Forms.Label lbl_Ite_2;
-        private System.Windows.Forms.TextBox txt_Funcion;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnObtener_2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label lbl_Solu_3;
         private System.Windows.Forms.Label lbl_Tole_3;
         private System.Windows.Forms.Label lbl_Ite_3;
+        private System.Windows.Forms.Button btnObtener_3;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TabPage tabU1M5;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label lbl_Solucion_4;
+        private System.Windows.Forms.Label lbl_Tole_4;
+        private System.Windows.Forms.Label lbl_Iter_4;
+        private System.Windows.Forms.Button btnObtener_4;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lbl_Solucion_1;
+        private System.Windows.Forms.Label lbl_Tole_1;
+        private System.Windows.Forms.Label lbl_Iter_1;
+        private System.Windows.Forms.Button btnObtener_1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }
 

@@ -60,8 +60,8 @@ namespace Logica.Unidad1
                     float xant = 0;
                     float xr = (xi + xd) / 2;
                     error = (xi + xd == 0) ? 1 : CalcularError(xr, xant);
-                    while ((Math.Abs(Fx(func, xr)) >= tole || Math.Abs(Fx(func, xr)) == 0) && contador < citer &&
-                        error > tole && band == false)
+                    while ((band == false && Math.Abs(Fx(func, xr)) >= tole || Math.Abs(Fx(func, xr)) == 0) && contador < citer &&
+                        error > tole)
                     {
                         contador += 1;
                         xr = (xi + xd) / 2;
@@ -129,8 +129,8 @@ namespace Logica.Unidad1
                     float xant = 0;
                     float xr = ((-(Fx(func, xd)) * xi) + (Fx(func, xi) * xd)) / (Fx(func, xi) - Fx(func, xd));
                     error = (xi + xd == 0) ? 1 : CalcularError(xr, xant);
-                    while ((Math.Abs(Fx(func, xr)) >= tole || Math.Abs(Fx(func, xr)) == 0) && contador < citer &&
-                        error > tole && band == false)
+                    while ((band == false && Math.Abs(Fx(func, xr)) >= tole || Math.Abs(Fx(func, xr)) == 0) && contador < citer &&
+                        error > tole)
                     {
                         contador += 1;
                         xr = ((-Fx(func, xd) * xi) + (Fx(func, xi) * xd)) / (Fx(func, xi) - Fx(func, xd));
@@ -199,24 +199,33 @@ namespace Logica.Unidad1
                     float xant = 0;
                     float xr = x;
                     error = (xr == 0) ? 1 : CalcularError(xr, xant);
-                    while ((Math.Abs(Fx(func, xr)) >= tole || Math.Abs(Fx(func, xr)) == 0) && contador < citer &&
-                        error > tole && band == false)
+                    while ((band == false && Math.Abs(Fx(func, xr)) >= tole || Math.Abs(Fx(func, xr)) == 0) && contador < citer &&
+                        error > tole)
                     {
                         contador += 1;
                         xr = xr - (Fx(func, xr) / ((Fx(func, xr + (float)tole) - Fx(func, xr)) / (float)tole));
-                        error = (xr == 0) ? 1 : CalcularError(xr, xant);
-                        if (Math.Abs(Fx(func, xr)) < tole || contador > citer || error < tole)
+                        if (!float.IsInfinity(xr))
                         {
-                            nuevo.Solucion = xr;
-                            nuevo.Iter = contador;
-                            if (Math.Abs(Fx(func, xr)) < tole)
-                                nuevo.Tole = Math.Abs(Fx(func, xr));
+                            error = (xr == 0) ? 1 : CalcularError(xr, xant);
+                            if (Math.Abs(Fx(func, xr)) < tole || contador > citer || error < tole)
+                            {
+                                nuevo.Solucion = xr;
+                                nuevo.Iter = contador;
+                                if (Math.Abs(Fx(func, xr)) < tole)
+                                    nuevo.Tole = Math.Abs(Fx(func, xr));
+                                else
+                                    nuevo.Tole = error;
+                                band = true;
+                            }
                             else
-                                nuevo.Tole = error;
-                            band = true;
+                            { xant = xr; }
                         }
                         else
-                        { xant = xr; }
+                        {
+                            nuevo.SePudo = false;
+                            nuevo.Mensaje = "El valor que utiliza el método se fue al infinito";
+                            band = true;
+                        }
                     }
                 }
                 else
@@ -238,8 +247,8 @@ namespace Logica.Unidad1
                     float xant = 0;
                     float xr = (Fx(func,xi) * xd - Fx(func,xd) * xi) /(-Fx(func,xd) + Fx(func,xi));
                     error = (xi + xd == 0) ? 1 : CalcularError(xr, xant);
-                    while ((Math.Abs(Fx(func, xr)) >= tole || Math.Abs(Fx(func, xr)) == 0) && contador < citer &&
-                        error > tole && band == false)
+                    while ((band == false && Math.Abs(Fx(func, xr)) >= tole || Math.Abs(Fx(func, xr)) == 0) && contador < citer &&
+                        error > tole)
                     {
                         contador += 1;
                         xr = (Fx(func, xi) * xd - Fx(func, xd) * xi) / (-Fx(func, xd) + Fx(func, xi));

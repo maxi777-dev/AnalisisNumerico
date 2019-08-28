@@ -222,34 +222,5 @@ namespace AnalisisNumerico1
                 }
             }
         }  // OBTENER CON EL METODO DE BISECCION
-
-        //private void TabU1M3_Click(object sender, EventArgs e)
-        //{
-        //    label21.Visible = false;
-        //    txt_LD.Visible = false;
-        //}
-
-        //private void TabU1M5_Click(object sender, EventArgs e)
-        //{
-        //    label21.Visible = true;
-        //    txt_LD.Visible = true;
-        //}
-
-        //private void TabPage1_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void TabU1M2_Click(object sender, EventArgs e)
-        //{
-        //    label21.Visible = true;
-        //    txt_LD.Visible = true;
-        //}
-
-        //private void TabU1M1_Click(object sender, EventArgs e)
-        //{
-        //    label21.Visible = true;
-        //    txt_LD.Visible = true;
-        //}
     }
 }

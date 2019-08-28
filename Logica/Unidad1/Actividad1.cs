@@ -20,7 +20,6 @@ namespace Logica.Unidad1
 
         //}
 
-
         private static Resultado Analizador(string func)
         {
             Resultado nuevo = new Resultado(0, 0, 0, true, "");
@@ -213,7 +212,7 @@ namespace Logica.Unidad1
                     bool band = false; float error = 0;
                     int contador = 0;
                     float xant = 0;
-                    float xr = x;
+                    float xr = x; //ESTO ME PARECE QUE A VECES NO ANDA. SI METES UN 0 COMO X, NO FUNCAS
                     error = Math.Abs((xr - xant) / xr);
                     while ((Math.Abs(Fx(func, xr)) >= tole || Math.Abs(Fx(func, xr)) == 0) && contador < citer &&
                         error > tole && band == false)

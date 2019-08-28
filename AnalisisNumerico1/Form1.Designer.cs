@@ -33,8 +33,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabU1M3 = new System.Windows.Forms.TabControl();
-            this.tabU1M1 = new System.Windows.Forms.TabPage();
+            this.tabTan = new System.Windows.Forms.TabControl();
+            this.tabBiseccion = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbl_Solucion_1 = new System.Windows.Forms.Label();
             this.lbl_Tole_1 = new System.Windows.Forms.Label();
@@ -43,7 +43,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.tabU1M2 = new System.Windows.Forms.TabPage();
+            this.tabRF = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lbl_Solu_2 = new System.Windows.Forms.Label();
             this.lbl_Tole_2 = new System.Windows.Forms.Label();
@@ -52,7 +52,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabTangente = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lbl_Solu_3 = new System.Windows.Forms.Label();
             this.lbl_Tole_3 = new System.Windows.Forms.Label();
@@ -61,7 +61,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.tabU1M5 = new System.Windows.Forms.TabPage();
+            this.tabSecante = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.lbl_Solucion_4 = new System.Windows.Forms.Label();
             this.lbl_Tole_4 = new System.Windows.Forms.Label();
@@ -81,7 +81,6 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabUnidad2 = new System.Windows.Forms.TabPage();
             this.tabUnidad3 = new System.Windows.Forms.TabPage();
             this.tabUnidad4 = new System.Windows.Forms.TabPage();
@@ -89,14 +88,14 @@
             this.tabUnidad1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabU1M3.SuspendLayout();
-            this.tabU1M1.SuspendLayout();
+            this.tabTan.SuspendLayout();
+            this.tabBiseccion.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tabU1M2.SuspendLayout();
+            this.tabRF.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabTangente.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.tabU1M5.SuspendLayout();
+            this.tabSecante.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.SuspendLayout();
@@ -129,7 +128,6 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(18, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -139,7 +137,7 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.tabU1M3);
+            this.tabPage2.Controls.Add(this.tabTan);
             this.tabPage2.Controls.Add(this.groupBox7);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -159,30 +157,30 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "METODOS:";
             // 
-            // tabU1M3
+            // tabTan
             // 
-            this.tabU1M3.Controls.Add(this.tabU1M1);
-            this.tabU1M3.Controls.Add(this.tabU1M2);
-            this.tabU1M3.Controls.Add(this.tabPage1);
-            this.tabU1M3.Controls.Add(this.tabU1M5);
-            this.tabU1M3.Location = new System.Drawing.Point(5, 151);
-            this.tabU1M3.Margin = new System.Windows.Forms.Padding(2);
-            this.tabU1M3.Name = "tabU1M3";
-            this.tabU1M3.SelectedIndex = 0;
-            this.tabU1M3.Size = new System.Drawing.Size(614, 215);
-            this.tabU1M3.TabIndex = 13;
+            this.tabTan.Controls.Add(this.tabBiseccion);
+            this.tabTan.Controls.Add(this.tabRF);
+            this.tabTan.Controls.Add(this.tabTangente);
+            this.tabTan.Controls.Add(this.tabSecante);
+            this.tabTan.Location = new System.Drawing.Point(5, 151);
+            this.tabTan.Margin = new System.Windows.Forms.Padding(2);
+            this.tabTan.Name = "tabTan";
+            this.tabTan.SelectedIndex = 0;
+            this.tabTan.Size = new System.Drawing.Size(614, 215);
+            this.tabTan.TabIndex = 13;
             // 
-            // tabU1M1
+            // tabBiseccion
             // 
-            this.tabU1M1.Controls.Add(this.groupBox1);
-            this.tabU1M1.Location = new System.Drawing.Point(4, 22);
-            this.tabU1M1.Margin = new System.Windows.Forms.Padding(2);
-            this.tabU1M1.Name = "tabU1M1";
-            this.tabU1M1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabU1M1.Size = new System.Drawing.Size(606, 189);
-            this.tabU1M1.TabIndex = 0;
-            this.tabU1M1.Text = "Biseccion";
-            this.tabU1M1.UseVisualStyleBackColor = true;
+            this.tabBiseccion.Controls.Add(this.groupBox1);
+            this.tabBiseccion.Location = new System.Drawing.Point(4, 22);
+            this.tabBiseccion.Margin = new System.Windows.Forms.Padding(2);
+            this.tabBiseccion.Name = "tabBiseccion";
+            this.tabBiseccion.Padding = new System.Windows.Forms.Padding(2);
+            this.tabBiseccion.Size = new System.Drawing.Size(606, 189);
+            this.tabBiseccion.TabIndex = 0;
+            this.tabBiseccion.Text = "Biseccion";
+            this.tabBiseccion.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -274,17 +272,17 @@
             this.label9.TabIndex = 11;
             this.label9.Text = "Iteraciones =";
             // 
-            // tabU1M2
+            // tabRF
             // 
-            this.tabU1M2.Controls.Add(this.groupBox3);
-            this.tabU1M2.Location = new System.Drawing.Point(4, 22);
-            this.tabU1M2.Margin = new System.Windows.Forms.Padding(2);
-            this.tabU1M2.Name = "tabU1M2";
-            this.tabU1M2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabU1M2.Size = new System.Drawing.Size(606, 189);
-            this.tabU1M2.TabIndex = 1;
-            this.tabU1M2.Text = "Regla Falsa";
-            this.tabU1M2.UseVisualStyleBackColor = true;
+            this.tabRF.Controls.Add(this.groupBox3);
+            this.tabRF.Location = new System.Drawing.Point(4, 22);
+            this.tabRF.Margin = new System.Windows.Forms.Padding(2);
+            this.tabRF.Name = "tabRF";
+            this.tabRF.Padding = new System.Windows.Forms.Padding(2);
+            this.tabRF.Size = new System.Drawing.Size(606, 189);
+            this.tabRF.TabIndex = 1;
+            this.tabRF.Text = "Regla Falsa";
+            this.tabRF.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -376,17 +374,17 @@
             this.label11.TabIndex = 11;
             this.label11.Text = "Iteraciones =";
             // 
-            // tabPage1
+            // tabTangente
             // 
-            this.tabPage1.Controls.Add(this.groupBox4);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(606, 189);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "Newton - Raphson";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabTangente.Controls.Add(this.groupBox4);
+            this.tabTangente.Location = new System.Drawing.Point(4, 22);
+            this.tabTangente.Margin = new System.Windows.Forms.Padding(2);
+            this.tabTangente.Name = "tabTangente";
+            this.tabTangente.Padding = new System.Windows.Forms.Padding(2);
+            this.tabTangente.Size = new System.Drawing.Size(606, 189);
+            this.tabTangente.TabIndex = 2;
+            this.tabTangente.Text = "Newton - Raphson";
+            this.tabTangente.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
@@ -478,17 +476,17 @@
             this.label14.TabIndex = 11;
             this.label14.Text = "Iteraciones =";
             // 
-            // tabU1M5
+            // tabSecante
             // 
-            this.tabU1M5.Controls.Add(this.groupBox6);
-            this.tabU1M5.Location = new System.Drawing.Point(4, 22);
-            this.tabU1M5.Margin = new System.Windows.Forms.Padding(2);
-            this.tabU1M5.Name = "tabU1M5";
-            this.tabU1M5.Padding = new System.Windows.Forms.Padding(2);
-            this.tabU1M5.Size = new System.Drawing.Size(606, 189);
-            this.tabU1M5.TabIndex = 4;
-            this.tabU1M5.Text = "Secante";
-            this.tabU1M5.UseVisualStyleBackColor = true;
+            this.tabSecante.Controls.Add(this.groupBox6);
+            this.tabSecante.Location = new System.Drawing.Point(4, 22);
+            this.tabSecante.Margin = new System.Windows.Forms.Padding(2);
+            this.tabSecante.Name = "tabSecante";
+            this.tabSecante.Padding = new System.Windows.Forms.Padding(2);
+            this.tabSecante.Size = new System.Drawing.Size(606, 189);
+            this.tabSecante.TabIndex = 4;
+            this.tabSecante.Text = "Secante";
+            this.tabSecante.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
@@ -700,16 +698,6 @@
             this.label25.TabIndex = 11;
             this.label25.Text = "f (x) =";
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(624, 362);
-            this.tabPage3.TabIndex = 1;
-            this.tabPage3.Text = "Actividad 2";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
             // tabUnidad2
             // 
             this.tabUnidad2.Location = new System.Drawing.Point(4, 22);
@@ -758,17 +746,17 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.tabU1M3.ResumeLayout(false);
-            this.tabU1M1.ResumeLayout(false);
+            this.tabTan.ResumeLayout(false);
+            this.tabBiseccion.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tabU1M2.ResumeLayout(false);
+            this.tabRF.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
+            this.tabTangente.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.tabU1M5.ResumeLayout(false);
+            this.tabSecante.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
@@ -786,7 +774,46 @@
         private System.Windows.Forms.TabPage tabUnidad4;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabControl tabTan;
+        private System.Windows.Forms.TabPage tabBiseccion;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lbl_Solucion_1;
+        private System.Windows.Forms.Label lbl_Tole_1;
+        private System.Windows.Forms.Label lbl_Iter_1;
+        private System.Windows.Forms.Button btnObtener_1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TabPage tabRF;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label lbl_Solu_2;
+        private System.Windows.Forms.Label lbl_Tole_2;
+        private System.Windows.Forms.Label lbl_Ite_2;
+        private System.Windows.Forms.Button btnObtener_2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TabPage tabTangente;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label lbl_Solu_3;
+        private System.Windows.Forms.Label lbl_Tole_3;
+        private System.Windows.Forms.Label lbl_Ite_3;
+        private System.Windows.Forms.Button btnObtener_3;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TabPage tabSecante;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label lbl_Solucion_4;
+        private System.Windows.Forms.Label lbl_Tole_4;
+        private System.Windows.Forms.Label lbl_Iter_4;
+        private System.Windows.Forms.Button btnObtener_4;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.TextBox txt_Funcion;
         private System.Windows.Forms.TextBox txt_LD;
         private System.Windows.Forms.TextBox txt_LI;
         private System.Windows.Forms.TextBox txt_Iter;
@@ -796,46 +823,6 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TextBox txt_Funcion;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabControl tabU1M3;
-        private System.Windows.Forms.TabPage tabU1M1;
-        private System.Windows.Forms.TabPage tabU1M2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label lbl_Solu_2;
-        private System.Windows.Forms.Label lbl_Tole_2;
-        private System.Windows.Forms.Label lbl_Ite_2;
-        private System.Windows.Forms.Button btnObtener_2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label lbl_Solu_3;
-        private System.Windows.Forms.Label lbl_Tole_3;
-        private System.Windows.Forms.Label lbl_Ite_3;
-        private System.Windows.Forms.Button btnObtener_3;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TabPage tabU1M5;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label lbl_Solucion_4;
-        private System.Windows.Forms.Label lbl_Tole_4;
-        private System.Windows.Forms.Label lbl_Iter_4;
-        private System.Windows.Forms.Button btnObtener_4;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lbl_Solucion_1;
-        private System.Windows.Forms.Label lbl_Tole_1;
-        private System.Windows.Forms.Label lbl_Iter_1;
-        private System.Windows.Forms.Button btnObtener_1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
     }
 }
 

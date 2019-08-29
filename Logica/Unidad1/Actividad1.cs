@@ -55,13 +55,13 @@ namespace Logica.Unidad1
                 double operacion = Fx(func, xi) * Fx(func, xd);
                 if (operacion < 0)
                 {
-                    bool band = false; float error = 0;
+                    bool band = false;
                     int contador = 0;
                     float xant = 0;
                     float xr = (xi + xd) / 2;
-                    error = (xi + xd == 0) ? 1 : CalcularError(xr, xant);
-                    while ((band == false && Math.Abs(Fx(func, xr)) >= tole || Math.Abs(Fx(func, xr)) == 0) && contador < citer &&
-                        error > tole)
+                    float error = 1;
+                    while ((Math.Abs(Fx(func, xr)) >= tole || Math.Abs(Fx(func, xr)) == 0) && contador < citer &&
+                        error > tole && band == false)
                     {
                         contador += 1;
                         xr = (xi + xd) / 2;
@@ -124,13 +124,13 @@ namespace Logica.Unidad1
                 double operacion = Fx(func, xi) * Fx(func, xd);
                 if (operacion < 0)
                 {
-                    bool band = false; float error = 0;
+                    bool band = false;
                     int contador = 0;
                     float xant = 0;
                     float xr = ((-(Fx(func, xd)) * xi) + (Fx(func, xi) * xd)) / (Fx(func, xi) - Fx(func, xd));
-                    error = (xi + xd == 0) ? 1 : CalcularError(xr, xant);
-                    while ((band == false && Math.Abs(Fx(func, xr)) >= tole || Math.Abs(Fx(func, xr)) == 0) && contador < citer &&
-                        error > tole)
+                    float error = 1;
+                    while ((Math.Abs(Fx(func, xr)) >= tole || Math.Abs(Fx(func, xr)) == 0) && contador < citer &&
+                        error > tole && band == false)
                     {
                         contador += 1;
                         xr = ((-Fx(func, xd) * xi) + (Fx(func, xi) * xd)) / (Fx(func, xi) - Fx(func, xd));
@@ -194,17 +194,17 @@ namespace Logica.Unidad1
                 double operacion = Fx(func, x);
                 if (operacion != 0)
                 {
-                    bool band = false; float error = 0;
+                    bool band = false; 
                     int contador = 0;
                     float xant = 0;
                     float xr = x;
-                    error = (xr == 0) ? 1 : CalcularError(xr, xant);
-                    while ((band == false && Math.Abs(Fx(func, xr)) >= tole || Math.Abs(Fx(func, xr)) == 0) && contador < citer &&
-                        error > tole)
+                    float error = 1;
+                    while ((Math.Abs(Fx(func, xr)) >= tole || Math.Abs(Fx(func, xr)) == 0) && contador < citer &&
+                        error > tole && band == false)
                     {
                         contador += 1;
                         xr = xr - (Fx(func, xr) / ((Fx(func, xr + (float)tole) - Fx(func, xr)) / (float)tole));
-                        if (!float.IsInfinity(xr))
+                        if (!float.IsInfinity(xr) && !float.IsNaN(xr) && !float.IsNaN(Fx(func, xr)) && !float.IsInfinity(Fx(func, xr)))
                         {
                             error = (xr == 0) ? 1 : CalcularError(xr, xant);
                             if (Math.Abs(Fx(func, xr)) < tole || contador > citer || error < tole)
@@ -223,7 +223,7 @@ namespace Logica.Unidad1
                         else
                         {
                             nuevo.SePudo = false;
-                            nuevo.Mensaje = "El valor que utiliza el método se fue al infinito";
+                            nuevo.Mensaje = "El método no puede converger";
                             band = true;
                         }
                     }
@@ -240,36 +240,51 @@ namespace Logica.Unidad1
             if (nuevo.SePudo)
             {
                 double operacion = Fx(func, xi) * Fx(func, xd);
-                if (operacion < 0)
+                if (operacion != 0)
                 {
-                    bool band = false; float error = 0;
+                    bool band = false;
                     int contador = 0;
                     float xant = 0;
                     float xr = (Fx(func,xi) * xd - Fx(func,xd) * xi) /(-Fx(func,xd) + Fx(func,xi));
-                    error = (xi + xd == 0) ? 1 : CalcularError(xr, xant);
-                    while ((band == false && Math.Abs(Fx(func, xr)) >= tole || Math.Abs(Fx(func, xr)) == 0) && contador < citer &&
-                        error > tole)
+                    if (float.IsInfinity(xr) || float.IsNaN(xr) || float.IsNaN(Fx(func, xr)) || float.IsInfinity(Fx(func, xr)))
+                    {
+                        nuevo.SePudo = false;
+                        nuevo.Mensaje = "El método no puede converger";
+                        band = true;
+                    }
+                    float error = 1;
+                    while ((Math.Abs(Fx(func, xr)) >= tole || Math.Abs(Fx(func, xr)) == 0) && contador < citer &&
+                        error > tole && band == false)
                     {
                         contador += 1;
                         xr = (Fx(func, xi) * xd - Fx(func, xd) * xi) / (-Fx(func, xd) + Fx(func, xi));
-                        error = (xi + xd == 0) ? 1 : CalcularError(xr, xant);
-                        if (Math.Abs(Fx(func, xr)) < tole || contador > citer || error < tole)
+                        if (!float.IsInfinity(xr) && !float.IsNaN(xr) && !float.IsNaN(Fx(func, xr)) && !float.IsInfinity(Fx(func, xr)))
                         {
-                            nuevo.Solucion = xr;
-                            nuevo.Iter = contador;
-                            if (Math.Abs(Fx(func, xr)) < tole)
-                                nuevo.Tole = Math.Abs(Fx(func, xr));
+                            error = (xi + xd == 0) ? 1 : CalcularError(xr, xant);
+                            if (Math.Abs(Fx(func, xr)) < tole || contador > citer || error < tole)
+                            {
+                                nuevo.Solucion = xr;
+                                nuevo.Iter = contador;
+                                if (Math.Abs(Fx(func, xr)) < tole)
+                                    nuevo.Tole = Math.Abs(Fx(func, xr));
+                                else
+                                    nuevo.Tole = error;
+                                band = true;
+                            }
                             else
-                                nuevo.Tole = error;
-                            band = true;
+                            {
+                                if (Fx(func, xi) * Fx(func, xr) < 0)
+                                { xd = xr; }
+                                else
+                                { xi = xr; }
+                                xant = xr;
+                            }
                         }
                         else
                         {
-                            if (Fx(func, xi) * Fx(func, xr) < 0)
-                            { xd = xr; }
-                            else
-                            { xi = xr; }
-                            xant = xr;
+                            nuevo.SePudo = false;
+                            nuevo.Mensaje = "El método no puede converger";
+                            band = true;
                         }
                     }
                     if (!band)
@@ -284,19 +299,11 @@ namespace Logica.Unidad1
                 }
                 else
                 {
-                    if (operacion == 0)
-                    {
-                        if (Fx(func, xi) == 0)
-                            nuevo.Solucion = xi;
+                    if (Fx(func, xi) == 0)
+                        nuevo.Solucion = xi;
 
-                        else
-                            nuevo.Solucion = xd;
-                    }
                     else
-                    {
-                        nuevo.SePudo = false;
-                        nuevo.Mensaje = "Limite Derecho o Izquierdo incorrectos, por favor ingreselos nuevamente";
-                    }
+                        nuevo.Solucion = xd;
                 }
             }
             return nuevo;

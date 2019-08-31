@@ -6,3 +6,10 @@ C:\Users\Agu\Documents\AnalisisNumerico\Logica\obj\Debug\Logica.dll
 C:\Users\Agu\Documents\AnalisisNumerico\Logica\obj\Debug\Logica.pdb
 C:\Users\Agu\Documents\AnalisisNumerico\Logica\bin\Debug\Calculus.dll
 C:\Users\Agu\Documents\AnalisisNumerico\Logica\obj\Debug\Logica.csproj.CopyComplete
+C:\Users\agufl\OneDrive\Documentos\AnalisisNumerico\Logica\bin\Debug\Logica.dll
+C:\Users\agufl\OneDrive\Documentos\AnalisisNumerico\Logica\bin\Debug\Logica.pdb
+C:\Users\agufl\OneDrive\Documentos\AnalisisNumerico\Logica\obj\Debug\Logica.csprojAssemblyReference.cache
+C:\Users\agufl\OneDrive\Documentos\AnalisisNumerico\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\agufl\OneDrive\Documentos\AnalisisNumerico\Logica\obj\Debug\Logica.csproj.CopyComplete
+C:\Users\agufl\OneDrive\Documentos\AnalisisNumerico\Logica\obj\Debug\Logica.dll
+C:\Users\agufl\OneDrive\Documentos\AnalisisNumerico\Logica\obj\Debug\Logica.pdb

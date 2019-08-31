@@ -22,3 +22,17 @@ C:\Users\Agu\Documents\AnalisisNumerico\AnalisisNumerico1\bin\Debug\Logica.dll
 C:\Users\Agu\Documents\AnalisisNumerico\AnalisisNumerico1\bin\Debug\Logica.pdb
 C:\Users\Agu\Documents\AnalisisNumerico\AnalisisNumerico1\obj\Debug\AnalisisNumerico1.csproj.CopyComplete
 C:\Users\Agu\Documents\AnalisisNumerico\AnalisisNumerico1\bin\Debug\Calculus.dll
+C:\Users\agufl\OneDrive\Documentos\AnalisisNumerico\AnalisisNumerico1\bin\Debug\AnalisisNumerico1.exe.config
+C:\Users\agufl\OneDrive\Documentos\AnalisisNumerico\AnalisisNumerico1\bin\Debug\AnalisisNumerico1.exe
+C:\Users\agufl\OneDrive\Documentos\AnalisisNumerico\AnalisisNumerico1\bin\Debug\AnalisisNumerico1.pdb
+C:\Users\agufl\OneDrive\Documentos\AnalisisNumerico\AnalisisNumerico1\bin\Debug\Logica.dll
+C:\Users\agufl\OneDrive\Documentos\AnalisisNumerico\AnalisisNumerico1\bin\Debug\Calculus.dll
+C:\Users\agufl\OneDrive\Documentos\AnalisisNumerico\AnalisisNumerico1\bin\Debug\Logica.pdb
+C:\Users\agufl\OneDrive\Documentos\AnalisisNumerico\AnalisisNumerico1\obj\Debug\AnalisisNumerico1.csprojAssemblyReference.cache
+C:\Users\agufl\OneDrive\Documentos\AnalisisNumerico\AnalisisNumerico1\obj\Debug\AnalisisNumerico1.Form1.resources
+C:\Users\agufl\OneDrive\Documentos\AnalisisNumerico\AnalisisNumerico1\obj\Debug\AnalisisNumerico1.Properties.Resources.resources
+C:\Users\agufl\OneDrive\Documentos\AnalisisNumerico\AnalisisNumerico1\obj\Debug\AnalisisNumerico1.csproj.GenerateResource.cache
+C:\Users\agufl\OneDrive\Documentos\AnalisisNumerico\AnalisisNumerico1\obj\Debug\AnalisisNumerico1.csproj.CoreCompileInputs.cache
+C:\Users\agufl\OneDrive\Documentos\AnalisisNumerico\AnalisisNumerico1\obj\Debug\AnalisisNumerico1.csproj.CopyComplete
+C:\Users\agufl\OneDrive\Documentos\AnalisisNumerico\AnalisisNumerico1\obj\Debug\AnalisisNumerico1.exe
+C:\Users\agufl\OneDrive\Documentos\AnalisisNumerico\AnalisisNumerico1\obj\Debug\AnalisisNumerico1.pdb

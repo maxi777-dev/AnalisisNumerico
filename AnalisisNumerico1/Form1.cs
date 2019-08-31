@@ -22,9 +22,47 @@ namespace AnalisisNumerico1
         {
 
         }
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
-       
-        // ----------------------------------------------------------------------------------------------------//
+        }
+
+
+        /// ------------------------------------------     PRACTICO 1    ----------------------------------------------------------// 
+
+        private void BtnObtener_1_Click_1(object sender, EventArgs e)
+        {
+            if ((txt_Iter.Text.Trim() == string.Empty) || (txt_Tole.Text.Trim() == string.Empty) ||
+                (txt_LI.Text.Trim() == string.Empty) || (txt_LD.Text.Trim() == string.Empty) || (txt_Funcion.Text.Trim() == string.Empty))
+            {
+                if ((txt_Iter.Text.Trim() == string.Empty))
+                    txt_Iter.BackColor = Color.Red;
+                if ((txt_Tole.Text.Trim() == string.Empty))
+                    txt_Tole.BackColor = Color.Red;
+                if ((txt_LI.Text.Trim() == string.Empty))
+                    txt_LI.BackColor = Color.Red;
+                if ((txt_LD.Text.Trim() == string.Empty))
+                    txt_LD.BackColor = Color.Red;
+                if ((txt_Funcion.Text.Trim() == string.Empty))
+                    txt_Funcion.BackColor = Color.Red;
+                MessageBox.Show("Campos Vacios");
+            }
+            else
+            {
+                Resultado nuevo = Logica.Unidad1.Actividad1.Biseccion(txt_Funcion.Text, int.Parse(txt_Iter.Text),
+                        double.Parse(txt_Tole.Text), float.Parse(txt_LI.Text), float.Parse(txt_LD.Text));
+                if (!nuevo.SePudo)
+                {
+                    MessageBox.Show(nuevo.Mensaje);
+                }
+                else
+                {
+                    lbl_Iter_1.Text = nuevo.Iter.ToString();
+                    lbl_Tole_1.Text = nuevo.Tole.ToString();
+                    lbl_Solucion_1.Text = nuevo.Solucion.ToString();
+                }
+            }
+        }  // OBTENER CON EL METODO DE BISECCION
 
         private void BtnObtener_2_Click(object sender, EventArgs e)
         {
@@ -184,43 +222,9 @@ namespace AnalisisNumerico1
             txt_Funcion.BackColor = Color.White;
         }  // PONE EL TEXTBOX EN BLANCO
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
+        // ------------------------------------------     PRACTICO 2     ----------------------------------------------------------// 
 
-        }
 
-        private void BtnObtener_1_Click_1(object sender, EventArgs e)
-        {
-            if ((txt_Iter.Text.Trim() == string.Empty) || (txt_Tole.Text.Trim() == string.Empty) ||
-                (txt_LI.Text.Trim() == string.Empty) || (txt_LD.Text.Trim() == string.Empty) || (txt_Funcion.Text.Trim() == string.Empty))
-            {
-                if ((txt_Iter.Text.Trim() == string.Empty))
-                    txt_Iter.BackColor = Color.Red;
-                if ((txt_Tole.Text.Trim() == string.Empty))
-                    txt_Tole.BackColor = Color.Red;
-                if ((txt_LI.Text.Trim() == string.Empty))
-                    txt_LI.BackColor = Color.Red;
-                if ((txt_LD.Text.Trim() == string.Empty))
-                    txt_LD.BackColor = Color.Red;
-                if ((txt_Funcion.Text.Trim() == string.Empty))
-                    txt_Funcion.BackColor = Color.Red;
-                MessageBox.Show("Campos Vacios");
-            }
-            else
-            {
-                Resultado nuevo = Logica.Unidad1.Actividad1.Biseccion(txt_Funcion.Text, int.Parse(txt_Iter.Text),
-                        double.Parse(txt_Tole.Text), float.Parse(txt_LI.Text), float.Parse(txt_LD.Text));
-                if (!nuevo.SePudo)
-                {
-                    MessageBox.Show(nuevo.Mensaje);
-                }
-                else
-                {
-                    lbl_Iter_1.Text = nuevo.Iter.ToString();
-                    lbl_Tole_1.Text = nuevo.Tole.ToString();
-                    lbl_Solucion_1.Text = nuevo.Solucion.ToString();
-                }
-            }
-        }  // OBTENER CON EL METODO DE BISECCION
+
     }
 }

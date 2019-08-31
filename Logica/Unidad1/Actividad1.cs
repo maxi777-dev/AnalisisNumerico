@@ -47,6 +47,8 @@ namespace Logica.Unidad1
             return Math.Abs((xr - xant) / xr);
         }
 
+
+        //--------------------------------------- METODOS  -------------------------------------------//
         public static Resultado Biseccion(string func, int citer, double tole, float xi, float xd)
         {
             Resultado nuevo = Analizador(func);
@@ -71,9 +73,12 @@ namespace Logica.Unidad1
                             nuevo.Solucion = xr;
                             nuevo.Iter = contador;
                             if (Math.Abs(Fx(func, xr)) < tole)
-                                nuevo.Tole = Math.Abs(Fx(func, xr));
+                                nuevo.Tole = Convert.ToDecimal(Math.Abs(Fx(func, xr)));
                             else
-                                nuevo.Tole = error;
+                                nuevo.Tole = Convert.ToDecimal(error);
+                            //nuevo.Tole = Math.Round(nuevo.Tole, 3); --> CON ESTO LE PODEMOS PONER UN LIMITE A LOS DECIMALES, 
+                            //                                                EN ESTE CASO EL LIMITE ES 3
+                            //nuevo.Solucion = Math.Round(nuevo.Solucion, 3);
                             band = true;
                         }
                         else
@@ -90,9 +95,9 @@ namespace Logica.Unidad1
                         nuevo.Solucion = xr;
                         nuevo.Iter = contador + 1;
                         if (Math.Abs(Fx(func, xr)) < tole)
-                            nuevo.Tole = Math.Abs(Fx(func, xr));
+                            nuevo.Tole = Convert.ToDecimal(Math.Abs(Fx(func, xr)));
                         else
-                            nuevo.Tole = error;
+                            nuevo.Tole = Convert.ToDecimal(error);
                     }
                 }
                 else
@@ -140,9 +145,9 @@ namespace Logica.Unidad1
                             nuevo.Solucion = xr;
                             nuevo.Iter = contador;
                             if (Math.Abs(Fx(func, xr)) < tole)
-                                nuevo.Tole = Math.Abs(Fx(func, xr));
+                                nuevo.Tole = Convert.ToDecimal(Math.Abs(Fx(func, xr)));
                             else
-                                nuevo.Tole = error;
+                                nuevo.Tole = Convert.ToDecimal(error);
                             band = true;
                         }
                         else
@@ -160,9 +165,9 @@ namespace Logica.Unidad1
                         nuevo.Solucion = xr;
                         nuevo.Iter = contador + 1;
                         if (Math.Abs(Fx(func, xr)) < tole)
-                            nuevo.Tole = Math.Abs(Fx(func, xr));
+                            nuevo.Tole = Convert.ToDecimal(Math.Abs(Fx(func, xr)));
                         else
-                            nuevo.Tole = error;
+                            nuevo.Tole = Convert.ToDecimal(error);
                     }
                 }
                 else
@@ -212,9 +217,9 @@ namespace Logica.Unidad1
                                 nuevo.Solucion = xr;
                                 nuevo.Iter = contador;
                                 if (Math.Abs(Fx(func, xr)) < tole)
-                                    nuevo.Tole = Math.Abs(Fx(func, xr));
+                                    nuevo.Tole = Convert.ToDecimal(Math.Abs(Fx(func, xr)));
                                 else
-                                    nuevo.Tole = error;
+                                    nuevo.Tole = Convert.ToDecimal(error);
                                 band = true;
                             }
                             else
@@ -266,9 +271,9 @@ namespace Logica.Unidad1
                                 nuevo.Solucion = xr;
                                 nuevo.Iter = contador;
                                 if (Math.Abs(Fx(func, xr)) < tole)
-                                    nuevo.Tole = Math.Abs(Fx(func, xr));
+                                    nuevo.Tole = Convert.ToDecimal(Math.Abs(Fx(func, xr)));
                                 else
-                                    nuevo.Tole = error;
+                                    nuevo.Tole = Convert.ToDecimal(error);
                                 band = true;
                             }
                             else
@@ -292,9 +297,9 @@ namespace Logica.Unidad1
                         nuevo.Solucion = xr;
                         nuevo.Iter = contador + 1;
                         if (Math.Abs(Fx(func, xr)) < tole)
-                            nuevo.Tole = Math.Abs(Fx(func, xr));
+                            nuevo.Tole = Convert.ToDecimal(Math.Abs(Fx(func, xr)));
                         else
-                            nuevo.Tole = error;
+                            nuevo.Tole = Convert.ToDecimal(error);
                     }
                 }
                 else

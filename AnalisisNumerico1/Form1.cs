@@ -251,7 +251,6 @@ namespace AnalisisNumerico1
                             a.AutoSize = false;
                             a.Size = new System.Drawing.Size(50, 22);
                             a.Name = nombretxt;
-                            //a.Text = (x + 1).ToString() + (i + 1).ToString();
                             a.Location = new Point(pointX, pointY);
                             panel2.Controls.Add(a);
                             Label lbl = new Label();

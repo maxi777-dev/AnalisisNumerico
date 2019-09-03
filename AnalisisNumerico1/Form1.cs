@@ -253,31 +253,60 @@ namespace AnalisisNumerico1
                             a.Name = nombretxt;
                             //a.Text = (x + 1).ToString() + (i + 1).ToString();
                             a.Location = new Point(pointX, pointY);
+                            panel2.Controls.Add(a);
                             Label lbl = new Label();
                             lbl.Name = nombrelabel;
-                            switch(i)
+                            lbl.AutoSize = false;
+                            lbl.Size = new System.Drawing.Size(30, 22);
+                            switch (i)
                             {
                                 case 1:
                                     lbl.Text = "x +";
-                                    lbl.Location = new Point(pointX + 55, pointY);
+                                    lbl.Location = new Point(pointX + 60, pointY + 2);
                                     break;
                                 case 2:
                                     lbl.Text = "y +";
+                                    lbl.Location = new Point(pointX + 60, pointY + 2);
+                                    if (cantincognitas==2)
+                                    {
+                                        lbl.Text = "y =";
+                                    }
                                     break;
                                 case 3:
                                     lbl.Text = "z +";
+                                    lbl.Location = new Point(pointX + 60, pointY + 2);
+                                    if (cantincognitas == 3)
+                                    {
+                                        lbl.Text = "z =";
+                                    }
+                                    if (cantincognitas == 2)
+                                    {
+                                        lbl.Visible = false;
+                                    }
                                     break;
                                 case 4:
                                     lbl.Text = "t +";
+                                    lbl.Location = new Point(pointX + 60, pointY + 2);
+                                    if (cantincognitas == 4)
+                                    {
+                                        lbl.Text = "t =";
+                                    }
+                                    if (cantincognitas == 3)
+                                    {
+                                        lbl.Visible = false;
+                                    }
                                     break;
                                 case 5:
                                     lbl.Text = "s =";
+                                    lbl.Location = new Point(pointX + 60, pointY + 2);
+                                    if (cantincognitas == 4)
+                                    {
+                                        lbl.Visible = false;
+                                    }
                                     break;
                             }
-                            panel2.Controls.Add(a);
                             panel2.Controls.Add(lbl);
                             panel2.Show();
-
                             pointY += 30;
                             a.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox1_KeyPress);
                         }

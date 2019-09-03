@@ -16,8 +16,7 @@ namespace AnalisisNumerico1
         public Form1()
         {
             InitializeComponent();
-        }
-        
+        }        
         private void TxtFuncion_TextChanged(object sender, EventArgs e)
         {
 
@@ -222,34 +221,88 @@ namespace AnalisisNumerico1
             txt_Funcion.BackColor = Color.White;
         }  // PONE EL TEXTBOX EN BLANCO
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int cantincognitas = int.Parse(textBox1.Text);
-            int pointX = 30;
-            int pointY = 40;
-            panel2.Controls.Clear();
-            for (int i = 0; i < cantincognitas+1; i++)
-            {
-                pointY = 40;
-                for (int x = 0; x < cantincognitas; x++)
-                {
-                    string nombre = "txt" + x + i;
-                    TextBox a = new TextBox();
-                    a.Name = nombre;
-                    a.Text = (x + 1).ToString() + (i + 1).ToString();
-                    a.Location = new Point(pointX, pointY);
-                    panel2.Controls.Add(a);
-                    panel2.Show();
-                    pointY += 20;
-                }
-                pointX += 120;
-            }
 
-        }
 
         // ------------------------------------------     PRACTICO 2     ----------------------------------------------------------// 
 
+        private void button1_Click(object sender, EventArgs e) //ACA SE GENERAN LAS ECUACIONES
+        {
+            if (textBox1.Text.Trim() == string.Empty)
+            {
+                textBox1.BackColor = Color.Red;
+                MessageBox.Show("No se ha ingresado un numero de ecuaciones.");
+            }
+            else
+            {
+                int cantincognitas = int.Parse(textBox1.Text);
+                int pointX = 30;
+                int pointY = 40;
+                panel2.Controls.Clear();
+                if ((cantincognitas >= 2) && (cantincognitas <= 5))
+                {
+                    for (int i = 1; i <= cantincognitas + 1; i++)
+                    {
+                        pointY = 40;
+                        for (int x = 1; x <= cantincognitas; x++)
+                        {
+                            string nombretxt = "txt" + x + i;
+                            string nombrelabel = "lbl" + x + i;
+                            TextBox a = new TextBox();
+                            a.AutoSize = false;
+                            a.Size = new System.Drawing.Size(50, 22);
+                            a.Name = nombretxt;
+                            //a.Text = (x + 1).ToString() + (i + 1).ToString();
+                            a.Location = new Point(pointX, pointY);
+                            Label lbl = new Label();
+                            lbl.Name = nombrelabel;
+                            switch(i)
+                            {
+                                case 1:
+                                    lbl.Text = "x +";
+                                    lbl.Location = new Point(pointX + 55, pointY);
+                                    break;
+                                case 2:
+                                    lbl.Text = "y +";
+                                    break;
+                                case 3:
+                                    lbl.Text = "z +";
+                                    break;
+                                case 4:
+                                    lbl.Text = "t +";
+                                    break;
+                                case 5:
+                                    lbl.Text = "s =";
+                                    break;
+                            }
+                            panel2.Controls.Add(a);
+                            panel2.Controls.Add(lbl);
+                            panel2.Show();
 
+                            pointY += 30;
+                            a.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox1_KeyPress);
+                        }
+                        pointX += 90;
+                    }
+                    btn_Resolver.Visible = true;
+                }
+                else
+                    MessageBox.Show("Ingrese una cantidad de incognitas adecuada");
+            }
+            
+        }
 
+        private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr != 8)
+            {
+                e.Handled = true;
+            }
+        }//INGRSAR SOLO NUMEROS
+
+        private void TextBox1_Click(object sender, EventArgs e)
+        {
+            textBox1.BackColor = Color.White;
+        }//PONE EL TEXTBOX EN BLANCO
     }
 }

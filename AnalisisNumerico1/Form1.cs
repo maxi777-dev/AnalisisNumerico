@@ -30,7 +30,7 @@ namespace AnalisisNumerico1
 
         /// ------------------------------------------     PRACTICO 1    ----------------------------------------------------------// 
 
-        private void BtnObtener_1_Click_1(object sender, EventArgs e)
+        private void btnObtener_1_Click(object sender, EventArgs e)
         {
             if ((txt_Iter.Text.Trim() == string.Empty) || (txt_Tole.Text.Trim() == string.Empty) ||
                 (txt_LI.Text.Trim() == string.Empty) || (txt_LD.Text.Trim() == string.Empty) || (txt_Funcion.Text.Trim() == string.Empty))
@@ -64,7 +64,7 @@ namespace AnalisisNumerico1
             }
         }  // OBTENER CON EL METODO DE BISECCION
 
-        private void BtnObtener_2_Click(object sender, EventArgs e)
+        private void BtnObtener_2_Click_1(object sender, EventArgs e)
         {
             if ((txt_Iter.Text.Trim() == string.Empty) || (txt_Tole.Text.Trim() == string.Empty) ||
                 (txt_LI.Text.Trim() == string.Empty) || (txt_LD.Text.Trim() == string.Empty))
@@ -96,7 +96,7 @@ namespace AnalisisNumerico1
             }      
         } //OBTENER CON EL METODO DE LA REGLA FALSA.
         
-        private void BtnObtener_3_Click(object sender, EventArgs e)
+        private void BtnObtener_3_Click_1(object sender, EventArgs e)
         {
             if ((txt_Iter.Text.Trim() == string.Empty) || (txt_Tole.Text.Trim() == string.Empty) ||
                 (txt_LI.Text.Trim() == string.Empty) || (txt_Funcion.Text.Trim() == string.Empty))
@@ -130,7 +130,7 @@ namespace AnalisisNumerico1
             }
         }//OBTENER CON EL METODO DE LA TANGENTE
 
-        private void BtnObtener_4_Click(object sender, EventArgs e) //OBTENER CON EL METODO DE LA SECANTE
+        private void BtnObtener_4_Click_1(object sender, EventArgs e) //OBTENER CON EL METODO DE LA SECANTE
         {
             if ((txt_Iter.Text.Trim() == string.Empty) || (txt_Tole.Text.Trim() == string.Empty) ||
                 (txt_LI.Text.Trim() == string.Empty) || (txt_LD.Text.Trim() == string.Empty) || (txt_Funcion.Text.Trim() == string.Empty))
@@ -221,6 +221,31 @@ namespace AnalisisNumerico1
         {
             txt_Funcion.BackColor = Color.White;
         }  // PONE EL TEXTBOX EN BLANCO
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int cantincognitas = int.Parse(textBox1.Text);
+            int pointX = 30;
+            int pointY = 40;
+            panel2.Controls.Clear();
+            for (int i = 0; i < cantincognitas+1; i++)
+            {
+                pointY = 40;
+                for (int x = 0; x < cantincognitas; x++)
+                {
+                    string nombre = "txt" + x + i;
+                    TextBox a = new TextBox();
+                    a.Name = nombre;
+                    a.Text = (x + 1).ToString() + (i + 1).ToString();
+                    a.Location = new Point(pointX, pointY);
+                    panel2.Controls.Add(a);
+                    panel2.Show();
+                    pointY += 20;
+                }
+                pointX += 120;
+            }
+
+        }
 
         // ------------------------------------------     PRACTICO 2     ----------------------------------------------------------// 
 

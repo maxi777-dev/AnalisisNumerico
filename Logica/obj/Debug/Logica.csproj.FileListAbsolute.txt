@@ -13,3 +13,10 @@ C:\Users\agufl\OneDrive\Documentos\AnalisisNumerico\Logica\obj\Debug\Logica.cspr
 C:\Users\agufl\OneDrive\Documentos\AnalisisNumerico\Logica\obj\Debug\Logica.csproj.CopyComplete
 C:\Users\agufl\OneDrive\Documentos\AnalisisNumerico\Logica\obj\Debug\Logica.dll
 C:\Users\agufl\OneDrive\Documentos\AnalisisNumerico\Logica\obj\Debug\Logica.pdb
+C:\Users\maxi\Desktop\C#\AnalisisNumerico\Logica\bin\Debug\Logica.dll
+C:\Users\maxi\Desktop\C#\AnalisisNumerico\Logica\bin\Debug\Logica.pdb
+C:\Users\maxi\Desktop\C#\AnalisisNumerico\Logica\obj\Debug\Logica.csprojAssemblyReference.cache
+C:\Users\maxi\Desktop\C#\AnalisisNumerico\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\maxi\Desktop\C#\AnalisisNumerico\Logica\obj\Debug\Logica.csproj.CopyComplete
+C:\Users\maxi\Desktop\C#\AnalisisNumerico\Logica\obj\Debug\Logica.dll
+C:\Users\maxi\Desktop\C#\AnalisisNumerico\Logica\obj\Debug\Logica.pdb

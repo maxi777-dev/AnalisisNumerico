@@ -9,17 +9,6 @@ namespace Logica.Unidad1
 {
     public class Actividad1 : Entrada
     {
-        //public static float funcion(float x)
-        //{
-        //    return (float)(8 * x - 7); //----------> 8X - 7
-        //    //return (float)((Math.Pow(x, 3) + 5)); ---> X^3 + 5
-        //    //return (float)((Math.Pow(x,3)) - (5 * x) + 6); -----------> X^3 - 5X + 6
-        //    //return (float)((Math.Pow(x, 5)) + (4 * (Math.Pow(x, 2))) + x - 5);  --------> x^5 + 4x^2 + x -5
-
-        //    //return 0;
-
-        //}
-
         private static Resultado Analizador(string func)
         {
             Resultado nuevo = new Resultado(0, 0, 0, true, "");

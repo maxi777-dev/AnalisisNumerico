@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using Logica;
+using Logica.Unidad2;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -260,23 +261,23 @@ namespace AnalisisNumerico1
                             switch (i)
                             {
                                 case 1:
-                                    lbl.Text = "x +";
-                                    lbl.Location = new Point(pointX + 60, pointY + 2);
+                                    lbl.Text = "x   +";
+                                    lbl.Location = new Point(pointX + 55, pointY + 2);
                                     break;
                                 case 2:
-                                    lbl.Text = "y +";
-                                    lbl.Location = new Point(pointX + 60, pointY + 2);
+                                    lbl.Text = "y   +";
+                                    lbl.Location = new Point(pointX + 55, pointY + 2);
                                     if (cantincognitas==2)
                                     {
-                                        lbl.Text = "y =";
+                                        lbl.Text = "y   =";
                                     }
                                     break;
                                 case 3:
-                                    lbl.Text = "z +";
-                                    lbl.Location = new Point(pointX + 60, pointY + 2);
+                                    lbl.Text = "z   +";
+                                    lbl.Location = new Point(pointX + 55, pointY + 2);
                                     if (cantincognitas == 3)
                                     {
-                                        lbl.Text = "z =";
+                                        lbl.Text = "z   =";
                                     }
                                     if (cantincognitas == 2)
                                     {
@@ -284,11 +285,11 @@ namespace AnalisisNumerico1
                                     }
                                     break;
                                 case 4:
-                                    lbl.Text = "t +";
-                                    lbl.Location = new Point(pointX + 60, pointY + 2);
+                                    lbl.Text = "t   +";
+                                    lbl.Location = new Point(pointX + 55, pointY + 2);
                                     if (cantincognitas == 4)
                                     {
-                                        lbl.Text = "t =";
+                                        lbl.Text = "t   =";
                                     }
                                     if (cantincognitas == 3)
                                     {
@@ -296,8 +297,8 @@ namespace AnalisisNumerico1
                                     }
                                     break;
                                 case 5:
-                                    lbl.Text = "s =";
-                                    lbl.Location = new Point(pointX + 60, pointY + 2);
+                                    lbl.Text = "s   =";
+                                    lbl.Location = new Point(pointX + 55, pointY + 2);
                                     if (cantincognitas == 4)
                                     {
                                         lbl.Visible = false;
@@ -332,5 +333,38 @@ namespace AnalisisNumerico1
         {
             textBox1.BackColor = Color.White;
         }//PONE EL TEXTBOX EN BLANCO
+
+        private void Btn_Resolver_Click(object sender, EventArgs e)
+        {
+            bool bandera = true;
+            int cantincognitas = int.Parse(textBox1.Text);
+            for (int i = 1; i <= cantincognitas + 1; i++)
+            {
+                for (int x = 1; x <= cantincognitas; x++)
+                {
+                    string nombre = "txt" + x + i;
+                    Control[] m = panel2.Controls.Find(nombre, true);
+                    if (m[0].Text.Trim() == string.Empty)
+                    {
+                        //m[0].BackColor = Color.Red;
+                        bandera = false;
+                    }
+                }
+            }
+            if (!bandera)
+                MessageBox.Show("campos vacios");
+            else
+            {
+                if (cmb_Metodos.SelectedIndex == 0)
+                {
+                    Resultado_2 nuevo = Logica.Unidad2.Practico2.Gauss_Jordan();
+                }
+                else
+                {
+                    Resultado_2 nuevo = Logica.Unidad2.Practico2.Gauss_Seidel();
+                }
+                
+            }
+        }//ACA SE RESUELVEN LAS ECUACIONES
     }
 }

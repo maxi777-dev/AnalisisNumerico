@@ -80,6 +80,7 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.tabUnidad2 = new System.Windows.Forms.TabPage();
+            this.btn_Resolver = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cmb_Metodos = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -88,7 +89,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabUnidad3 = new System.Windows.Forms.TabPage();
             this.tabUnidad4 = new System.Windows.Forms.TabPage();
-            this.btn_Resolver = new System.Windows.Forms.Button();
             this.Panel1.SuspendLayout();
             this.tabUnidad1.SuspendLayout();
             this.tabTan.SuspendLayout();
@@ -688,6 +688,17 @@
             this.tabUnidad2.Text = "Unidad 2";
             this.tabUnidad2.UseVisualStyleBackColor = true;
             // 
+            // btn_Resolver
+            // 
+            this.btn_Resolver.Location = new System.Drawing.Point(139, 364);
+            this.btn_Resolver.Name = "btn_Resolver";
+            this.btn_Resolver.Size = new System.Drawing.Size(384, 23);
+            this.btn_Resolver.TabIndex = 65;
+            this.btn_Resolver.Text = "Resolver";
+            this.btn_Resolver.UseVisualStyleBackColor = true;
+            this.btn_Resolver.Visible = false;
+            this.btn_Resolver.Click += new System.EventHandler(this.Btn_Resolver_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -770,16 +781,6 @@
             this.tabUnidad4.TabIndex = 3;
             this.tabUnidad4.Text = "Unidad 4";
             this.tabUnidad4.UseVisualStyleBackColor = true;
-            // 
-            // btn_Resolver
-            // 
-            this.btn_Resolver.Location = new System.Drawing.Point(139, 364);
-            this.btn_Resolver.Name = "btn_Resolver";
-            this.btn_Resolver.Size = new System.Drawing.Size(384, 23);
-            this.btn_Resolver.TabIndex = 65;
-            this.btn_Resolver.Text = "Resolver";
-            this.btn_Resolver.UseVisualStyleBackColor = true;
-            this.btn_Resolver.Visible = false;
             // 
             // Form1
             // 

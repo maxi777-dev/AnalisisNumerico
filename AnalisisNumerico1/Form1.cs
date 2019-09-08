@@ -63,7 +63,6 @@ namespace AnalisisNumerico1
                 }
             }
         }  // OBTENER CON EL METODO DE BISECCION
-
         private void BtnObtener_2_Click_1(object sender, EventArgs e)
         {
             if ((txt_Iter.Text.Trim() == string.Empty) || (txt_Tole.Text.Trim() == string.Empty) ||
@@ -94,8 +93,7 @@ namespace AnalisisNumerico1
                     lbl_Solu_2.Text = nuevo.Solucion.ToString();
                 }
             }      
-        } //OBTENER CON EL METODO DE LA REGLA FALSA.
-        
+        } //OBTENER CON EL METODO DE LA REGLA FALSA.        
         private void BtnObtener_3_Click_1(object sender, EventArgs e)
         {
             if ((txt_Iter.Text.Trim() == string.Empty) || (txt_Tole.Text.Trim() == string.Empty) ||
@@ -129,7 +127,6 @@ namespace AnalisisNumerico1
                 }
             }
         }//OBTENER CON EL METODO DE LA TANGENTE
-
         private void BtnObtener_4_Click_1(object sender, EventArgs e) //OBTENER CON EL METODO DE LA SECANTE
         {
             if ((txt_Iter.Text.Trim() == string.Empty) || (txt_Tole.Text.Trim() == string.Empty) ||
@@ -199,8 +196,7 @@ namespace AnalisisNumerico1
             }
         }//SOLO NUMEROS
 
-
-
+        
         private void Txt_Tole_Click(object sender, EventArgs e)
         {
             txt_Tole.BackColor = Color.White;
@@ -323,7 +319,7 @@ namespace AnalisisNumerico1
         private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             Char chr = e.KeyChar;
-            if (!Char.IsDigit(chr) && chr != 8)
+            if (!Char.IsDigit(chr) && chr != 8 && chr != 47 && chr != 44) //Cambiar el 44 por un 46 para que sea un .
             {
                 e.Handled = true;
             }
@@ -355,13 +351,36 @@ namespace AnalisisNumerico1
                 MessageBox.Show("campos vacios");
             else
             {
+                string[] aux;
+                double[,] matriz = new double[cantincognitas, cantincognitas + 1];
+                for (int i = 0; i < cantincognitas; i++)
+                {
+                    for (int j = 0; j < cantincognitas + 1; j++)
+                    {
+                        string nom = "txt";
+                        int x = j + 1;
+                        int y = i + 1;
+                        nom = nom + y + x;
+                        Control[] m = panel2.Controls.Find(nom, true);
+                        if (m[0].Text.Contains("/"))
+                        {
+                            aux = m[0].Text.Split(new char[] { '/' }, 2);
+                            matriz[i, j] = double.Parse(aux[0]) / double.Parse(aux[1]);
+                        }
+                        else
+                        {
+                            matriz[i, j] = double.Parse(m[0].Text);
+                        }
+                    }
+                }
+
                 if (cmb_Metodos.SelectedIndex == 0)
                 {
-                    Resultado_2 nuevo = Logica.Unidad2.Practico2.Gauss_Jordan();
+                    Resultado_2 nuevo = Logica.Unidad2.Practico2.Gauss_Jordan(matriz, cantincognitas);
                 }
                 else
                 {
-                    Resultado_2 nuevo = Logica.Unidad2.Practico2.Gauss_Seidel();
+                    Resultado_2 nuevo = Logica.Unidad2.Practico2.Gauss_Seidel(matriz, cantincognitas);
                 }
                 
             }

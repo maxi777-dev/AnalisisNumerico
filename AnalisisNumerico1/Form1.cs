@@ -316,20 +316,6 @@ namespace AnalisisNumerico1
             
         }
 
-        private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Char chr = e.KeyChar;
-            if (!Char.IsDigit(chr) && chr != 8 && chr != 47 && chr != 44) //Cambiar el 44 por un 46 para que sea un .
-            {
-                e.Handled = true;
-            }
-        }//INGRSAR SOLO NUMEROS
-
-        private void TextBox1_Click(object sender, EventArgs e)
-        {
-            textBox1.BackColor = Color.White;
-        }//PONE EL TEXTBOX EN BLANCO
-
         private void Btn_Resolver_Click(object sender, EventArgs e)
         {
             bool bandera = true;
@@ -374,16 +360,61 @@ namespace AnalisisNumerico1
                     }
                 }
 
+                Resultado_2 nuevo = new Resultado_2(true, "");
+
                 if (cmb_Metodos.SelectedIndex == 0)
                 {
-                    Resultado_2 nuevo = Logica.Unidad2.Practico2.Gauss_Jordan(matriz, cantincognitas);
+                    nuevo = Logica.Unidad2.Practico2.Gauss_Jordan(matriz, cantincognitas);
                 }
                 else
                 {
-                    Resultado_2 nuevo = Logica.Unidad2.Practico2.Gauss_Seidel(matriz, cantincognitas);
+                    nuevo = Logica.Unidad2.Practico2.Gauss_Seidel(matriz, cantincognitas);
                 }
+
+                MostrarResultados(nuevo);
                 
             }
         }//ACA SE RESUELVEN LAS ECUACIONES
+
+        public void MostrarResultados(Resultado_2 rdos)
+        {
+            string[] v = new string[5] { "x = ", "y = ", "z = ", "t = ", "s = " };
+            lbl_texto.Visible = true;
+            lbl_texto.Text = rdos.Mensaje;
+            lbl_texto.Font = new Font(lbl_texto.Font.Name, 10);
+            panel2.Controls.Add(lbl_texto);
+            int pointX = 50;
+            int pointY = 240;
+            for (int i = 0; i < rdos.Resultados.Length; i++)
+            {
+                Label lbl = new Label();
+                lbl.Name = "lbl_Resultado_" + i;
+                lbl.AutoSize = false;
+                lbl.Size = new System.Drawing.Size(90, 30);
+                lbl.Font = new Font(lbl.Font.Name, 10);
+                lbl.Location = new Point(pointX, pointY);
+                lbl.Text = v[i] + Math.Round(rdos.Resultados[i], 2);
+                lbl.ForeColor = Color.Red;
+                panel2.Controls.Add(lbl);
+                panel2.Show();
+                pointX += 90;
+            }
+
+        }   //ACA MOSTRAMOS LOS RESULTADOS OBTENIDOS EN PANTALLA
+
+
+        private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr != 8 && chr != 47 && chr != 44) //Cambiar el 44 por un 46 para que sea un .
+            {
+                e.Handled = true;
+            }
+        }//INGRSAR SOLO NUMEROS
+
+        private void TextBox1_Click(object sender, EventArgs e)
+        {
+            textBox1.BackColor = Color.White;
+        }//PONE EL TEXTBOX EN BLANCO
     }
 }

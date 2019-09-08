@@ -86,6 +86,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbl_texto = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabUnidad3 = new System.Windows.Forms.TabPage();
             this.tabUnidad4 = new System.Windows.Forms.TabPage();
@@ -102,6 +103,7 @@
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.tabUnidad2.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // Panel1
@@ -744,11 +746,22 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lbl_texto);
             this.panel2.Location = new System.Drawing.Point(4, 71);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(649, 288);
             this.panel2.TabIndex = 60;
+            // 
+            // lbl_texto
+            // 
+            this.lbl_texto.AutoSize = true;
+            this.lbl_texto.Location = new System.Drawing.Point(41, 216);
+            this.lbl_texto.Name = "lbl_texto";
+            this.lbl_texto.Size = new System.Drawing.Size(35, 13);
+            this.lbl_texto.TabIndex = 0;
+            this.lbl_texto.Text = "label5";
+            this.lbl_texto.Visible = false;
             // 
             // label2
             // 
@@ -812,6 +825,8 @@
             this.groupBox7.PerformLayout();
             this.tabUnidad2.ResumeLayout(false);
             this.tabUnidad2.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -879,6 +894,7 @@
         private System.Windows.Forms.ComboBox cmb_Metodos;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_Resolver;
+        private System.Windows.Forms.Label lbl_texto;
     }
 }
 

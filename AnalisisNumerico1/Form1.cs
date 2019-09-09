@@ -373,7 +373,7 @@ namespace AnalisisNumerico1
                 MostrarResultados(nuevo);
                 
             }
-        }//ACA SE RESUELVEN LAS ECUACIONES
+        }  //ACA SE RESUELVEN LAS ECUACIONES
         public void MostrarResultados(Resultado_2 rdos)
         {
             string[] v = new string[5] { "x = ", "y = ", "z = ", "t = ", "s = " };

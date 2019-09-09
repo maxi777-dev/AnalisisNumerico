@@ -72,6 +72,8 @@ namespace Logica.Unidad2
             return matriz;
         }
 
+
+        //--------------------------------------------  METODOS  ----------------------------------------------------//
         public static Resultado_2 Gauss_Jordan(double[,] matriz, int incognitas)
         {
             Resultado_2 nuevo = new Resultado_2(true, "Los valores de las inognitas son los siguientes: ");

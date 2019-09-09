@@ -41,7 +41,6 @@ namespace Logica.Unidad2
         {
             double mayor = 0;
             int posicion = 0;
-            //double[] v = new double[incognitas + 1];
             for (int i = 0; i < incognitas; i++)
             {
                 if (i == 0)
@@ -68,7 +67,6 @@ namespace Logica.Unidad2
                     matriz[posicion, i] = aux;
                 }
             }
-            
             return matriz;
         }
 
@@ -76,19 +74,64 @@ namespace Logica.Unidad2
         //--------------------------------------------  METODOS  ----------------------------------------------------//
         public static Resultado_2 Gauss_Jordan(double[,] matriz, int incognitas)
         {
-            Resultado_2 nuevo = new Resultado_2(true, "Los valores de las inognitas son los siguientes: ");
+            Resultado_2 nuevo = new Resultado_2(true, "Los valores de las inognitas son los siguientes: ", incognitas);
             matriz = Pivoteo_Parcial(matriz, incognitas);
             nuevo.Resultados = Escalonar(matriz, incognitas);
             return nuevo;
         }
 
-        public static Resultado_2 Gauss_Seidel(double[,] matriz, int incognitas)
+        public static Resultado_2 Gauss_Seidel(double[,] matriz, int incognitas, int iteraciones, double tole)
         {
-            Resultado_2 nuevo = new Resultado_2(true, "Los valores de las incognitas son los siguientes: ");
+            Resultado_2 nuevo = new Resultado_2(true, "Los valores de las incognitas son los siguientes: ", incognitas);
             double[] V_arranque = new double[incognitas];
             for (int i = 0; i < incognitas; i++)
             {
                 V_arranque[i] = 0;
+            }
+            matriz = Pivoteo_Parcial(matriz, incognitas);
+
+            double suma; double divisor;
+            int cont_iter = 0;
+            bool band = false;
+            double[] V_ant = new double[incognitas];
+            while ((cont_iter < iteraciones) && !band)
+            {
+                for (int i = 0; i < incognitas; i++)
+                {
+                    V_ant[i] = V_arranque[i];
+                }
+
+                for (int i = 0; i < incognitas; i++)
+                {
+                    suma = 0; divisor = 0;
+                    for (int j = 0; j < incognitas; j++)
+                    {
+                        if (i != j)
+                            suma += matriz[i, j] * V_arranque[j];
+                        else
+                            divisor = matriz[i, j];
+                    }
+                    V_arranque[i] = (matriz[i, incognitas] - suma) / divisor;
+                }
+                
+                cont_iter += 1;
+                double resta = 0;
+                int c = 0;
+                for (int i = 0; i < incognitas; i++)
+                {
+                    resta = V_arranque[i] - V_ant[i];
+                    if (resta < tole)
+                        c += 1;
+                }
+                if (c == incognitas)
+                    band = true;
+            }
+            if (!band)
+                nuevo.Mensaje = "Se ha execido el numero de iteraciones, el resltado obtenido de las variaables es el siguiente:";
+
+            for (int i = 0; i < incognitas; i++)
+            {
+                nuevo.Resultados[i] = V_arranque[i];
             }
 
             return nuevo;

@@ -80,6 +80,8 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.tabUnidad2 = new System.Windows.Forms.TabPage();
+            this.txt_Iter_Practico2 = new System.Windows.Forms.TextBox();
+            this.lbl_iteraciones_Practico2 = new System.Windows.Forms.Label();
             this.btn_Resolver = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cmb_Metodos = new System.Windows.Forms.ComboBox();
@@ -90,6 +92,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabUnidad3 = new System.Windows.Forms.TabPage();
             this.tabUnidad4 = new System.Windows.Forms.TabPage();
+            this.lbl_Tole_Practico2 = new System.Windows.Forms.Label();
+            this.txt_Tole_Practico2 = new System.Windows.Forms.TextBox();
             this.Panel1.SuspendLayout();
             this.tabUnidad1.SuspendLayout();
             this.tabTan.SuspendLayout();
@@ -674,6 +678,10 @@
             // 
             // tabUnidad2
             // 
+            this.tabUnidad2.Controls.Add(this.txt_Tole_Practico2);
+            this.tabUnidad2.Controls.Add(this.lbl_Tole_Practico2);
+            this.tabUnidad2.Controls.Add(this.txt_Iter_Practico2);
+            this.tabUnidad2.Controls.Add(this.lbl_iteraciones_Practico2);
             this.tabUnidad2.Controls.Add(this.btn_Resolver);
             this.tabUnidad2.Controls.Add(this.label3);
             this.tabUnidad2.Controls.Add(this.cmb_Metodos);
@@ -690,6 +698,28 @@
             this.tabUnidad2.Text = "Unidad 2";
             this.tabUnidad2.UseVisualStyleBackColor = true;
             // 
+            // txt_Iter_Practico2
+            // 
+            this.txt_Iter_Practico2.Location = new System.Drawing.Point(419, 38);
+            this.txt_Iter_Practico2.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Iter_Practico2.Name = "txt_Iter_Practico2";
+            this.txt_Iter_Practico2.Size = new System.Drawing.Size(76, 20);
+            this.txt_Iter_Practico2.TabIndex = 67;
+            this.txt_Iter_Practico2.Visible = false;
+            this.txt_Iter_Practico2.Click += new System.EventHandler(this.Txt_Iter_Practico2_Click);
+            this.txt_Iter_Practico2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Iter_Practico2_KeyPress);
+            // 
+            // lbl_iteraciones_Practico2
+            // 
+            this.lbl_iteraciones_Practico2.AutoSize = true;
+            this.lbl_iteraciones_Practico2.Location = new System.Drawing.Point(354, 41);
+            this.lbl_iteraciones_Practico2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_iteraciones_Practico2.Name = "lbl_iteraciones_Practico2";
+            this.lbl_iteraciones_Practico2.Size = new System.Drawing.Size(62, 13);
+            this.lbl_iteraciones_Practico2.TabIndex = 66;
+            this.lbl_iteraciones_Practico2.Text = "Iteraciones:";
+            this.lbl_iteraciones_Practico2.Visible = false;
+            // 
             // btn_Resolver
             // 
             this.btn_Resolver.Location = new System.Drawing.Point(139, 364);
@@ -704,7 +734,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(398, 23);
+            this.label3.Location = new System.Drawing.Point(416, 18);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
@@ -717,11 +747,12 @@
             this.cmb_Metodos.Items.AddRange(new object[] {
             "Gauss - Jordan",
             "Gauss - Seidel"});
-            this.cmb_Metodos.Location = new System.Drawing.Point(472, 20);
+            this.cmb_Metodos.Location = new System.Drawing.Point(472, 15);
             this.cmb_Metodos.Name = "cmb_Metodos";
             this.cmb_Metodos.Size = new System.Drawing.Size(121, 21);
             this.cmb_Metodos.TabIndex = 63;
             this.cmb_Metodos.Text = "Gauss - Jordan";
+            this.cmb_Metodos.TextChanged += new System.EventHandler(this.Cmb_Metodos_TextChanged);
             // 
             // button1
             // 
@@ -794,6 +825,28 @@
             this.tabUnidad4.TabIndex = 3;
             this.tabUnidad4.Text = "Unidad 4";
             this.tabUnidad4.UseVisualStyleBackColor = true;
+            // 
+            // lbl_Tole_Practico2
+            // 
+            this.lbl_Tole_Practico2.AutoSize = true;
+            this.lbl_Tole_Practico2.Location = new System.Drawing.Point(510, 41);
+            this.lbl_Tole_Practico2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Tole_Practico2.Name = "lbl_Tole_Practico2";
+            this.lbl_Tole_Practico2.Size = new System.Drawing.Size(60, 13);
+            this.lbl_Tole_Practico2.TabIndex = 68;
+            this.lbl_Tole_Practico2.Text = "Tolerancia:";
+            this.lbl_Tole_Practico2.Visible = false;
+            // 
+            // txt_Tole_Practico2
+            // 
+            this.txt_Tole_Practico2.Location = new System.Drawing.Point(574, 38);
+            this.txt_Tole_Practico2.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Tole_Practico2.Name = "txt_Tole_Practico2";
+            this.txt_Tole_Practico2.Size = new System.Drawing.Size(76, 20);
+            this.txt_Tole_Practico2.TabIndex = 69;
+            this.txt_Tole_Practico2.Visible = false;
+            this.txt_Tole_Practico2.Click += new System.EventHandler(this.Txt_Tole_Practico2_Click);
+            this.txt_Tole_Practico2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Tole_Practico2_KeyPress);
             // 
             // Form1
             // 
@@ -895,6 +948,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_Resolver;
         private System.Windows.Forms.Label lbl_texto;
+        private System.Windows.Forms.TextBox txt_Iter_Practico2;
+        private System.Windows.Forms.Label lbl_iteraciones_Practico2;
+        private System.Windows.Forms.TextBox txt_Tole_Practico2;
+        private System.Windows.Forms.Label lbl_Tole_Practico2;
     }
 }
 

@@ -333,7 +333,7 @@ namespace AnalisisNumerico1
                 }
             }
             if (!bandera)
-                MessageBox.Show("campos vacios");
+                MessageBox.Show("campos en las ecuaciones vacios");
             else
             {
                 string[] aux;
@@ -359,7 +359,7 @@ namespace AnalisisNumerico1
                     }
                 }
 
-                Resultado_2 nuevo = new Resultado_2(true, "");
+                Resultado_2 nuevo = new Resultado_2(true, "",cantincognitas);
 
                 if (cmb_Metodos.SelectedIndex == 0)
                 {
@@ -367,10 +367,28 @@ namespace AnalisisNumerico1
                 }
                 else
                 {
-                    nuevo = Logica.Unidad2.Practico2.Gauss_Seidel(matriz, cantincognitas);
+                    if ((txt_Iter_Practico2.Text.Trim() == string.Empty))
+                    {
+                        MessageBox.Show("Por favor, ingrese un maximo de iteraciones");
+                        txt_Iter_Practico2.BackColor = Color.Red;
+                        nuevo.SePudo = false;
+                    }
+                    else
+                    {
+                        if (txt_Tole_Practico2.Text.Trim() == string.Empty)
+                        {
+                            MessageBox.Show("Por favor, ingrese una tolerancia");
+                            txt_Tole_Practico2.BackColor = Color.Red;
+                            nuevo.SePudo = false;
+                        }
+                        else
+                            nuevo = Logica.Unidad2.Practico2.Gauss_Seidel(matriz, cantincognitas, 
+                                        int.Parse(txt_Iter_Practico2.Text), double.Parse(txt_Tole_Practico2.Text));
+                    }
                 }
 
-                MostrarResultados(nuevo);
+                if (nuevo.SePudo)
+                    MostrarResultados(nuevo);
                 
             }
         }  //ACA SE RESUELVEN LAS ECUACIONES
@@ -391,7 +409,7 @@ namespace AnalisisNumerico1
                 lbl.Size = new System.Drawing.Size(90, 30);
                 lbl.Font = new Font(lbl.Font.Name, 10);
                 lbl.Location = new Point(pointX, pointY);
-                lbl.Text = v[i] + Math.Round(rdos.Resultados[i], 2);
+                lbl.Text = v[i] + Convert.ToDecimal(Math.Round(rdos.Resultados[i], 2));
                 lbl.ForeColor = Color.Red;
                 panel2.Controls.Add(lbl);
                 panel2.Show();
@@ -404,7 +422,7 @@ namespace AnalisisNumerico1
         private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             Char chr = e.KeyChar;
-            if (!Char.IsDigit(chr) && chr != 8 && chr != 47 && chr != 44) //Cambiar el 44 por un 46 para que sea un .
+            if (!Char.IsDigit(chr) && chr != 8 && chr != 47 && chr != 44 && chr != 45) //Cambiar el 44 por un 46 para que sea un .
             {
                 e.Handled = true;
             }
@@ -413,5 +431,48 @@ namespace AnalisisNumerico1
         {
             textBox1.BackColor = Color.White;
         }//PONE EL TEXTBOX EN BLANCO
+        private void Txt_Iter_Practico2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr != 8)
+            {
+                e.Handled = true;
+            }
+        }  //Solo numeros en iter 
+        private void Cmb_Metodos_TextChanged(object sender, EventArgs e)
+        {
+            if (cmb_Metodos.SelectedIndex == 0)
+            {
+                lbl_iteraciones_Practico2.Visible = false;
+                txt_Iter_Practico2.Visible = false;
+                lbl_Tole_Practico2.Visible = false;
+                txt_Tole_Practico2.Visible = false;
+            }
+            else
+            {
+                lbl_iteraciones_Practico2.Visible = true;
+                txt_Iter_Practico2.Visible = true;
+                lbl_Tole_Practico2.Visible = true;
+                txt_Tole_Practico2.Visible = true;
+            }
+            lbl_texto.Text.Replace(lbl_texto.Text, "");
+
+        }//hacer visible el lbl y el txt de iter
+        private void Txt_Iter_Practico2_Click(object sender, EventArgs e)
+        {
+            txt_Iter_Practico2.BackColor = Color.White;
+        } //Pone el txt_iter en blanco
+        private void Txt_Tole_Practico2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr != 8 && chr != 44)
+            {
+                e.Handled = true;
+            }
+        }
+        private void Txt_Tole_Practico2_Click(object sender, EventArgs e)
+        {
+            txt_Tole_Practico2.BackColor = Color.White;
+        }
     }
 }

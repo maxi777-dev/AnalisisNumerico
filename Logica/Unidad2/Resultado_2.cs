@@ -8,10 +8,11 @@ namespace Logica.Unidad2
 {
     public class Resultado_2
     {
-        public Resultado_2(bool b, string s)
+        public Resultado_2(bool b, string s, int inc)
         {
             SePudo = b;
             Mensaje = s;
+            Resultados = new double[inc];
         }
 
         public bool SePudo { get; set; }

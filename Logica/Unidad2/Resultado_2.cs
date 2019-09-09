@@ -18,6 +18,5 @@ namespace Logica.Unidad2
         public string Mensaje { get; set; }
         public double[] Resultados { get; set; }
 
-
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logica.Unidad2
 {
-    public class Practico2 : Entrada
+    public class Practico2
     {
         public static double[] Escalonar(double[,] matriz, int incognitas)
         {
@@ -36,7 +36,7 @@ namespace Logica.Unidad2
                 v[i] = matriz[i, incognitas];
             }
             return v;
-        } // CREO QUE ESTO ES EL ESCALONAMIENTO
+        }
 
         public static Resultado_2 Gauss_Jordan(double[,] matriz, int incognitas)
         {

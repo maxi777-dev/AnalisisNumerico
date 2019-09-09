@@ -315,7 +315,6 @@ namespace AnalisisNumerico1
             }
             
         }
-
         private void Btn_Resolver_Click(object sender, EventArgs e)
         {
             bool bandera = true;
@@ -375,7 +374,6 @@ namespace AnalisisNumerico1
                 
             }
         }//ACA SE RESUELVEN LAS ECUACIONES
-
         public void MostrarResultados(Resultado_2 rdos)
         {
             string[] v = new string[5] { "x = ", "y = ", "z = ", "t = ", "s = " };
@@ -411,7 +409,6 @@ namespace AnalisisNumerico1
                 e.Handled = true;
             }
         }//INGRSAR SOLO NUMEROS
-
         private void TextBox1_Click(object sender, EventArgs e)
         {
             textBox1.BackColor = Color.White;

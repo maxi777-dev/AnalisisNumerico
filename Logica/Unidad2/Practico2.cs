@@ -74,15 +74,14 @@ namespace Logica.Unidad2
         //--------------------------------------------  METODOS  ----------------------------------------------------//
         public static Resultado_2 Gauss_Jordan(double[,] matriz, int incognitas)
         {
-            Resultado_2 nuevo = new Resultado_2(true, "Los valores de las inognitas son los siguientes: ", incognitas);
+            Resultado_2 nuevo = new Resultado_2(true, "Los valores de las incognitas son los siguientes: ", incognitas,0);
             matriz = Pivoteo_Parcial(matriz, incognitas);
             nuevo.Resultados = Escalonar(matriz, incognitas);
             return nuevo;
         }
-
         public static Resultado_2 Gauss_Seidel(double[,] matriz, int incognitas, int iteraciones, double tole)
         {
-            Resultado_2 nuevo = new Resultado_2(true, "Los valores de las incognitas son los siguientes: ", incognitas);
+            Resultado_2 nuevo = new Resultado_2(true, "Los valores de las incognitas son los siguientes: ", incognitas,0);
             double[] V_arranque = new double[incognitas];
             for (int i = 0; i < incognitas; i++)
             {
@@ -127,12 +126,16 @@ namespace Logica.Unidad2
                     band = true;
             }
             if (!band)
-                nuevo.Mensaje = "Se ha execido el numero de iteraciones, el resltado obtenido de las variaables es el siguiente:";
+            {
+                nuevo.Mensaje = "Se ha execido el numero de iteraciones";
+            }
+                
 
             for (int i = 0; i < incognitas; i++)
             {
                 nuevo.Resultados[i] = V_arranque[i];
             }
+            nuevo.Iter = cont_iter;
 
             return nuevo;
         }

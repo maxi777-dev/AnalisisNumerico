@@ -80,6 +80,8 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.tabUnidad2 = new System.Windows.Forms.TabPage();
+            this.txt_Tole_Practico2 = new System.Windows.Forms.TextBox();
+            this.lbl_Tole_Practico2 = new System.Windows.Forms.Label();
             this.txt_Iter_Practico2 = new System.Windows.Forms.TextBox();
             this.lbl_iteraciones_Practico2 = new System.Windows.Forms.Label();
             this.btn_Resolver = new System.Windows.Forms.Button();
@@ -88,12 +90,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbl_texto = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabUnidad3 = new System.Windows.Forms.TabPage();
             this.tabUnidad4 = new System.Windows.Forms.TabPage();
-            this.lbl_Tole_Practico2 = new System.Windows.Forms.Label();
-            this.txt_Tole_Practico2 = new System.Windows.Forms.TextBox();
+            this.lbl_texto = new System.Windows.Forms.Label();
             this.Panel1.SuspendLayout();
             this.tabUnidad1.SuspendLayout();
             this.tabTan.SuspendLayout();
@@ -698,9 +698,31 @@
             this.tabUnidad2.Text = "Unidad 2";
             this.tabUnidad2.UseVisualStyleBackColor = true;
             // 
+            // txt_Tole_Practico2
+            // 
+            this.txt_Tole_Practico2.Location = new System.Drawing.Point(574, 47);
+            this.txt_Tole_Practico2.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Tole_Practico2.Name = "txt_Tole_Practico2";
+            this.txt_Tole_Practico2.Size = new System.Drawing.Size(76, 20);
+            this.txt_Tole_Practico2.TabIndex = 69;
+            this.txt_Tole_Practico2.Visible = false;
+            this.txt_Tole_Practico2.Click += new System.EventHandler(this.Txt_Tole_Practico2_Click);
+            this.txt_Tole_Practico2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Tole_Practico2_KeyPress);
+            // 
+            // lbl_Tole_Practico2
+            // 
+            this.lbl_Tole_Practico2.AutoSize = true;
+            this.lbl_Tole_Practico2.Location = new System.Drawing.Point(510, 50);
+            this.lbl_Tole_Practico2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Tole_Practico2.Name = "lbl_Tole_Practico2";
+            this.lbl_Tole_Practico2.Size = new System.Drawing.Size(60, 13);
+            this.lbl_Tole_Practico2.TabIndex = 68;
+            this.lbl_Tole_Practico2.Text = "Tolerancia:";
+            this.lbl_Tole_Practico2.Visible = false;
+            // 
             // txt_Iter_Practico2
             // 
-            this.txt_Iter_Practico2.Location = new System.Drawing.Point(419, 38);
+            this.txt_Iter_Practico2.Location = new System.Drawing.Point(420, 47);
             this.txt_Iter_Practico2.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Iter_Practico2.Name = "txt_Iter_Practico2";
             this.txt_Iter_Practico2.Size = new System.Drawing.Size(76, 20);
@@ -712,7 +734,7 @@
             // lbl_iteraciones_Practico2
             // 
             this.lbl_iteraciones_Practico2.AutoSize = true;
-            this.lbl_iteraciones_Practico2.Location = new System.Drawing.Point(354, 41);
+            this.lbl_iteraciones_Practico2.Location = new System.Drawing.Point(354, 50);
             this.lbl_iteraciones_Practico2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_iteraciones_Practico2.Name = "lbl_iteraciones_Practico2";
             this.lbl_iteraciones_Practico2.Size = new System.Drawing.Size(62, 13);
@@ -722,9 +744,9 @@
             // 
             // btn_Resolver
             // 
-            this.btn_Resolver.Location = new System.Drawing.Point(139, 364);
+            this.btn_Resolver.Location = new System.Drawing.Point(5, 364);
             this.btn_Resolver.Name = "btn_Resolver";
-            this.btn_Resolver.Size = new System.Drawing.Size(384, 23);
+            this.btn_Resolver.Size = new System.Drawing.Size(645, 23);
             this.btn_Resolver.TabIndex = 65;
             this.btn_Resolver.Text = "Resolver";
             this.btn_Resolver.UseVisualStyleBackColor = true;
@@ -784,16 +806,6 @@
             this.panel2.Size = new System.Drawing.Size(649, 288);
             this.panel2.TabIndex = 60;
             // 
-            // lbl_texto
-            // 
-            this.lbl_texto.AutoSize = true;
-            this.lbl_texto.Location = new System.Drawing.Point(41, 216);
-            this.lbl_texto.Name = "lbl_texto";
-            this.lbl_texto.Size = new System.Drawing.Size(35, 13);
-            this.lbl_texto.TabIndex = 0;
-            this.lbl_texto.Text = "label5";
-            this.lbl_texto.Visible = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -826,27 +838,15 @@
             this.tabUnidad4.Text = "Unidad 4";
             this.tabUnidad4.UseVisualStyleBackColor = true;
             // 
-            // lbl_Tole_Practico2
+            // lbl_texto
             // 
-            this.lbl_Tole_Practico2.AutoSize = true;
-            this.lbl_Tole_Practico2.Location = new System.Drawing.Point(510, 41);
-            this.lbl_Tole_Practico2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Tole_Practico2.Name = "lbl_Tole_Practico2";
-            this.lbl_Tole_Practico2.Size = new System.Drawing.Size(60, 13);
-            this.lbl_Tole_Practico2.TabIndex = 68;
-            this.lbl_Tole_Practico2.Text = "Tolerancia:";
-            this.lbl_Tole_Practico2.Visible = false;
-            // 
-            // txt_Tole_Practico2
-            // 
-            this.txt_Tole_Practico2.Location = new System.Drawing.Point(574, 38);
-            this.txt_Tole_Practico2.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_Tole_Practico2.Name = "txt_Tole_Practico2";
-            this.txt_Tole_Practico2.Size = new System.Drawing.Size(76, 20);
-            this.txt_Tole_Practico2.TabIndex = 69;
-            this.txt_Tole_Practico2.Visible = false;
-            this.txt_Tole_Practico2.Click += new System.EventHandler(this.Txt_Tole_Practico2_Click);
-            this.txt_Tole_Practico2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Tole_Practico2_KeyPress);
+            this.lbl_texto.AutoSize = true;
+            this.lbl_texto.Location = new System.Drawing.Point(18, 200);
+            this.lbl_texto.Name = "lbl_texto";
+            this.lbl_texto.Size = new System.Drawing.Size(35, 13);
+            this.lbl_texto.TabIndex = 0;
+            this.lbl_texto.Text = "label5";
+            this.lbl_texto.Visible = false;
             // 
             // Form1
             // 
@@ -947,11 +947,11 @@
         private System.Windows.Forms.ComboBox cmb_Metodos;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_Resolver;
-        private System.Windows.Forms.Label lbl_texto;
         private System.Windows.Forms.TextBox txt_Iter_Practico2;
         private System.Windows.Forms.Label lbl_iteraciones_Practico2;
         private System.Windows.Forms.TextBox txt_Tole_Practico2;
         private System.Windows.Forms.Label lbl_Tole_Practico2;
+        private System.Windows.Forms.Label lbl_texto;
     }
 }
 

@@ -359,7 +359,7 @@ namespace AnalisisNumerico1
                     }
                 }
 
-                Resultado_2 nuevo = new Resultado_2(true, "",cantincognitas);
+                Resultado_2 nuevo = new Resultado_2(true, "",cantincognitas,0);
 
                 if (cmb_Metodos.SelectedIndex == 0)
                 {
@@ -389,6 +389,8 @@ namespace AnalisisNumerico1
 
                 if (nuevo.SePudo)
                     MostrarResultados(nuevo);
+                else
+                    lbl_texto.Text = nuevo.Mensaje;
                 
             }
         }  //ACA SE RESUELVEN LAS ECUACIONES
@@ -399,23 +401,35 @@ namespace AnalisisNumerico1
             lbl_texto.Text = rdos.Mensaje;
             lbl_texto.Font = new Font(lbl_texto.Font.Name, 10);
             panel2.Controls.Add(lbl_texto);
-            int pointX = 50;
-            int pointY = 240;
+            int pointX = 25;
+            int pointY = 225;
             for (int i = 0; i < rdos.Resultados.Length; i++)
             {
                 Label lbl = new Label();
                 lbl.Name = "lbl_Resultado_" + i;
                 lbl.AutoSize = false;
-                lbl.Size = new System.Drawing.Size(90, 30);
+                lbl.Size = new System.Drawing.Size(120, 17);
                 lbl.Font = new Font(lbl.Font.Name, 10);
                 lbl.Location = new Point(pointX, pointY);
-                lbl.Text = v[i] + Convert.ToDecimal(Math.Round(rdos.Resultados[i], 2));
+                lbl.Text = v[i] + Math.Round(rdos.Resultados[i], 6);
                 lbl.ForeColor = Color.Red;
                 panel2.Controls.Add(lbl);
                 panel2.Show();
-                pointX += 90;
+                pointX += 120;
             }
-
+            if (rdos.Iter != 0)
+            {
+                Label lbl = new Label();
+                lbl.Name = "lbl_Iteraciones";
+                lbl.AutoSize = false;
+                lbl.Size = new System.Drawing.Size(200, 17);
+                lbl.Font = new Font(lbl.Font.Name, 10);
+                lbl.Location = new Point(25,250);
+                lbl.Text = "Iteraciones Realizadas: " + rdos.Iter;
+                lbl.ForeColor = Color.Green;
+                panel2.Controls.Add(lbl);
+                panel2.Show();
+            }
         }   //ACA MOSTRAMOS LOS RESULTADOS OBTENIDOS EN PANTALLA
 
 

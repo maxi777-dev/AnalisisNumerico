@@ -45,15 +45,15 @@ namespace Logica.Unidad2
             {
                 if (i == 0)
                 {
-                    mayor = Math.Abs(matriz[i, 1]);
+                    mayor = Math.Abs(matriz[i, 0]);
                     posicion = 0;
                 }                    
                 else
                 {
-                    if (Math.Abs(matriz[i, 1]) > mayor)
+                    if (Math.Abs(matriz[i, 0]) > mayor)
                     {
                         posicion = i;
-                        mayor = Math.Abs(matriz[i, 1]);
+                        mayor = Math.Abs(matriz[i, 0]);
                     }
                 }
             }
@@ -72,14 +72,15 @@ namespace Logica.Unidad2
 
 
         //--------------------------------------------  METODOS  ----------------------------------------------------//
-        public static Resultado_2 Gauss_Jordan(double[,] matriz, int incognitas)
+        public static Resultado_2 Gauss_Jordan(double[,] matriz, int incognitas, bool pivoteo)
         {
             Resultado_2 nuevo = new Resultado_2(true, "Los valores de las incognitas son los siguientes: ", incognitas,0);
-            matriz = Pivoteo_Parcial(matriz, incognitas);
+            if (pivoteo)
+                matriz = Pivoteo_Parcial(matriz, incognitas);
             nuevo.Resultados = Escalonar(matriz, incognitas);
             return nuevo;
         }
-        public static Resultado_2 Gauss_Seidel(double[,] matriz, int incognitas, int iteraciones, double tole)
+        public static Resultado_2 Gauss_Seidel(double[,] matriz, int incognitas, int iteraciones, double tole, bool pivoteo)
         {
             Resultado_2 nuevo = new Resultado_2(true, "Los valores de las incognitas son los siguientes: ", incognitas,0);
             double[] V_arranque = new double[incognitas];
@@ -87,7 +88,9 @@ namespace Logica.Unidad2
             {
                 V_arranque[i] = 0;
             }
-            matriz = Pivoteo_Parcial(matriz, incognitas);
+
+            if (pivoteo)
+                matriz = Pivoteo_Parcial(matriz, incognitas);
 
             double suma; double divisor;
             int cont_iter = 0;
@@ -119,7 +122,7 @@ namespace Logica.Unidad2
                 for (int i = 0; i < incognitas; i++)
                 {
                     resta = V_arranque[i] - V_ant[i];
-                    if (resta < tole)
+                    if (Math.Abs(resta) < tole)
                         c += 1;
                 }
                 if (c == incognitas)
@@ -127,7 +130,8 @@ namespace Logica.Unidad2
             }
             if (!band)
             {
-                nuevo.Mensaje = "Se ha execido el numero de iteraciones";
+                nuevo.Mensaje = "Se ha execido el numero de iteraciones, no se ha llegado a una solucion valida";
+                nuevo.SePudo = false;
             }
                 
 

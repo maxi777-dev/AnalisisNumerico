@@ -90,10 +90,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbl_texto = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabUnidad3 = new System.Windows.Forms.TabPage();
             this.tabUnidad4 = new System.Windows.Forms.TabPage();
-            this.lbl_texto = new System.Windows.Forms.Label();
+            this.lbl_Pivoteo = new System.Windows.Forms.Label();
+            this.cmb_Pivoteo = new System.Windows.Forms.ComboBox();
             this.Panel1.SuspendLayout();
             this.tabUnidad1.SuspendLayout();
             this.tabTan.SuspendLayout();
@@ -678,6 +680,8 @@
             // 
             // tabUnidad2
             // 
+            this.tabUnidad2.Controls.Add(this.cmb_Pivoteo);
+            this.tabUnidad2.Controls.Add(this.lbl_Pivoteo);
             this.tabUnidad2.Controls.Add(this.txt_Tole_Practico2);
             this.tabUnidad2.Controls.Add(this.lbl_Tole_Practico2);
             this.tabUnidad2.Controls.Add(this.txt_Iter_Practico2);
@@ -756,7 +760,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(416, 18);
+            this.label3.Location = new System.Drawing.Point(354, 18);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
@@ -769,7 +773,7 @@
             this.cmb_Metodos.Items.AddRange(new object[] {
             "Gauss - Jordan",
             "Gauss - Seidel"});
-            this.cmb_Metodos.Location = new System.Drawing.Point(472, 15);
+            this.cmb_Metodos.Location = new System.Drawing.Point(410, 15);
             this.cmb_Metodos.Name = "cmb_Metodos";
             this.cmb_Metodos.Size = new System.Drawing.Size(121, 21);
             this.cmb_Metodos.TabIndex = 63;
@@ -806,6 +810,16 @@
             this.panel2.Size = new System.Drawing.Size(649, 288);
             this.panel2.TabIndex = 60;
             // 
+            // lbl_texto
+            // 
+            this.lbl_texto.AutoSize = true;
+            this.lbl_texto.Location = new System.Drawing.Point(18, 200);
+            this.lbl_texto.Name = "lbl_texto";
+            this.lbl_texto.Size = new System.Drawing.Size(35, 13);
+            this.lbl_texto.TabIndex = 0;
+            this.lbl_texto.Text = "label5";
+            this.lbl_texto.Visible = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -838,15 +852,27 @@
             this.tabUnidad4.Text = "Unidad 4";
             this.tabUnidad4.UseVisualStyleBackColor = true;
             // 
-            // lbl_texto
+            // lbl_Pivoteo
             // 
-            this.lbl_texto.AutoSize = true;
-            this.lbl_texto.Location = new System.Drawing.Point(18, 200);
-            this.lbl_texto.Name = "lbl_texto";
-            this.lbl_texto.Size = new System.Drawing.Size(35, 13);
-            this.lbl_texto.TabIndex = 0;
-            this.lbl_texto.Text = "label5";
-            this.lbl_texto.Visible = false;
+            this.lbl_Pivoteo.AutoSize = true;
+            this.lbl_Pivoteo.Location = new System.Drawing.Point(548, 18);
+            this.lbl_Pivoteo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Pivoteo.Name = "lbl_Pivoteo";
+            this.lbl_Pivoteo.Size = new System.Drawing.Size(46, 13);
+            this.lbl_Pivoteo.TabIndex = 70;
+            this.lbl_Pivoteo.Text = "Pivoteo:";
+            // 
+            // cmb_Pivoteo
+            // 
+            this.cmb_Pivoteo.FormattingEnabled = true;
+            this.cmb_Pivoteo.Items.AddRange(new object[] {
+            "Si",
+            "No"});
+            this.cmb_Pivoteo.Location = new System.Drawing.Point(599, 15);
+            this.cmb_Pivoteo.Name = "cmb_Pivoteo";
+            this.cmb_Pivoteo.Size = new System.Drawing.Size(39, 21);
+            this.cmb_Pivoteo.TabIndex = 71;
+            this.cmb_Pivoteo.Text = "Si";
             // 
             // Form1
             // 
@@ -952,6 +978,8 @@
         private System.Windows.Forms.TextBox txt_Tole_Practico2;
         private System.Windows.Forms.Label lbl_Tole_Practico2;
         private System.Windows.Forms.Label lbl_texto;
+        private System.Windows.Forms.ComboBox cmb_Pivoteo;
+        private System.Windows.Forms.Label lbl_Pivoteo;
     }
 }
 

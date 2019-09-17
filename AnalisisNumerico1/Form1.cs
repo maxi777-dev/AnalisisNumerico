@@ -359,11 +359,15 @@ namespace AnalisisNumerico1
                     }
                 }
 
+                bool pivot = false;
+                if (cmb_Pivoteo.Text == "Si")
+                    pivot = true;
+
                 Resultado_2 nuevo = new Resultado_2(true, "",cantincognitas,0);
 
                 if (cmb_Metodos.SelectedIndex == 0)
                 {
-                    nuevo = Logica.Unidad2.Practico2.Gauss_Jordan(matriz, cantincognitas);
+                    nuevo = Logica.Unidad2.Practico2.Gauss_Jordan(matriz, cantincognitas, pivot);
                 }
                 else
                 {
@@ -383,14 +387,20 @@ namespace AnalisisNumerico1
                         }
                         else
                             nuevo = Logica.Unidad2.Practico2.Gauss_Seidel(matriz, cantincognitas, 
-                                        int.Parse(txt_Iter_Practico2.Text), double.Parse(txt_Tole_Practico2.Text));
+                                        int.Parse(txt_Iter_Practico2.Text), double.Parse(txt_Tole_Practico2.Text), pivot);
                     }
                 }
 
                 if (nuevo.SePudo)
                     MostrarResultados(nuevo);
                 else
+                {
+                    lbl_texto.Visible = true;
                     lbl_texto.Text = nuevo.Mensaje;
+                    lbl_texto.Font = new Font(lbl_texto.Font.Name, 10);
+                    panel2.Controls.Add(lbl_texto);
+                }
+                    
                 
             }
         }  //ACA SE RESUELVEN LAS ECUACIONES

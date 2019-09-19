@@ -24,7 +24,8 @@ namespace AnalisisNumerico1
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            cmb_Metodos.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmb_Pivoteo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
 

@@ -69,78 +69,129 @@ namespace Logica.Unidad2
             }
             return matriz;
         }
-
+        public static double Determinante(double[,] matriz, int incognitas)
+        {
+            double resultado = 0;
+            switch (incognitas)
+            {
+                case 2: return matriz[0, 0] * matriz[1, 1] - matriz[1, 0] * matriz[0, 1];
+                default:
+                    double[,] auxiliar = new double[incognitas - 1, incognitas -1];
+                    for (int i = 0; i < incognitas; i++)
+                    {
+                        auxiliar = MatrizCofactores(matriz, incognitas - 1, i);
+                        resultado += Math.Pow(-1,i) * matriz[0,i] * Determinante(auxiliar, incognitas - 1);
+                    }
+                    return resultado;
+            }
+        }
+        public static double[,] MatrizCofactores(double[,] matriz, int incognitas, int i)
+        {
+            double[,] matriz_aux = new double[incognitas, incognitas];
+            int x = 0;
+            int y = 0;
+            for (int j = 0; j < incognitas + 1; j++)
+            {
+                for (int k = 0; k < incognitas + 1; k++)
+                {
+                    if (j != 0 && k != i)
+                    {
+                        matriz_aux[x, y] = matriz[j, k];
+                        if (y < incognitas - 1)
+                        { y += 1; }
+                        else
+                        { x += 1; y = 0; };
+                    }
+                }
+            }
+            return matriz_aux;
+        }
 
         //--------------------------------------------  METODOS  ----------------------------------------------------//
         public static Resultado_2 Gauss_Jordan(double[,] matriz, int incognitas, bool pivoteo)
         {
-            Resultado_2 nuevo = new Resultado_2(true, "Los valores de las incognitas son los siguientes: ", incognitas,0);
-            if (pivoteo)
-                matriz = Pivoteo_Parcial(matriz, incognitas);
-            nuevo.Resultados = Escalonar(matriz, incognitas);
+            Resultado_2 nuevo = new Resultado_2(true, "Los valores de las incognitas son los siguientes: ", incognitas, 0);
+            if (Determinante(matriz, incognitas) != 0)
+            {
+                if (pivoteo)
+                    matriz = Pivoteo_Parcial(matriz, incognitas);
+                nuevo.Resultados = Escalonar(matriz, incognitas);
+                if (nuevo.Resultados[0] is Double.NaN)
+                { nuevo.SePudo = false; nuevo.Mensaje = "El elemento pivotal es 0"; }
+            }
+            else
+            {
+                nuevo.Mensaje = "El sistema no tiene resolución";
+                nuevo.SePudo = false;
+            }
             return nuevo;
         }
         public static Resultado_2 Gauss_Seidel(double[,] matriz, int incognitas, int iteraciones, double tole, bool pivoteo)
         {
             Resultado_2 nuevo = new Resultado_2(true, "Los valores de las incognitas son los siguientes: ", incognitas,0);
-            double[] V_arranque = new double[incognitas];
-            for (int i = 0; i < incognitas; i++)
-            {
-                V_arranque[i] = 0;
-            }
 
-            if (pivoteo)
-                matriz = Pivoteo_Parcial(matriz, incognitas);
-
-            double suma; double divisor;
-            int cont_iter = 0;
-            bool band = false;
-            double[] V_ant = new double[incognitas];
-            while ((cont_iter < iteraciones) && !band)
+            if (Determinante(matriz, incognitas) != 0)
             {
+                double[] V_arranque = new double[incognitas];
                 for (int i = 0; i < incognitas; i++)
                 {
-                    V_ant[i] = V_arranque[i];
+                    V_arranque[i] = 0;
                 }
 
-                for (int i = 0; i < incognitas; i++)
+                if (pivoteo)
+                    matriz = Pivoteo_Parcial(matriz, incognitas);
+
+                double suma; double divisor;
+                int cont_iter = 0;
+                bool band = false;
+                double[] V_ant = new double[incognitas];
+                while ((cont_iter < iteraciones) && !band)
                 {
-                    suma = 0; divisor = 0;
-                    for (int j = 0; j < incognitas; j++)
+                    for (int i = 0; i < incognitas; i++)
                     {
-                        if (i != j)
-                            suma += matriz[i, j] * V_arranque[j];
-                        else
-                            divisor = matriz[i, j];
+                        V_ant[i] = V_arranque[i];
                     }
-                    V_arranque[i] = (matriz[i, incognitas] - suma) / divisor;
+
+                    for (int i = 0; i < incognitas; i++)
+                    {
+                        suma = 0; divisor = 0;
+                        for (int j = 0; j < incognitas; j++)
+                        {
+                            if (i != j)
+                                suma += matriz[i, j] * V_arranque[j];
+                            else
+                                divisor = matriz[i, j];
+                        }
+                        V_arranque[i] = (matriz[i, incognitas] - suma) / divisor;
+                    }
+                    cont_iter += 1;
+                    double resta = 0;
+                    int c = 0;
+                    for (int i = 0; i < incognitas; i++)
+                    {
+                        resta = V_arranque[i] - V_ant[i];
+                        if (Math.Abs(resta) < tole)
+                            c += 1;
+                    }
+                    if (c == incognitas)
+                        band = true;
                 }
-                
-                cont_iter += 1;
-                double resta = 0;
-                int c = 0;
+                if (!band)
+                {
+                    nuevo.Mensaje = "Se ha excedido el numero de iteraciones, no se ha llegado a una solucion valida";
+                    nuevo.SePudo = false;
+                }
                 for (int i = 0; i < incognitas; i++)
                 {
-                    resta = V_arranque[i] - V_ant[i];
-                    if (Math.Abs(resta) < tole)
-                        c += 1;
+                    nuevo.Resultados[i] = V_arranque[i];
                 }
-                if (c == incognitas)
-                    band = true;
+                nuevo.Iter = cont_iter;
             }
-            if (!band)
+            else
             {
-                nuevo.Mensaje = "Se ha execido el numero de iteraciones, no se ha llegado a una solucion valida";
+                nuevo.Mensaje = "El sistema no tiene resolución";
                 nuevo.SePudo = false;
             }
-                
-
-            for (int i = 0; i < incognitas; i++)
-            {
-                nuevo.Resultados[i] = V_arranque[i];
-            }
-            nuevo.Iter = cont_iter;
-
             return nuevo;
         }
     }

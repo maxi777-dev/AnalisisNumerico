@@ -499,5 +499,66 @@ namespace AnalisisNumerico1
         {
             txt_Tole_Practico2.BackColor = Color.White;
         }
+
+
+
+
+        // ----------------------------------------------   PRACTICO 3    --------------------------------------------------//
+
+        private void BtnCalcular_Click(object sender, EventArgs e)
+        {
+            double[] vectorX = new double[100];
+            double[] vectorY = new double[100];
+
+
+            int sum2x = 0; //SUMATORIA DE X AL CUADRADO
+            int sumx = 0; //SUMATORIA DE X
+            int x = 0;
+            int contador = 0;
+            foreach (DataGridViewRow row in dgvXeY.Rows)
+            {
+                contador += 1;
+                string codigo = Convert.ToString(row.Cells["X"].Value);
+                vectorX[contador] = double.Parse(codigo);
+                sumx += x;
+                sum2x += x * x;
+            }
+
+            int sumy = 0; //SUMATORIA DE Y
+            int y = 0;
+            contador = 0;
+            foreach (DataGridViewRow row in dgvXeY.Rows)
+            {
+                contador += 1;
+                string codigo = Convert.ToString(row.Cells["Y"].Value);
+                vectorY[contador] = double.Parse(codigo);
+                sumy += y;
+            }
+
+            double promy = sumy / dgvXeY.Columns.Count;
+            double promx = sumx / dgvXeY.Columns.Count;
+
+            double sum_multi = 0; //SUMATORIA DE X * Y
+
+            foreach (DataGridViewRow row in dgvXeY.Rows)
+            {
+                string codigo = Convert.ToString(row.Cells["X"].Value);
+                x = int.Parse(codigo);
+                foreach (DataGridViewRow row2 in dgvXeY.Rows)
+                {
+                    
+                    string codigo_2 = Convert.ToString(row2.Cells["Y"].Value);
+                    y = int.Parse(codigo);
+
+                    if (row2 == row)
+                    {
+                        double multiplicacion = x * y;
+                        sum_multi += multiplicacion;
+                    }
+                    
+                }
+
+            }
+        }
     }
 }

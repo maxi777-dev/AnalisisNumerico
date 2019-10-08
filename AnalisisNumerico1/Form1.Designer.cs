@@ -80,6 +80,8 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.tabUnidad2 = new System.Windows.Forms.TabPage();
+            this.cmb_Pivoteo = new System.Windows.Forms.ComboBox();
+            this.lbl_Pivoteo = new System.Windows.Forms.Label();
             this.txt_Tole_Practico2 = new System.Windows.Forms.TextBox();
             this.lbl_Tole_Practico2 = new System.Windows.Forms.Label();
             this.txt_Iter_Practico2 = new System.Windows.Forms.TextBox();
@@ -94,8 +96,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabUnidad3 = new System.Windows.Forms.TabPage();
             this.tabUnidad4 = new System.Windows.Forms.TabPage();
-            this.lbl_Pivoteo = new System.Windows.Forms.Label();
-            this.cmb_Pivoteo = new System.Windows.Forms.ComboBox();
+            this.dgvXeY = new System.Windows.Forms.DataGridView();
+            this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCalcular = new System.Windows.Forms.Button();
             this.Panel1.SuspendLayout();
             this.tabUnidad1.SuspendLayout();
             this.tabTan.SuspendLayout();
@@ -110,6 +114,8 @@
             this.groupBox7.SuspendLayout();
             this.tabUnidad2.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.tabUnidad3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvXeY)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel1
@@ -334,6 +340,7 @@
             this.btnObtener_2.TabIndex = 22;
             this.btnObtener_2.Text = "Obtener";
             this.btnObtener_2.UseVisualStyleBackColor = true;
+            this.btnObtener_2.Click += new System.EventHandler(this.BtnObtener_2_Click_1);
             // 
             // label4
             // 
@@ -435,6 +442,7 @@
             this.btnObtener_3.TabIndex = 22;
             this.btnObtener_3.Text = "Obtener";
             this.btnObtener_3.UseVisualStyleBackColor = true;
+            this.btnObtener_3.Click += new System.EventHandler(this.BtnObtener_3_Click_1);
             // 
             // label12
             // 
@@ -536,6 +544,7 @@
             this.btnObtener_4.TabIndex = 22;
             this.btnObtener_4.Text = "Obtener";
             this.btnObtener_4.UseVisualStyleBackColor = true;
+            this.btnObtener_4.Click += new System.EventHandler(this.BtnObtener_4_Click_1);
             // 
             // label18
             // 
@@ -702,6 +711,28 @@
             this.tabUnidad2.Text = "Unidad 2";
             this.tabUnidad2.UseVisualStyleBackColor = true;
             // 
+            // cmb_Pivoteo
+            // 
+            this.cmb_Pivoteo.FormattingEnabled = true;
+            this.cmb_Pivoteo.Items.AddRange(new object[] {
+            "No",
+            "Si"});
+            this.cmb_Pivoteo.Location = new System.Drawing.Point(599, 15);
+            this.cmb_Pivoteo.Name = "cmb_Pivoteo";
+            this.cmb_Pivoteo.Size = new System.Drawing.Size(39, 21);
+            this.cmb_Pivoteo.TabIndex = 71;
+            this.cmb_Pivoteo.Text = "No";
+            // 
+            // lbl_Pivoteo
+            // 
+            this.lbl_Pivoteo.AutoSize = true;
+            this.lbl_Pivoteo.Location = new System.Drawing.Point(548, 18);
+            this.lbl_Pivoteo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Pivoteo.Name = "lbl_Pivoteo";
+            this.lbl_Pivoteo.Size = new System.Drawing.Size(46, 13);
+            this.lbl_Pivoteo.TabIndex = 70;
+            this.lbl_Pivoteo.Text = "Pivoteo:";
+            // 
             // txt_Tole_Practico2
             // 
             this.txt_Tole_Practico2.Location = new System.Drawing.Point(574, 47);
@@ -832,6 +863,8 @@
             // 
             // tabUnidad3
             // 
+            this.tabUnidad3.Controls.Add(this.btnCalcular);
+            this.tabUnidad3.Controls.Add(this.dgvXeY);
             this.tabUnidad3.Location = new System.Drawing.Point(4, 22);
             this.tabUnidad3.Margin = new System.Windows.Forms.Padding(2);
             this.tabUnidad3.Name = "tabUnidad3";
@@ -852,27 +885,39 @@
             this.tabUnidad4.Text = "Unidad 4";
             this.tabUnidad4.UseVisualStyleBackColor = true;
             // 
-            // lbl_Pivoteo
+            // dgvXeY
             // 
-            this.lbl_Pivoteo.AutoSize = true;
-            this.lbl_Pivoteo.Location = new System.Drawing.Point(548, 18);
-            this.lbl_Pivoteo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_Pivoteo.Name = "lbl_Pivoteo";
-            this.lbl_Pivoteo.Size = new System.Drawing.Size(46, 13);
-            this.lbl_Pivoteo.TabIndex = 70;
-            this.lbl_Pivoteo.Text = "Pivoteo:";
+            this.dgvXeY.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvXeY.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.X,
+            this.Y});
+            this.dgvXeY.Location = new System.Drawing.Point(43, 52);
+            this.dgvXeY.Name = "dgvXeY";
+            this.dgvXeY.Size = new System.Drawing.Size(143, 172);
+            this.dgvXeY.TabIndex = 0;
             // 
-            // cmb_Pivoteo
+            // X
             // 
-            this.cmb_Pivoteo.FormattingEnabled = true;
-            this.cmb_Pivoteo.Items.AddRange(new object[] {
-            "Si",
-            "No"});
-            this.cmb_Pivoteo.Location = new System.Drawing.Point(599, 15);
-            this.cmb_Pivoteo.Name = "cmb_Pivoteo";
-            this.cmb_Pivoteo.Size = new System.Drawing.Size(39, 21);
-            this.cmb_Pivoteo.TabIndex = 71;
-            this.cmb_Pivoteo.Text = "Si";
+            this.X.HeaderText = "X";
+            this.X.MaxInputLength = 2000;
+            this.X.Name = "X";
+            this.X.Width = 50;
+            // 
+            // Y
+            // 
+            this.Y.HeaderText = "Y";
+            this.Y.Name = "Y";
+            this.Y.Width = 50;
+            // 
+            // btnCalcular
+            // 
+            this.btnCalcular.Location = new System.Drawing.Point(234, 134);
+            this.btnCalcular.Name = "btnCalcular";
+            this.btnCalcular.Size = new System.Drawing.Size(75, 23);
+            this.btnCalcular.TabIndex = 1;
+            this.btnCalcular.Text = "Calcular";
+            this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.Click += new System.EventHandler(this.BtnCalcular_Click);
             // 
             // Form1
             // 
@@ -906,6 +951,8 @@
             this.tabUnidad2.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tabUnidad3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvXeY)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -980,6 +1027,10 @@
         private System.Windows.Forms.Label lbl_texto;
         private System.Windows.Forms.ComboBox cmb_Pivoteo;
         private System.Windows.Forms.Label lbl_Pivoteo;
+        private System.Windows.Forms.Button btnCalcular;
+        private System.Windows.Forms.DataGridView dgvXeY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn X;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Y;
     }
 }
 

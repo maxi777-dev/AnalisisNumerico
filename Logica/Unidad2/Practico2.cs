@@ -37,38 +37,76 @@ namespace Logica.Unidad2
             }
             return v;
         }
+        //public static double[,] Pivoteo_Parcial(double[,] matriz, int incognitas)
+        //{
+        //    double mayor = 0;
+        //    int posicion = 0;
+        //    for (int i = 0; i < incognitas; i++)
+        //    {
+        //        if (i == 0)
+        //        {
+        //            mayor = Math.Abs(matriz[i, 0]);
+        //            posicion = 0;
+        //        }                    
+        //        else
+        //        {
+        //            if (Math.Abs(matriz[i, 0]) > mayor)
+        //            {
+        //                posicion = i;
+        //                mayor = Math.Abs(matriz[i, 0]);
+        //            }
+        //        }
+        //    }
+        //    if (posicion != 0)
+        //    {
+        //        double aux;
+        //        for (int i = 0; i < (incognitas + 1); i++)
+        //        {
+        //            aux = matriz[0, i];
+        //            matriz[0, i] = matriz[posicion, i];
+        //            matriz[posicion, i] = aux;
+        //        }
+        //    }
+        //    return matriz;
+        //}
+
         public static double[,] Pivoteo_Parcial(double[,] matriz, int incognitas)
         {
             double mayor = 0;
             int posicion = 0;
             for (int i = 0; i < incognitas; i++)
             {
-                if (i == 0)
+                for (int j = 0; j < incognitas; j++)
                 {
-                    mayor = Math.Abs(matriz[i, 0]);
-                    posicion = 0;
-                }                    
-                else
-                {
-                    if (Math.Abs(matriz[i, 0]) > mayor)
+                    if (j == 0)
                     {
-                        posicion = i;
-                        mayor = Math.Abs(matriz[i, 0]);
+                        mayor = Math.Abs(matriz[j, 0]);
+                        posicion = 0;
+                    }
+                    else
+                    {
+                        if (Math.Abs(matriz[j, 0]) > mayor)
+                        {
+                            posicion = j;
+                            mayor = Math.Abs(matriz[j, 0]);
+                        }
                     }
                 }
-            }
-            if (posicion != 0)
-            {
-                double aux;
-                for (int i = 0; i < (incognitas + 1); i++)
+                if (posicion != 0)
                 {
-                    aux = matriz[0, i];
-                    matriz[0, i] = matriz[posicion, i];
-                    matriz[posicion, i] = aux;
+                    double aux;
+                    for (int k = 0; k < (incognitas + 1); k++)
+                    {
+                        aux = matriz[i, k];
+                        matriz[i, k] = matriz[posicion, k];
+                        matriz[posicion, k] = aux;
+                    }
                 }
+
             }
             return matriz;
         }
+
         public static double Determinante(double[,] matriz, int incognitas)
         {
             double resultado = 0;

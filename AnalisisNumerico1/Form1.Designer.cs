@@ -95,11 +95,14 @@
             this.lbl_texto = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabUnidad3 = new System.Windows.Forms.TabPage();
-            this.tabUnidad4 = new System.Windows.Forms.TabPage();
+            this.btnCalcular = new System.Windows.Forms.Button();
             this.dgvXeY = new System.Windows.Forms.DataGridView();
             this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCalcular = new System.Windows.Forms.Button();
+            this.tabUnidad4 = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lbl_textoMC = new System.Windows.Forms.Label();
+            this.lbl_coeficiente = new System.Windows.Forms.Label();
             this.Panel1.SuspendLayout();
             this.tabUnidad1.SuspendLayout();
             this.tabTan.SuspendLayout();
@@ -116,6 +119,7 @@
             this.panel2.SuspendLayout();
             this.tabUnidad3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvXeY)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // Panel1
@@ -863,6 +867,8 @@
             // 
             // tabUnidad3
             // 
+            this.tabUnidad3.Controls.Add(this.lbl_coeficiente);
+            this.tabUnidad3.Controls.Add(this.panel3);
             this.tabUnidad3.Controls.Add(this.btnCalcular);
             this.tabUnidad3.Controls.Add(this.dgvXeY);
             this.tabUnidad3.Location = new System.Drawing.Point(4, 22);
@@ -874,16 +880,15 @@
             this.tabUnidad3.Text = "Unidad 3";
             this.tabUnidad3.UseVisualStyleBackColor = true;
             // 
-            // tabUnidad4
+            // btnCalcular
             // 
-            this.tabUnidad4.Location = new System.Drawing.Point(4, 22);
-            this.tabUnidad4.Margin = new System.Windows.Forms.Padding(2);
-            this.tabUnidad4.Name = "tabUnidad4";
-            this.tabUnidad4.Padding = new System.Windows.Forms.Padding(2);
-            this.tabUnidad4.Size = new System.Drawing.Size(657, 398);
-            this.tabUnidad4.TabIndex = 3;
-            this.tabUnidad4.Text = "Unidad 4";
-            this.tabUnidad4.UseVisualStyleBackColor = true;
+            this.btnCalcular.Location = new System.Drawing.Point(210, 95);
+            this.btnCalcular.Name = "btnCalcular";
+            this.btnCalcular.Size = new System.Drawing.Size(75, 23);
+            this.btnCalcular.TabIndex = 1;
+            this.btnCalcular.Text = "Calcular";
+            this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.Click += new System.EventHandler(this.BtnCalcular_Click);
             // 
             // dgvXeY
             // 
@@ -891,7 +896,7 @@
             this.dgvXeY.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.X,
             this.Y});
-            this.dgvXeY.Location = new System.Drawing.Point(43, 52);
+            this.dgvXeY.Location = new System.Drawing.Point(41, 28);
             this.dgvXeY.Name = "dgvXeY";
             this.dgvXeY.Size = new System.Drawing.Size(143, 172);
             this.dgvXeY.TabIndex = 0;
@@ -909,15 +914,45 @@
             this.Y.Name = "Y";
             this.Y.Width = 50;
             // 
-            // btnCalcular
+            // tabUnidad4
             // 
-            this.btnCalcular.Location = new System.Drawing.Point(234, 134);
-            this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(75, 23);
-            this.btnCalcular.TabIndex = 1;
-            this.btnCalcular.Text = "Calcular";
-            this.btnCalcular.UseVisualStyleBackColor = true;
-            this.btnCalcular.Click += new System.EventHandler(this.BtnCalcular_Click);
+            this.tabUnidad4.Location = new System.Drawing.Point(4, 22);
+            this.tabUnidad4.Margin = new System.Windows.Forms.Padding(2);
+            this.tabUnidad4.Name = "tabUnidad4";
+            this.tabUnidad4.Padding = new System.Windows.Forms.Padding(2);
+            this.tabUnidad4.Size = new System.Drawing.Size(657, 398);
+            this.tabUnidad4.TabIndex = 3;
+            this.tabUnidad4.Text = "Unidad 4";
+            this.tabUnidad4.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.lbl_textoMC);
+            this.panel3.Location = new System.Drawing.Point(4, 287);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(649, 104);
+            this.panel3.TabIndex = 61;
+            // 
+            // lbl_textoMC
+            // 
+            this.lbl_textoMC.AutoSize = true;
+            this.lbl_textoMC.Location = new System.Drawing.Point(24, 20);
+            this.lbl_textoMC.Name = "lbl_textoMC";
+            this.lbl_textoMC.Size = new System.Drawing.Size(35, 13);
+            this.lbl_textoMC.TabIndex = 0;
+            this.lbl_textoMC.Text = "label5";
+            this.lbl_textoMC.Visible = false;
+            // 
+            // lbl_coeficiente
+            // 
+            this.lbl_coeficiente.AutoSize = true;
+            this.lbl_coeficiente.Location = new System.Drawing.Point(28, 252);
+            this.lbl_coeficiente.Name = "lbl_coeficiente";
+            this.lbl_coeficiente.Size = new System.Drawing.Size(35, 13);
+            this.lbl_coeficiente.TabIndex = 62;
+            this.lbl_coeficiente.Text = "label6";
+            this.lbl_coeficiente.Visible = false;
             // 
             // Form1
             // 
@@ -952,7 +987,10 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tabUnidad3.ResumeLayout(false);
+            this.tabUnidad3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvXeY)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1031,6 +1069,9 @@
         private System.Windows.Forms.DataGridView dgvXeY;
         private System.Windows.Forms.DataGridViewTextBoxColumn X;
         private System.Windows.Forms.DataGridViewTextBoxColumn Y;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label lbl_textoMC;
+        private System.Windows.Forms.Label lbl_coeficiente;
     }
 }
 

@@ -17,7 +17,7 @@ namespace AnalisisNumerico1
         public Form1()
         {
             InitializeComponent();
-        }        
+        }
         private void TxtFuncion_TextChanged(object sender, EventArgs e)
         {
 
@@ -93,7 +93,7 @@ namespace AnalisisNumerico1
                     lbl_Tole_2.Text = nuevo.Tole.ToString();
                     lbl_Solu_2.Text = nuevo.Solucion.ToString();
                 }
-            }      
+            }
         } //OBTENER CON EL METODO DE LA REGLA FALSA.        
         private void BtnObtener_3_Click_1(object sender, EventArgs e)
         {
@@ -197,7 +197,7 @@ namespace AnalisisNumerico1
             }
         }//SOLO NUMEROS
 
-        
+
         private void Txt_Tole_Click(object sender, EventArgs e)
         {
             txt_Tole.BackColor = Color.White;
@@ -264,7 +264,7 @@ namespace AnalisisNumerico1
                                 case 2:
                                     lbl.Text = "y   +";
                                     lbl.Location = new Point(pointX + 55, pointY + 2);
-                                    if (cantincognitas==2)
+                                    if (cantincognitas == 2)
                                     {
                                         lbl.Text = "y   =";
                                     }
@@ -314,7 +314,7 @@ namespace AnalisisNumerico1
                 else
                     MessageBox.Show("Ingrese una cantidad de incognitas adecuada");
             }
-            
+
         }
         private void Btn_Resolver_Click(object sender, EventArgs e)
         {
@@ -364,7 +364,7 @@ namespace AnalisisNumerico1
                 if (cmb_Pivoteo.Text == "Si")
                     pivot = true;
 
-                Resultado_2 nuevo = new Resultado_2(true, "",cantincognitas,0);
+                Resultado_2 nuevo = new Resultado_2(true, "", cantincognitas, 0);
 
                 if (cmb_Metodos.SelectedIndex == 0)
                 {
@@ -387,7 +387,7 @@ namespace AnalisisNumerico1
                             nuevo.SePudo = false;
                         }
                         else
-                            nuevo = Logica.Unidad2.Practico2.Gauss_Seidel(matriz, cantincognitas, 
+                            nuevo = Logica.Unidad2.Practico2.Gauss_Seidel(matriz, cantincognitas,
                                         int.Parse(txt_Iter_Practico2.Text), double.Parse(txt_Tole_Practico2.Text), pivot);
                     }
                 }
@@ -401,8 +401,8 @@ namespace AnalisisNumerico1
                     lbl_texto.Font = new Font(lbl_texto.Font.Name, 10);
                     panel2.Controls.Add(lbl_texto);
                 }
-                    
-                
+
+
             }
         }  //ACA SE RESUELVEN LAS ECUACIONES
         public void MostrarResultados(Resultado_2 rdos)
@@ -435,7 +435,7 @@ namespace AnalisisNumerico1
                 lbl.AutoSize = false;
                 lbl.Size = new System.Drawing.Size(200, 17);
                 lbl.Font = new Font(lbl.Font.Name, 10);
-                lbl.Location = new Point(25,250);
+                lbl.Location = new Point(25, 250);
                 lbl.Text = "Iteraciones Realizadas: " + rdos.Iter;
                 lbl.ForeColor = Color.Green;
                 panel2.Controls.Add(lbl);
@@ -504,61 +504,85 @@ namespace AnalisisNumerico1
 
 
         // ----------------------------------------------   PRACTICO 3    --------------------------------------------------//
+        public void MostrarResultadosMC(Resultado_2 rdos)
+        {
+            string[] v = new string[5] { "a0 = ", "a1 = ", "a2 = ", "a3 = ", "a4 = " };
+            lbl_textoMC.Visible = true;
+            lbl_textoMC.Text = rdos.Mensaje;
+            lbl_textoMC.Font = new Font(lbl_textoMC.Font.Name, 10);
+            panel3.Controls.Add(lbl_textoMC);
+            int pointX = 25;
+            int pointY = 55;
+            for (int i = 0; i < rdos.Resultados.Length; i++)
+            {
+                Label lbl = new Label();
+                lbl.Name = "lbl_Resultado_" + i;
+                lbl.AutoSize = false;
+                lbl.Size = new System.Drawing.Size(120, 17);
+                lbl.Font = new Font(lbl.Font.Name, 10);
+                lbl.Location = new Point(pointX, pointY);
+                lbl.Text = v[i] + Math.Round(rdos.Resultados[i], 6);
+                lbl.ForeColor = Color.Red;
+                panel3.Controls.Add(lbl);
+                panel3.Show();
+                pointX += 120;
+            }
+            lbl_coeficiente.Visible = true;
+            lbl_coeficiente.Text = "Coeficiente de correlación = " + rdos.Bandera_3;
+        }   //ACA MOSTRAMOS LOS RESULTADOS OBTENIDOS EN PANTALLA
 
         private void BtnCalcular_Click(object sender, EventArgs e)
         {
-            double[] vectorX = new double[100];
-            double[] vectorY = new double[100];
+            for (int i = panel3.Controls.Count - 1; i >= 0; i--)
+            {
+                Label label = panel3.Controls[i] as Label;
+                if ((label != null) && (label.Name != "lbl_textoMC"))
+                {
+                    panel3.Controls.RemoveAt(i);
+                    label.Dispose();
+                }
+            }
+            lbl_coeficiente.Visible = false;
+            panel3.Update();
+            panel3.Refresh();
 
+            double[] vectorX = new double[15];
+            double[] vectorY = new double[15];
 
-            int sum2x = 0; //SUMATORIA DE X AL CUADRADO
-            int sumx = 0; //SUMATORIA DE X
-            int x = 0;
-            int contador = 0;
+            //Vector de valores x
+            int contador = -1;
             foreach (DataGridViewRow row in dgvXeY.Rows)
             {
                 contador += 1;
                 string codigo = Convert.ToString(row.Cells["X"].Value);
-                vectorX[contador] = double.Parse(codigo);
-                sumx += x;
-                sum2x += x * x;
+                if (codigo != "")
+                { vectorX[contador] = double.Parse(codigo); }
             }
 
-            int sumy = 0; //SUMATORIA DE Y
-            int y = 0;
-            contador = 0;
+            //Vector de valores y
+            contador = -1;
             foreach (DataGridViewRow row in dgvXeY.Rows)
             {
                 contador += 1;
                 string codigo = Convert.ToString(row.Cells["Y"].Value);
-                vectorY[contador] = double.Parse(codigo);
-                sumy += y;
+                if (codigo != "")
+                { vectorY[contador] = double.Parse(codigo); }
             }
 
-            double promy = sumy / dgvXeY.Columns.Count;
-            double promx = sumx / dgvXeY.Columns.Count;
-
-            double sum_multi = 0; //SUMATORIA DE X * Y
-
-            foreach (DataGridViewRow row in dgvXeY.Rows)
+            int grad = 1;
+            Resultado_2 res = new Resultado_2(false, "Ajuste no aceptable para polinomios de grado menor a 6", 0, 50);
+            while (grad < 6 & (res.Bandera_3 * 100 < 80))
             {
-                string codigo = Convert.ToString(row.Cells["X"].Value);
-                x = int.Parse(codigo);
-                foreach (DataGridViewRow row2 in dgvXeY.Rows)
+                grad += 1;
+                res = Logica.Unidad3.Practico3.ResolucionMC(vectorX, vectorY, contador, grad);
+                if (res.Bandera_3 >= 80)
                 {
-                    
-                    string codigo_2 = Convert.ToString(row2.Cells["Y"].Value);
-                    y = int.Parse(codigo);
-
-                    if (row2 == row)
-                    {
-                        double multiplicacion = x * y;
-                        sum_multi += multiplicacion;
-                    }
-                    
+                    res.Mensaje = "Los valores son:";                    
+                    MostrarResultadosMC(res);
                 }
-
             }
+            if (grad == 6)
+            { res.SePudo = false; }
         }
     }
 }

@@ -14,12 +14,14 @@ namespace Logica.Unidad2
             Mensaje = s;
             Resultados = new double[inc];
             Iter = iter;
+            Bandera_3 = 0;
         }
 
         public int Iter { get; set; }
         public bool SePudo { get; set; }
         public string Mensaje { get; set; }
         public double[] Resultados { get; set; }
+        public double Bandera_3 { get; set; }
 
     }
 }

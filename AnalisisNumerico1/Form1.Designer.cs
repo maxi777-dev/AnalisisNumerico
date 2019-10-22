@@ -95,6 +95,10 @@
             this.lbl_texto = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabUnidad3 = new System.Windows.Forms.TabPage();
+            this.txt_valor_lagrange = new System.Windows.Forms.TextBox();
+            this.lbl_valor_lagrange = new System.Windows.Forms.Label();
+            this.cmb_Lagrange = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_TP3_Tolerancia = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -107,10 +111,6 @@
             this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabUnidad4 = new System.Windows.Forms.TabPage();
-            this.label15 = new System.Windows.Forms.Label();
-            this.cmb_Lagrange = new System.Windows.Forms.ComboBox();
-            this.lbl_valor_lagrange = new System.Windows.Forms.Label();
-            this.txt_valor_lagrange = new System.Windows.Forms.TextBox();
             this.Panel1.SuspendLayout();
             this.tabUnidad1.SuspendLayout();
             this.tabTan.SuspendLayout();
@@ -896,10 +896,51 @@
             this.tabUnidad3.Text = "Unidad 3";
             this.tabUnidad3.UseVisualStyleBackColor = true;
             // 
+            // txt_valor_lagrange
+            // 
+            this.txt_valor_lagrange.Location = new System.Drawing.Point(402, 81);
+            this.txt_valor_lagrange.Name = "txt_valor_lagrange";
+            this.txt_valor_lagrange.Size = new System.Drawing.Size(100, 20);
+            this.txt_valor_lagrange.TabIndex = 70;
+            this.txt_valor_lagrange.Visible = false;
+            this.txt_valor_lagrange.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_valor_lagrange_KeyPress);
+            // 
+            // lbl_valor_lagrange
+            // 
+            this.lbl_valor_lagrange.AutoSize = true;
+            this.lbl_valor_lagrange.Location = new System.Drawing.Point(337, 84);
+            this.lbl_valor_lagrange.Name = "lbl_valor_lagrange";
+            this.lbl_valor_lagrange.Size = new System.Drawing.Size(59, 13);
+            this.lbl_valor_lagrange.TabIndex = 69;
+            this.lbl_valor_lagrange.Text = "Valor de X:";
+            this.lbl_valor_lagrange.Visible = false;
+            // 
+            // cmb_Lagrange
+            // 
+            this.cmb_Lagrange.FormattingEnabled = true;
+            this.cmb_Lagrange.Items.AddRange(new object[] {
+            "No",
+            "Si"});
+            this.cmb_Lagrange.Location = new System.Drawing.Point(402, 54);
+            this.cmb_Lagrange.Name = "cmb_Lagrange";
+            this.cmb_Lagrange.Size = new System.Drawing.Size(59, 21);
+            this.cmb_Lagrange.TabIndex = 68;
+            this.cmb_Lagrange.Text = "No";
+            this.cmb_Lagrange.SelectedIndexChanged += new System.EventHandler(this.Cmb_Lagrange_SelectedIndexChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(307, 57);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(89, 13);
+            this.label15.TabIndex = 67;
+            this.label15.Text = "¿Usar Lagrange?";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(364, 66);
+            this.label10.Location = new System.Drawing.Point(336, 140);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(60, 13);
             this.label10.TabIndex = 66;
@@ -907,7 +948,7 @@
             // 
             // txt_TP3_Tolerancia
             // 
-            this.txt_TP3_Tolerancia.Location = new System.Drawing.Point(430, 63);
+            this.txt_TP3_Tolerancia.Location = new System.Drawing.Point(402, 137);
             this.txt_TP3_Tolerancia.Name = "txt_TP3_Tolerancia";
             this.txt_TP3_Tolerancia.Size = new System.Drawing.Size(100, 20);
             this.txt_TP3_Tolerancia.TabIndex = 65;
@@ -916,7 +957,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(389, 40);
+            this.label5.Location = new System.Drawing.Point(360, 110);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 13);
             this.label5.TabIndex = 64;
@@ -924,7 +965,7 @@
             // 
             // txt_Grado
             // 
-            this.txt_Grado.Location = new System.Drawing.Point(430, 37);
+            this.txt_Grado.Location = new System.Drawing.Point(402, 107);
             this.txt_Grado.Name = "txt_Grado";
             this.txt_Grado.Size = new System.Drawing.Size(100, 20);
             this.txt_Grado.TabIndex = 63;
@@ -1003,47 +1044,6 @@
             this.tabUnidad4.TabIndex = 3;
             this.tabUnidad4.Text = "Unidad 4";
             this.tabUnidad4.UseVisualStyleBackColor = true;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(336, 121);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(89, 13);
-            this.label15.TabIndex = 67;
-            this.label15.Text = "¿Usar Lagrange?";
-            // 
-            // cmb_Lagrange
-            // 
-            this.cmb_Lagrange.FormattingEnabled = true;
-            this.cmb_Lagrange.Items.AddRange(new object[] {
-            "No",
-            "Si"});
-            this.cmb_Lagrange.Location = new System.Drawing.Point(430, 118);
-            this.cmb_Lagrange.Name = "cmb_Lagrange";
-            this.cmb_Lagrange.Size = new System.Drawing.Size(59, 21);
-            this.cmb_Lagrange.TabIndex = 68;
-            this.cmb_Lagrange.Text = "No";
-            this.cmb_Lagrange.SelectedIndexChanged += new System.EventHandler(this.Cmb_Lagrange_SelectedIndexChanged);
-            // 
-            // lbl_valor_lagrange
-            // 
-            this.lbl_valor_lagrange.AutoSize = true;
-            this.lbl_valor_lagrange.Location = new System.Drawing.Point(366, 152);
-            this.lbl_valor_lagrange.Name = "lbl_valor_lagrange";
-            this.lbl_valor_lagrange.Size = new System.Drawing.Size(59, 13);
-            this.lbl_valor_lagrange.TabIndex = 69;
-            this.lbl_valor_lagrange.Text = "Valor de X:";
-            this.lbl_valor_lagrange.Visible = false;
-            // 
-            // txt_valor_lagrange
-            // 
-            this.txt_valor_lagrange.Location = new System.Drawing.Point(431, 149);
-            this.txt_valor_lagrange.Name = "txt_valor_lagrange";
-            this.txt_valor_lagrange.Size = new System.Drawing.Size(100, 20);
-            this.txt_valor_lagrange.TabIndex = 70;
-            this.txt_valor_lagrange.Visible = false;
-            this.txt_valor_lagrange.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_valor_lagrange_KeyPress);
             // 
             // Form1
             // 

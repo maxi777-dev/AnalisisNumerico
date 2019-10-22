@@ -31,23 +31,28 @@ namespace Logica.Unidad3
             return Matriz;
         }
 
-        public static void Lagrange (double[] VectorX, double[] VectorY, int n, int Grado)
+        public static Unidad2.Resultado_2 Lagrange (double[] VectorX, double[] VectorY, double variable, int Grado)
         {
-            string Polinomio = "";
-            double varY = 0; double varX = 0;
-            for (int j = 0; j < n; j++)
+            Unidad2.Resultado_2 res = new Unidad2.Resultado_2(false, "No se pudo realizar Lagrange", 1, 50);
+            int i = 0; double S = 0; double Sa = 0; double Sb = 0;
+            while (i <= Grado - 1)
             {
-                varY = VectorY[j];
-                Polinomio += $"{varY}";
-                for (int i = 0; i < n; i++)
+                Sa = 1; Sb = 1;
+                for (int j = 0; j < Grado - 1; j++)
                 {
                     if (i != j)
                     {
-                        varX = VectorX[i];
-
+                        Sa = Sa * (variable - VectorX[j]);
+                        Sb = Sb * (VectorX[i] - VectorX[j]);
                     }
                 }
+                S = S + (VectorY[i] * (Sa / Sb));
+                i += 1;
             }
+            res.SePudo = true;
+            res.Resultados[0] = S;
+            res.Mensaje = "Lagrange se realizo con exito";
+            return res;
         }
 
         public static Logica.Unidad2.Resultado_2 ResolucionMC(double[] VectorX, double[] VectorY, int n, int Grado)

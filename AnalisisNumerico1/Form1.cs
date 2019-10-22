@@ -527,7 +527,22 @@ namespace AnalisisNumerico1
             }
             lbl_coeficiente.Visible = true;
             lbl_coeficiente.Text = "Coeficiente de correlación = " + rdos.Bandera_3;
-        }   //ACA MOSTRAMOS LOS RESULTADOS OBTENIDOS EN PANTALLA
+        }
+        public void MostrarResultadosLagrange(Resultado_2 rdos, double x)
+        {
+            label6.Text = $"El valor de Lagrange obtenido, con un valor de X de {x} es:";
+            label6.Visible = true;
+            //panel3.Controls.Add(label6);
+            label5.AutoSize = false;
+            label5.Size = new System.Drawing.Size(120, 17);
+            label5.Font = new Font(label5.Font.Name, 10);
+            label5.Location = new Point(25,55);
+            label5.Text = $"P({x}): " + Math.Round(rdos.Resultados[0], 6);
+            label5.ForeColor = Color.Red;
+            panel3.Controls.Add(label5);
+            panel3.Show();
+        }
+
         private void BtnCalcular_Click(object sender, EventArgs e)
         {
             for (int i = panel3.Controls.Count - 1; i >= 0; i--)
@@ -567,20 +582,76 @@ namespace AnalisisNumerico1
                 { vectorY[contador] = double.Parse(codigo); }
             }
 
-            int grad = int.Parse(txt_Grado.Text);
-            Resultado_2 res = new Resultado_2(false, "Ajuste no aceptable para polinomios de grado menor a 6", 0, 50);
-            while (grad < 6 & (res.Bandera_3 * 100 < int.Parse(txt_TP3_Tolerancia.Text)))
+            bool bandera_lagrange = false;
+            double valor_lagrange = 0;
+            if (cmb_Lagrange.Text == "Si")
             {
-                res = Logica.Unidad3.Practico3.ResolucionMC(vectorX, vectorY, contador, grad);
-                if (res.Bandera_3 >= int.Parse(txt_TP3_Tolerancia.Text))
-                {
-                    res.Mensaje = "Los valores son:";                    
-                    MostrarResultadosMC(res);
-                }
-                grad += 1;
+                bandera_lagrange = true;
+                valor_lagrange = double.Parse(txt_valor_lagrange.Text);
             }
-            if (grad == 6)
-            { res.SePudo = false; }
+
+            int grad = int.Parse(txt_Grado.Text);
+
+            if (bandera_lagrange)
+            {
+                Resultado_2 res = Logica.Unidad3.Practico3.Lagrange(vectorX, vectorY, valor_lagrange, grad);
+                MostrarResultadosLagrange(res,valor_lagrange);
+            }
+            else
+            {
+                Resultado_2 res = new Resultado_2(false, "Ajuste no aceptable para polinomios de grado menor a 6", 0, 50);
+                while (grad < 6 & (res.Bandera_3 * 100 < int.Parse(txt_TP3_Tolerancia.Text)))
+                {
+                    res = Logica.Unidad3.Practico3.ResolucionMC(vectorX, vectorY, contador, grad);
+                    if (res.Bandera_3 >= int.Parse(txt_TP3_Tolerancia.Text))
+                    {
+                        res.Mensaje = "Los valores son:";
+                        MostrarResultadosMC(res);
+                    }
+                    grad += 1;
+                }
+                if (grad == 6)
+                { res.SePudo = false; }
+            }
+        }
+
+
+        private void Cmb_Lagrange_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_Lagrange.Text == "No")
+            {
+                lbl_valor_lagrange.Visible = false;
+                txt_valor_lagrange.Visible = false;
+            }
+            else
+            {
+                lbl_valor_lagrange.Visible = true;
+                txt_valor_lagrange.Visible = true;
+            }
+        }
+        private void Txt_Grado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr != 8)
+            {
+                e.Handled = true;
+            }
+        }
+        private void Txt_TP3_Tolerancia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr != 8 && chr != 44) // Cambiar por el 44 por 46 para que sea un .
+            {
+                e.Handled = true;
+            }
+        }
+        private void Txt_valor_lagrange_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (!Char.IsDigit(chr) && chr != 8 && chr != 44 && chr != 45)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

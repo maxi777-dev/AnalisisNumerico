@@ -500,9 +500,7 @@ namespace AnalisisNumerico1
             txt_Tole_Practico2.BackColor = Color.White;
         }
 
-
-
-
+               
         // ----------------------------------------------   PRACTICO 3    --------------------------------------------------//
         public void MostrarResultadosMC(Resultado_2 rdos)
         {
@@ -530,7 +528,6 @@ namespace AnalisisNumerico1
             lbl_coeficiente.Visible = true;
             lbl_coeficiente.Text = "Coeficiente de correlación = " + rdos.Bandera_3;
         }   //ACA MOSTRAMOS LOS RESULTADOS OBTENIDOS EN PANTALLA
-
         private void BtnCalcular_Click(object sender, EventArgs e)
         {
             for (int i = panel3.Controls.Count - 1; i >= 0; i--)
@@ -542,6 +539,7 @@ namespace AnalisisNumerico1
                     label.Dispose();
                 }
             }
+
             lbl_coeficiente.Visible = false;
             panel3.Update();
             panel3.Refresh();
@@ -569,17 +567,17 @@ namespace AnalisisNumerico1
                 { vectorY[contador] = double.Parse(codigo); }
             }
 
-            int grad = 1;
+            int grad = int.Parse(txt_Grado.Text);
             Resultado_2 res = new Resultado_2(false, "Ajuste no aceptable para polinomios de grado menor a 6", 0, 50);
-            while (grad < 6 & (res.Bandera_3 * 100 < 80))
+            while (grad < 6 & (res.Bandera_3 * 100 < int.Parse(txt_TP3_Tolerancia.Text)))
             {
-                grad += 1;
                 res = Logica.Unidad3.Practico3.ResolucionMC(vectorX, vectorY, contador, grad);
-                if (res.Bandera_3 >= 80)
+                if (res.Bandera_3 >= int.Parse(txt_TP3_Tolerancia.Text))
                 {
                     res.Mensaje = "Los valores son:";                    
                     MostrarResultadosMC(res);
                 }
+                grad += 1;
             }
             if (grad == 6)
             { res.SePudo = false; }

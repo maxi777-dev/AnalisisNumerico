@@ -112,6 +112,7 @@ namespace Logica.Unidad2
             double resultado = 0;
             switch (incognitas)
             {
+                case 1: return 1;
                 case 2: return matriz[0, 0] * matriz[1, 1] - matriz[1, 0] * matriz[0, 1];
                 default:
                     double[,] auxiliar = new double[incognitas - 1, incognitas -1];

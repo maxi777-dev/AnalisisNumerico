@@ -95,14 +95,18 @@
             this.lbl_texto = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabUnidad3 = new System.Windows.Forms.TabPage();
+            this.lbl_coeficiente = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lbl_textoMC = new System.Windows.Forms.Label();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.dgvXeY = new System.Windows.Forms.DataGridView();
             this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabUnidad4 = new System.Windows.Forms.TabPage();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.lbl_textoMC = new System.Windows.Forms.Label();
-            this.lbl_coeficiente = new System.Windows.Forms.Label();
+            this.txt_Grado = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txt_TP3_Tolerancia = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.Panel1.SuspendLayout();
             this.tabUnidad1.SuspendLayout();
             this.tabTan.SuspendLayout();
@@ -118,8 +122,8 @@
             this.tabUnidad2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabUnidad3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvXeY)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvXeY)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel1
@@ -867,6 +871,10 @@
             // 
             // tabUnidad3
             // 
+            this.tabUnidad3.Controls.Add(this.label10);
+            this.tabUnidad3.Controls.Add(this.txt_TP3_Tolerancia);
+            this.tabUnidad3.Controls.Add(this.label5);
+            this.tabUnidad3.Controls.Add(this.txt_Grado);
             this.tabUnidad3.Controls.Add(this.lbl_coeficiente);
             this.tabUnidad3.Controls.Add(this.panel3);
             this.tabUnidad3.Controls.Add(this.btnCalcular);
@@ -879,6 +887,35 @@
             this.tabUnidad3.TabIndex = 2;
             this.tabUnidad3.Text = "Unidad 3";
             this.tabUnidad3.UseVisualStyleBackColor = true;
+            // 
+            // lbl_coeficiente
+            // 
+            this.lbl_coeficiente.AutoSize = true;
+            this.lbl_coeficiente.Location = new System.Drawing.Point(28, 252);
+            this.lbl_coeficiente.Name = "lbl_coeficiente";
+            this.lbl_coeficiente.Size = new System.Drawing.Size(35, 13);
+            this.lbl_coeficiente.TabIndex = 62;
+            this.lbl_coeficiente.Text = "label6";
+            this.lbl_coeficiente.Visible = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.lbl_textoMC);
+            this.panel3.Location = new System.Drawing.Point(4, 287);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(649, 104);
+            this.panel3.TabIndex = 61;
+            // 
+            // lbl_textoMC
+            // 
+            this.lbl_textoMC.AutoSize = true;
+            this.lbl_textoMC.Location = new System.Drawing.Point(24, 20);
+            this.lbl_textoMC.Name = "lbl_textoMC";
+            this.lbl_textoMC.Size = new System.Drawing.Size(35, 13);
+            this.lbl_textoMC.TabIndex = 0;
+            this.lbl_textoMC.Text = "label5";
+            this.lbl_textoMC.Visible = false;
             // 
             // btnCalcular
             // 
@@ -925,34 +962,37 @@
             this.tabUnidad4.Text = "Unidad 4";
             this.tabUnidad4.UseVisualStyleBackColor = true;
             // 
-            // panel3
+            // txt_Grado
             // 
-            this.panel3.Controls.Add(this.lbl_textoMC);
-            this.panel3.Location = new System.Drawing.Point(4, 287);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(649, 104);
-            this.panel3.TabIndex = 61;
+            this.txt_Grado.Location = new System.Drawing.Point(430, 37);
+            this.txt_Grado.Name = "txt_Grado";
+            this.txt_Grado.Size = new System.Drawing.Size(100, 20);
+            this.txt_Grado.TabIndex = 63;
             // 
-            // lbl_textoMC
+            // label5
             // 
-            this.lbl_textoMC.AutoSize = true;
-            this.lbl_textoMC.Location = new System.Drawing.Point(24, 20);
-            this.lbl_textoMC.Name = "lbl_textoMC";
-            this.lbl_textoMC.Size = new System.Drawing.Size(35, 13);
-            this.lbl_textoMC.TabIndex = 0;
-            this.lbl_textoMC.Text = "label5";
-            this.lbl_textoMC.Visible = false;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(389, 40);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(36, 13);
+            this.label5.TabIndex = 64;
+            this.label5.Text = "Grado";
             // 
-            // lbl_coeficiente
+            // txt_TP3_Tolerancia
             // 
-            this.lbl_coeficiente.AutoSize = true;
-            this.lbl_coeficiente.Location = new System.Drawing.Point(28, 252);
-            this.lbl_coeficiente.Name = "lbl_coeficiente";
-            this.lbl_coeficiente.Size = new System.Drawing.Size(35, 13);
-            this.lbl_coeficiente.TabIndex = 62;
-            this.lbl_coeficiente.Text = "label6";
-            this.lbl_coeficiente.Visible = false;
+            this.txt_TP3_Tolerancia.Location = new System.Drawing.Point(430, 63);
+            this.txt_TP3_Tolerancia.Name = "txt_TP3_Tolerancia";
+            this.txt_TP3_Tolerancia.Size = new System.Drawing.Size(100, 20);
+            this.txt_TP3_Tolerancia.TabIndex = 65;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(364, 66);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(60, 13);
+            this.label10.TabIndex = 66;
+            this.label10.Text = "Tolerancia:";
             // 
             // Form1
             // 
@@ -988,9 +1028,9 @@
             this.panel2.PerformLayout();
             this.tabUnidad3.ResumeLayout(false);
             this.tabUnidad3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvXeY)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvXeY)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1072,6 +1112,10 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbl_textoMC;
         private System.Windows.Forms.Label lbl_coeficiente;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txt_Grado;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txt_TP3_Tolerancia;
     }
 }
 

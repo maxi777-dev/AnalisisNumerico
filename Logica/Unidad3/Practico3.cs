@@ -31,13 +31,32 @@ namespace Logica.Unidad3
             return Matriz;
         }
 
+        public static void Lagrange (double[] VectorX, double[] VectorY, int n, int Grado)
+        {
+            string Polinomio = "";
+            double varY = 0; double varX = 0;
+            for (int j = 0; j < n; j++)
+            {
+                varY = VectorY[j];
+                Polinomio += $"{varY}";
+                for (int i = 0; i < n; i++)
+                {
+                    if (i != j)
+                    {
+                        varX = VectorX[i];
+
+                    }
+                }
+            }
+        }
+
         public static Logica.Unidad2.Resultado_2 ResolucionMC(double[] VectorX, double[] VectorY, int n, int Grado)
         {
             //Obtengo el sistema de ecuaciones
             double[,] auxiliar = Logica.Unidad3.Practico3.RegresionPolinomial(VectorX, VectorY, n, Grado);
 
             //Obtengo los valores del sistema de ecuaciones
-            Logica.Unidad2.Resultado_2 res = Logica.Unidad2.Practico2.Gauss_Jordan(auxiliar, Grado, false);
+            Logica.Unidad2.Resultado_2 res = Logica.Unidad2.Practico2.Gauss_Jordan(auxiliar, Grado + 1, false);
 
             //Con los valores anteriores, calcular sr y st para poder calcular el coeficiente de correlación
             double sumatoriaY = 0, sr= 0, st= 0, sr_temp;
@@ -45,13 +64,15 @@ namespace Logica.Unidad3
             { sumatoriaY += VectorY[i]; }
             for (int i = 0; i < n; i++)
             {
-                sr_temp = VectorY[i] - VectorX[i] * res.Resultados[1] - res.Resultados[0];
+                sr_temp = VectorY[i] - res.Resultados[0];
                 sr_temp -= Grado > 4 ? Math.Pow(VectorX[i], 4) * res.Resultados[4] : 0;
                 sr_temp -= Grado > 3 ? Math.Pow(VectorX[i], 3) * res.Resultados[3] : 0;
                 sr_temp -= Grado > 2 ? Math.Pow(VectorX[i], 2) * res.Resultados[2] : 0;
+                sr_temp -= Grado > 1 ? Math.Pow(VectorX[i], 2) * res.Resultados[1] : 0;
+
 
                 sr += Math.Pow(sr_temp, 2);
-                st += Math.Pow(VectorY[i] - (sumatoriaY/n),2);
+                st += Math.Pow(VectorY[i] - (sumatoriaY/n), 2);
             }
 
             //Evaluar coeficiente de correlación

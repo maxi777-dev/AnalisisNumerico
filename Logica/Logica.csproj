@@ -51,9 +51,9 @@
     <Compile Include="Unidad2\Practico2.cs" />
     <Compile Include="Unidad2\Resultado_2.cs" />
     <Compile Include="Unidad3\Practico3.cs" />
+    <Compile Include="Unidad4\Practico4.cs" />
+    <Compile Include="Unidad4\Resultado_4.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Unidad4\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

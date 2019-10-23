@@ -22,7 +22,7 @@ namespace Logica.Unidad1
             return nuevo;
         }
 
-        private static float Fx(string func, double x)
+        public static float Fx(string func, double x)
         {
             double f = 0;
             Calculo funcion = new Calculo();

@@ -111,6 +111,21 @@
             this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabUnidad4 = new System.Windows.Forms.TabPage();
+            this.gpb_tp4 = new System.Windows.Forms.GroupBox();
+            this.btn_obtener_tp4 = new System.Windows.Forms.Button();
+            this.lbl_n_tp4 = new System.Windows.Forms.Label();
+            this.txt_n_tp4 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.cmb_metodos_tp4 = new System.Windows.Forms.ComboBox();
+            this.txt_funcion_TP4 = new System.Windows.Forms.TextBox();
+            this.txt_b_tp4 = new System.Windows.Forms.TextBox();
+            this.txt_a_tp4 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.panel_tp4 = new System.Windows.Forms.Panel();
+            this.lbl_mensaje_tp4 = new System.Windows.Forms.Label();
+            this.lbl_rdo_tp4 = new System.Windows.Forms.Label();
             this.Panel1.SuspendLayout();
             this.tabUnidad1.SuspendLayout();
             this.tabTan.SuspendLayout();
@@ -128,6 +143,9 @@
             this.tabUnidad3.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvXeY)).BeginInit();
+            this.tabUnidad4.SuspendLayout();
+            this.gpb_tp4.SuspendLayout();
+            this.panel_tp4.SuspendLayout();
             this.SuspendLayout();
             // 
             // Panel1
@@ -1036,6 +1054,8 @@
             // 
             // tabUnidad4
             // 
+            this.tabUnidad4.Controls.Add(this.panel_tp4);
+            this.tabUnidad4.Controls.Add(this.gpb_tp4);
             this.tabUnidad4.Location = new System.Drawing.Point(4, 22);
             this.tabUnidad4.Margin = new System.Windows.Forms.Padding(2);
             this.tabUnidad4.Name = "tabUnidad4";
@@ -1044,6 +1064,174 @@
             this.tabUnidad4.TabIndex = 3;
             this.tabUnidad4.Text = "Unidad 4";
             this.tabUnidad4.UseVisualStyleBackColor = true;
+            // 
+            // gpb_tp4
+            // 
+            this.gpb_tp4.Controls.Add(this.btn_obtener_tp4);
+            this.gpb_tp4.Controls.Add(this.lbl_n_tp4);
+            this.gpb_tp4.Controls.Add(this.txt_n_tp4);
+            this.gpb_tp4.Controls.Add(this.label16);
+            this.gpb_tp4.Controls.Add(this.cmb_metodos_tp4);
+            this.gpb_tp4.Controls.Add(this.txt_funcion_TP4);
+            this.gpb_tp4.Controls.Add(this.txt_b_tp4);
+            this.gpb_tp4.Controls.Add(this.txt_a_tp4);
+            this.gpb_tp4.Controls.Add(this.label26);
+            this.gpb_tp4.Controls.Add(this.label27);
+            this.gpb_tp4.Controls.Add(this.label28);
+            this.gpb_tp4.Location = new System.Drawing.Point(20, 17);
+            this.gpb_tp4.Margin = new System.Windows.Forms.Padding(2);
+            this.gpb_tp4.Name = "gpb_tp4";
+            this.gpb_tp4.Padding = new System.Windows.Forms.Padding(2);
+            this.gpb_tp4.Size = new System.Drawing.Size(614, 101);
+            this.gpb_tp4.TabIndex = 27;
+            this.gpb_tp4.TabStop = false;
+            this.gpb_tp4.Text = "Datos de entrada";
+            // 
+            // btn_obtener_tp4
+            // 
+            this.btn_obtener_tp4.Location = new System.Drawing.Point(486, 33);
+            this.btn_obtener_tp4.Name = "btn_obtener_tp4";
+            this.btn_obtener_tp4.Size = new System.Drawing.Size(98, 36);
+            this.btn_obtener_tp4.TabIndex = 18;
+            this.btn_obtener_tp4.Text = "Obtener";
+            this.btn_obtener_tp4.UseVisualStyleBackColor = true;
+            this.btn_obtener_tp4.Click += new System.EventHandler(this.Btn_obtener_tp4_Click);
+            // 
+            // lbl_n_tp4
+            // 
+            this.lbl_n_tp4.AutoSize = true;
+            this.lbl_n_tp4.Location = new System.Drawing.Point(271, 63);
+            this.lbl_n_tp4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_n_tp4.Name = "lbl_n_tp4";
+            this.lbl_n_tp4.Size = new System.Drawing.Size(22, 13);
+            this.lbl_n_tp4.TabIndex = 17;
+            this.lbl_n_tp4.Text = "n =";
+            this.lbl_n_tp4.Visible = false;
+            // 
+            // txt_n_tp4
+            // 
+            this.txt_n_tp4.Location = new System.Drawing.Point(297, 60);
+            this.txt_n_tp4.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_n_tp4.Name = "txt_n_tp4";
+            this.txt_n_tp4.Size = new System.Drawing.Size(121, 20);
+            this.txt_n_tp4.TabIndex = 16;
+            this.txt_n_tp4.Visible = false;
+            this.txt_n_tp4.Click += new System.EventHandler(this.Txt_n_tp4_Click);
+            this.txt_n_tp4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_n_tp4_KeyPress);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(246, 24);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(46, 13);
+            this.label16.TabIndex = 15;
+            this.label16.Text = "Método:";
+            // 
+            // cmb_metodos_tp4
+            // 
+            this.cmb_metodos_tp4.FormattingEnabled = true;
+            this.cmb_metodos_tp4.Items.AddRange(new object[] {
+            "Trapecio Simple",
+            "Trapecio Múltiple",
+            "Simpson 1/3 Simple",
+            "Simpson 1/3 Múltiple",
+            "Simpson 3/8 Simple"});
+            this.cmb_metodos_tp4.Location = new System.Drawing.Point(297, 21);
+            this.cmb_metodos_tp4.Name = "cmb_metodos_tp4";
+            this.cmb_metodos_tp4.Size = new System.Drawing.Size(139, 21);
+            this.cmb_metodos_tp4.TabIndex = 14;
+            this.cmb_metodos_tp4.Text = "Trapecio Simple";
+            this.cmb_metodos_tp4.SelectedIndexChanged += new System.EventHandler(this.Cmb_metodos_tp4_SelectedIndexChanged);
+            // 
+            // txt_funcion_TP4
+            // 
+            this.txt_funcion_TP4.Location = new System.Drawing.Point(85, 21);
+            this.txt_funcion_TP4.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_funcion_TP4.Name = "txt_funcion_TP4";
+            this.txt_funcion_TP4.Size = new System.Drawing.Size(104, 20);
+            this.txt_funcion_TP4.TabIndex = 1;
+            this.txt_funcion_TP4.Click += new System.EventHandler(this.Txt_funcion_TP4_Click);
+            // 
+            // txt_b_tp4
+            // 
+            this.txt_b_tp4.Location = new System.Drawing.Point(85, 64);
+            this.txt_b_tp4.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_b_tp4.Name = "txt_b_tp4";
+            this.txt_b_tp4.Size = new System.Drawing.Size(104, 20);
+            this.txt_b_tp4.TabIndex = 3;
+            this.txt_b_tp4.Click += new System.EventHandler(this.Txt_b_tp4_Click);
+            this.txt_b_tp4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_b_tp4_KeyPress);
+            // 
+            // txt_a_tp4
+            // 
+            this.txt_a_tp4.Location = new System.Drawing.Point(85, 43);
+            this.txt_a_tp4.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_a_tp4.Name = "txt_a_tp4";
+            this.txt_a_tp4.Size = new System.Drawing.Size(104, 20);
+            this.txt_a_tp4.TabIndex = 2;
+            this.txt_a_tp4.Click += new System.EventHandler(this.Txt_a_tp4_Click);
+            this.txt_a_tp4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_a_tp4_KeyPress);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(59, 67);
+            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(22, 13);
+            this.label26.TabIndex = 13;
+            this.label26.Text = "b =";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(59, 45);
+            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(22, 13);
+            this.label27.TabIndex = 12;
+            this.label27.Text = "a =";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(48, 24);
+            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(33, 13);
+            this.label28.TabIndex = 11;
+            this.label28.Text = "f (x) =";
+            // 
+            // panel_tp4
+            // 
+            this.panel_tp4.Controls.Add(this.lbl_rdo_tp4);
+            this.panel_tp4.Controls.Add(this.lbl_mensaje_tp4);
+            this.panel_tp4.Location = new System.Drawing.Point(20, 144);
+            this.panel_tp4.Name = "panel_tp4";
+            this.panel_tp4.Size = new System.Drawing.Size(614, 249);
+            this.panel_tp4.TabIndex = 28;
+            // 
+            // lbl_mensaje_tp4
+            // 
+            this.lbl_mensaje_tp4.AutoSize = true;
+            this.lbl_mensaje_tp4.Location = new System.Drawing.Point(51, 42);
+            this.lbl_mensaje_tp4.Name = "lbl_mensaje_tp4";
+            this.lbl_mensaje_tp4.Size = new System.Drawing.Size(41, 13);
+            this.lbl_mensaje_tp4.TabIndex = 0;
+            this.lbl_mensaje_tp4.Text = "label17";
+            this.lbl_mensaje_tp4.Visible = false;
+            // 
+            // lbl_rdo_tp4
+            // 
+            this.lbl_rdo_tp4.AutoSize = true;
+            this.lbl_rdo_tp4.Location = new System.Drawing.Point(271, 42);
+            this.lbl_rdo_tp4.Name = "lbl_rdo_tp4";
+            this.lbl_rdo_tp4.Size = new System.Drawing.Size(41, 13);
+            this.lbl_rdo_tp4.TabIndex = 1;
+            this.lbl_rdo_tp4.Text = "label17";
+            this.lbl_rdo_tp4.Visible = false;
             // 
             // Form1
             // 
@@ -1082,6 +1270,11 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvXeY)).EndInit();
+            this.tabUnidad4.ResumeLayout(false);
+            this.gpb_tp4.ResumeLayout(false);
+            this.gpb_tp4.PerformLayout();
+            this.panel_tp4.ResumeLayout(false);
+            this.panel_tp4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1171,6 +1364,21 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txt_valor_lagrange;
         private System.Windows.Forms.Label lbl_valor_lagrange;
+        private System.Windows.Forms.GroupBox gpb_tp4;
+        private System.Windows.Forms.Button btn_obtener_tp4;
+        private System.Windows.Forms.Label lbl_n_tp4;
+        private System.Windows.Forms.TextBox txt_n_tp4;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox cmb_metodos_tp4;
+        private System.Windows.Forms.TextBox txt_funcion_TP4;
+        private System.Windows.Forms.TextBox txt_b_tp4;
+        private System.Windows.Forms.TextBox txt_a_tp4;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Panel panel_tp4;
+        private System.Windows.Forms.Label lbl_rdo_tp4;
+        private System.Windows.Forms.Label lbl_mensaje_tp4;
     }
 }
 

@@ -21,7 +21,6 @@ namespace Logica.Unidad1
             }
             return nuevo;
         }
-
         public static float Fx(string func, double x)
         {
             double f = 0;
@@ -30,7 +29,6 @@ namespace Logica.Unidad1
                 f = funcion.EvaluaFx(x);
             return (float)f;
         }
-
         private static float CalcularError(float xr, float xant)
         {
             return Math.Abs((xr - xant) / xr);
@@ -109,7 +107,6 @@ namespace Logica.Unidad1
             }
             return nuevo;
         }
-
         public static Resultado ReglaFalsa(string func, int citer, double tole, float xi, float xd)
         {
             Resultado nuevo = Analizador(func);
@@ -179,7 +176,6 @@ namespace Logica.Unidad1
             }
             return nuevo;
         }
-
         public static Resultado Tangente(string func, int citer, double tole, float x)
         {
             Resultado nuevo = Analizador(func);
@@ -227,7 +223,6 @@ namespace Logica.Unidad1
             }
             return nuevo;
         }
-
         public static Resultado Secante(string func, int citer, double tole, float xi, float xd)
         {
             Resultado nuevo = Analizador(func);

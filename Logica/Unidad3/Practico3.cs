@@ -61,27 +61,29 @@ namespace Logica.Unidad3
             double[,] auxiliar = Logica.Unidad3.Practico3.RegresionPolinomial(VectorX, VectorY, n, Grado);
 
             //Obtengo los valores del sistema de ecuaciones
-            Logica.Unidad2.Resultado_2 res = Logica.Unidad2.Practico2.Gauss_Jordan(auxiliar, Grado + 1, false);
-
-            //Con los valores anteriores, calcular sr y st para poder calcular el coeficiente de correlación
-            double sumatoriaY = 0, sr= 0, st= 0, sr_temp;
-            for (int i = 0; i < n; i++)
-            { sumatoriaY += VectorY[i]; }
-            for (int i = 0; i < n; i++)
+            Logica.Unidad2.Resultado_2 res = Logica.Unidad2.Practico2.Gauss_Jordan(auxiliar, Grado, false);
+            if (res.SePudo != false)
             {
-                sr_temp = VectorY[i] - res.Resultados[0];
-                sr_temp -= Grado > 4 ? Math.Pow(VectorX[i], 4) * res.Resultados[4] : 0;
-                sr_temp -= Grado > 3 ? Math.Pow(VectorX[i], 3) * res.Resultados[3] : 0;
-                sr_temp -= Grado > 2 ? Math.Pow(VectorX[i], 2) * res.Resultados[2] : 0;
-                sr_temp -= Grado > 1 ? Math.Pow(VectorX[i], 2) * res.Resultados[1] : 0;
+                //Con los valores anteriores, calcular sr y st para poder calcular el coeficiente de correlación
+                double sumatoriaY = 0, sr= 0, st= 0, sr_temp;
+                for (int i = 0; i < n; i++)
+                { sumatoriaY += VectorY[i]; }
+                for (int i = 0; i < n; i++)
+                {
+                    sr_temp = VectorY[i] - res.Resultados[0];
+                    for (int j = 4; j > 0; j--)
+                    {
+                        sr_temp -= Grado - 1 >= j ? Math.Pow(VectorX[i], j) * res.Resultados[j] : 0;
+                    }
+                    sr += Math.Pow(sr_temp, 2);
+                    st += Math.Pow(VectorY[i] - (sumatoriaY/n), 2);
+                }
 
-
-                sr += Math.Pow(sr_temp, 2);
-                st += Math.Pow(VectorY[i] - (sumatoriaY/n), 2);
+                //Evaluar coeficiente de correlación
+                res.valorcoeficiente = ((st - sr) / st) * 100;   
             }
-
-            //Evaluar coeficiente de correlación
-            res.Bandera_3 = ((st - sr) / st) * 100;            
+            else
+            { res.valorcoeficiente = -1; }
             return res;
         }
     }

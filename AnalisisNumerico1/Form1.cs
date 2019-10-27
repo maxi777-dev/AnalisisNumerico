@@ -503,8 +503,10 @@ namespace AnalisisNumerico1
             txt_Tole_Practico2.BackColor = Color.White;
         }
 
-               
-        // ----------------------------------------------   PRACTICO 3    --------------------------------------------------//
+
+        // ----------------------------------------------   PRACTICO 3    --------------------------------------------------//        
+        const int max_grado = 4;
+
         public void MostrarResultadosMC(Resultado_2 rdos)
         {
             string[] v = new string[5] { "a0 = ", "a1 = ", "a2 = ", "a3 = ", "a4 = " };
@@ -514,22 +516,25 @@ namespace AnalisisNumerico1
             panel3.Controls.Add(lbl_textoMC);
             int pointX = 25;
             int pointY = 55;
-            for (int i = 0; i < rdos.Resultados.Length; i++)
+            if (rdos.SePudo != false)
             {
-                Label lbl = new Label();
-                lbl.Name = "lbl_Resultado_" + i;
-                lbl.AutoSize = false;
-                lbl.Size = new System.Drawing.Size(120, 17);
-                lbl.Font = new Font(lbl.Font.Name, 10);
-                lbl.Location = new Point(pointX, pointY);
-                lbl.Text = v[i] + Math.Round(rdos.Resultados[i], 6);
-                lbl.ForeColor = Color.Red;
-                panel3.Controls.Add(lbl);
-                panel3.Show();
-                pointX += 120;
+                for (int i = 0; i < rdos.Resultados.Length; i++)
+                {
+                    Label lbl = new Label();
+                    lbl.Name = "lbl_Resultado_" + i;
+                    lbl.AutoSize = false;
+                    lbl.Size = new System.Drawing.Size(120, 17);
+                    lbl.Font = new Font(lbl.Font.Name, 10);
+                    lbl.Location = new Point(pointX, pointY);
+                    lbl.Text = v[i] + Math.Round(rdos.Resultados[i], 6);
+                    lbl.ForeColor = Color.Red;
+                    panel3.Controls.Add(lbl);
+                    panel3.Show();
+                    pointX += 120;
+                    lbl_coeficiente.Text = "Coeficiente de correlación = " + rdos.valorcoeficiente;
+                    lbl_coeficiente.Visible = true;
+                }
             }
-            lbl_coeficiente.Visible = true;
-            lbl_coeficiente.Text = "Coeficiente de correlación = " + rdos.Bandera_3;
         }
         public void MostrarResultadosLagrange(Resultado_2 rdos, double x)
         {
@@ -600,23 +605,21 @@ namespace AnalisisNumerico1
             if (bandera_lagrange)
             {
                 Resultado_2 res = Logica.Unidad3.Practico3.Lagrange(vectorX, vectorY, valor_lagrange, grad);
-                MostrarResultadosLagrange(res,valor_lagrange);
+                MostrarResultadosLagrange(res, valor_lagrange);
             }
             else
             {
-                Resultado_2 res = new Resultado_2(false, "Ajuste no aceptable para polinomios de grado menor a 6", 0, 50);
-                while (grad < 6 & (res.Bandera_3 * 100 < int.Parse(txt_TP3_Tolerancia.Text)))
+                Resultado_2 res = new Resultado_2(true, "Ajuste no aceptable para polinomios de grado mayor a " + (max_grado), 0, 50);
+                while (grad < max_grado + 1 & (res.valorcoeficiente < int.Parse(txt_TP3_Tolerancia.Text)) & res.SePudo == true)
                 {
-                    res = Logica.Unidad3.Practico3.ResolucionMC(vectorX, vectorY, contador, grad);
-                    if (res.Bandera_3 >= int.Parse(txt_TP3_Tolerancia.Text))
-                    {
-                        res.Mensaje = "Los valores son:";
-                        MostrarResultadosMC(res);
-                    }
-                    grad += 1;
+                    res = Logica.Unidad3.Practico3.ResolucionMC(vectorX, vectorY, contador, grad + 1);
+                    if (res.valorcoeficiente >= int.Parse(txt_TP3_Tolerancia.Text))
+                    { res.Mensaje = "Los valores son:"; }
+                    else { grad += 1; }
                 }
-                if (grad == 6)
+                if (grad == max_grado + 1)
                 { res.SePudo = false; }
+                MostrarResultadosMC(res);
             }
         }
 

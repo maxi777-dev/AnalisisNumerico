@@ -112,13 +112,12 @@ namespace Logica.Unidad2
             double resultado = 0;
             switch (incognitas)
             {
-                case 1: return 1;
                 case 2: return matriz[0, 0] * matriz[1, 1] - matriz[1, 0] * matriz[0, 1];
                 default:
-                    double[,] auxiliar = new double[incognitas - 1, incognitas -1];
+                    double[,] auxiliar = new double[incognitas - 1, incognitas - 1];
                     for (int i = 0; i < incognitas; i++)
                     {
-                        auxiliar = MatrizCofactores(matriz, incognitas - 1, i);
+                        auxiliar = MatrizCofactores(matriz, incognitas, i);
                         resultado += Math.Pow(-1,i) * matriz[0,i] * Determinante(auxiliar, incognitas - 1);
                     }
                     return resultado;
@@ -126,17 +125,17 @@ namespace Logica.Unidad2
         }
         public static double[,] MatrizCofactores(double[,] matriz, int incognitas, int i)
         {
-            double[,] matriz_aux = new double[incognitas, incognitas];
+            double[,] matriz_aux = new double[incognitas - 1, incognitas - 1];
             int x = 0;
             int y = 0;
-            for (int j = 0; j < incognitas + 1; j++)
+            for (int j = 0; j < incognitas; j++)
             {
-                for (int k = 0; k < incognitas + 1; k++)
+                for (int k = 0; k < incognitas; k++)
                 {
                     if (j != 0 && k != i)
                     {
                         matriz_aux[x, y] = matriz[j, k];
-                        if (y < incognitas - 1)
+                        if (y < incognitas - 2)
                         { y += 1; }
                         else
                         { x += 1; y = 0; };
@@ -156,7 +155,7 @@ namespace Logica.Unidad2
                     matriz = Pivoteo_Parcial(matriz, incognitas);
                 nuevo.Resultados = Escalonar(matriz, incognitas);
                 if (nuevo.Resultados[0] is Double.NaN)
-                { nuevo.SePudo = false; nuevo.Mensaje = "El elemento pivotal es 0"; }
+                { nuevo.SePudo = false; nuevo.Mensaje = "El elemento pivotal es 0 (El sistema no tiene resolución)"; }
             }
             else
             {

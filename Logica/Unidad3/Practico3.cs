@@ -55,7 +55,7 @@ namespace Logica.Unidad3
             return res;
         }
 
-        public static Logica.Unidad2.Resultado_2 ResolucionMC(double[] VectorX, double[] VectorY, int n, int Grado)
+        public static Logica.Unidad2.Resultado_2 ResolucionMC(double[] VectorX, double[] VectorY, int n, int Grado, int max_grado)
         {
             //Obtengo el sistema de ecuaciones
             double[,] auxiliar = Logica.Unidad3.Practico3.RegresionPolinomial(VectorX, VectorY, n, Grado);
@@ -71,7 +71,7 @@ namespace Logica.Unidad3
                 for (int i = 0; i < n; i++)
                 {
                     sr_temp = VectorY[i] - res.Resultados[0];
-                    for (int j = 4; j > 0; j--)
+                    for (int j = max_grado; j > 0; j--)
                     {
                         sr_temp -= Grado - 1 >= j ? Math.Pow(VectorX[i], j) * res.Resultados[j] : 0;
                     }

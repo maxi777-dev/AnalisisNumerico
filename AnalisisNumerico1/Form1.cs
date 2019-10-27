@@ -505,11 +505,11 @@ namespace AnalisisNumerico1
 
 
         // ----------------------------------------------   PRACTICO 3    --------------------------------------------------//        
-        const int max_grado = 4;
+        const int max_grado = 5;
 
         public void MostrarResultadosMC(Resultado_2 rdos)
         {
-            string[] v = new string[5] { "a0 = ", "a1 = ", "a2 = ", "a3 = ", "a4 = " };
+            string[] v = new string[6] { "a0 = ", "a1 = ", "a2 = ", "a3 = ", "a4 = ", "a5 = " };
             lbl_textoMC.Visible = true;
             lbl_textoMC.Text = rdos.Mensaje;
             lbl_textoMC.Font = new Font(lbl_textoMC.Font.Name, 10);
@@ -523,17 +523,17 @@ namespace AnalisisNumerico1
                     Label lbl = new Label();
                     lbl.Name = "lbl_Resultado_" + i;
                     lbl.AutoSize = false;
-                    lbl.Size = new System.Drawing.Size(120, 17);
-                    lbl.Font = new Font(lbl.Font.Name, 10);
+                    lbl.Size = new System.Drawing.Size(80, 17);
+                    lbl.Font = new Font(lbl.Font.Name, 8);
                     lbl.Location = new Point(pointX, pointY);
                     lbl.Text = v[i] + Math.Round(rdos.Resultados[i], 6);
                     lbl.ForeColor = Color.Red;
                     panel3.Controls.Add(lbl);
                     panel3.Show();
-                    pointX += 120;
-                    lbl_coeficiente.Text = "Coeficiente de correlación = " + rdos.valorcoeficiente;
-                    lbl_coeficiente.Visible = true;
+                    pointX += 100;
                 }
+                lbl_coeficiente.Text = "Coeficiente de correlación = " + rdos.valorcoeficiente;
+                lbl_coeficiente.Visible = true;
             }
         }
         public void MostrarResultadosLagrange(Resultado_2 rdos, double x)
@@ -612,7 +612,7 @@ namespace AnalisisNumerico1
                 Resultado_2 res = new Resultado_2(true, "Ajuste no aceptable para polinomios de grado mayor a " + (max_grado), 0, 50);
                 while (grad < max_grado + 1 & (res.valorcoeficiente < int.Parse(txt_TP3_Tolerancia.Text)) & res.SePudo == true)
                 {
-                    res = Logica.Unidad3.Practico3.ResolucionMC(vectorX, vectorY, contador, grad + 1);
+                    res = Logica.Unidad3.Practico3.ResolucionMC(vectorX, vectorY, contador, grad + 1, max_grado);
                     if (res.valorcoeficiente >= int.Parse(txt_TP3_Tolerancia.Text))
                     { res.Mensaje = "Los valores son:"; }
                     else { grad += 1; }

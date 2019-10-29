@@ -523,10 +523,10 @@ namespace AnalisisNumerico1
                     Label lbl = new Label();
                     lbl.Name = "lbl_Resultado_" + i;
                     lbl.AutoSize = false;
-                    lbl.Size = new System.Drawing.Size(80, 17);
+                    lbl.Size = new System.Drawing.Size(85, 17);
                     lbl.Font = new Font(lbl.Font.Name, 8);
                     lbl.Location = new Point(pointX, pointY);
-                    lbl.Text = v[i] + Math.Round(rdos.Resultados[i], 6);
+                    lbl.Text = v[i] + Math.Round(rdos.Resultados[i], 5);
                     lbl.ForeColor = Color.Red;
                     panel3.Controls.Add(lbl);
                     panel3.Show();
@@ -610,10 +610,10 @@ namespace AnalisisNumerico1
             else
             {
                 Resultado_2 res = new Resultado_2(true, "Ajuste no aceptable para polinomios de grado mayor a " + (max_grado), 0, 50);
-                while (grad < max_grado + 1 & (res.valorcoeficiente < int.Parse(txt_TP3_Tolerancia.Text)) & res.SePudo == true)
+                while (grad < max_grado + 1 & (res.valorcoeficiente < double.Parse(txt_TP3_Tolerancia.Text)) & res.SePudo == true)
                 {
                     res = Logica.Unidad3.Practico3.ResolucionMC(vectorX, vectorY, contador, grad + 1, max_grado);
-                    if (res.valorcoeficiente >= int.Parse(txt_TP3_Tolerancia.Text))
+                    if (res.valorcoeficiente >= double.Parse(txt_TP3_Tolerancia.Text))
                     { res.Mensaje = "Los valores son:"; }
                     else { grad += 1; }
                 }
@@ -746,7 +746,6 @@ namespace AnalisisNumerico1
             panel_tp4.Refresh();
             panel_tp4.Show();
         }
-
 
 
         private void Cmb_metodos_tp4_SelectedIndexChanged(object sender, EventArgs e)

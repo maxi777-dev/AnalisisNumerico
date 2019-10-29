@@ -35,10 +35,10 @@ namespace Logica.Unidad3
         {
             Unidad2.Resultado_2 res = new Unidad2.Resultado_2(false, "No se pudo realizar Lagrange", 1, 50);
             int i = 0; double S = 0; double Sa = 0; double Sb = 0;
-            while (i <= Grado - 1)
+            while (i <= Grado)
             {
                 Sa = 1; Sb = 1;
-                for (int j = 0; j < Grado - 1; j++)
+                for (int j = 0; j < Grado + 1 ; j++)
                 {
                     if (i != j)
                     {
@@ -46,7 +46,7 @@ namespace Logica.Unidad3
                         Sb = Sb * (VectorX[i] - VectorX[j]);
                     }
                 }
-                S = S + (VectorY[i] * (Sa / Sb));
+                S = S + ((VectorY[i] * Sa) / Sb);
                 i += 1;
             }
             res.SePudo = true;

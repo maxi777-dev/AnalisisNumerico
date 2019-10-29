@@ -505,6 +505,7 @@ namespace AnalisisNumerico1
 
 
         // ----------------------------------------------   PRACTICO 3    --------------------------------------------------//        
+
         const int max_grado = 5;
 
         public void MostrarResultadosMC(Resultado_2 rdos)
@@ -716,7 +717,6 @@ namespace AnalisisNumerico1
                             nuevo = Practico4.Un_Tercio_Multiple(funcion, a, Xnmenos3, n - 3);
                             Resultado_4 nuevo2 = Practico4.Tres_Octavos(funcion, Xnmenos3, b);
                             nuevo.Solucion += nuevo2.Solucion;
-                            
                         }
                         else
                         { nuevo = Practico4.Un_Tercio_Multiple(funcion, a, b, n); }                        
@@ -802,6 +802,15 @@ namespace AnalisisNumerico1
         {
             Char chr = e.KeyChar;
             if (!Char.IsDigit(chr) && chr != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_funcion_TP4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Char chr = e.KeyChar;
+            if (chr == 44)
             {
                 e.Handled = true;
             }

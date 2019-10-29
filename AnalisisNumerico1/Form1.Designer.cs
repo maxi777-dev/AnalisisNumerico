@@ -111,6 +111,9 @@
             this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabUnidad4 = new System.Windows.Forms.TabPage();
+            this.panel_tp4 = new System.Windows.Forms.Panel();
+            this.lbl_rdo_tp4 = new System.Windows.Forms.Label();
+            this.lbl_mensaje_tp4 = new System.Windows.Forms.Label();
             this.gpb_tp4 = new System.Windows.Forms.GroupBox();
             this.btn_obtener_tp4 = new System.Windows.Forms.Button();
             this.lbl_n_tp4 = new System.Windows.Forms.Label();
@@ -123,9 +126,6 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.panel_tp4 = new System.Windows.Forms.Panel();
-            this.lbl_mensaje_tp4 = new System.Windows.Forms.Label();
-            this.lbl_rdo_tp4 = new System.Windows.Forms.Label();
             this.Panel1.SuspendLayout();
             this.tabUnidad1.SuspendLayout();
             this.tabTan.SuspendLayout();
@@ -144,8 +144,8 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvXeY)).BeginInit();
             this.tabUnidad4.SuspendLayout();
-            this.gpb_tp4.SuspendLayout();
             this.panel_tp4.SuspendLayout();
+            this.gpb_tp4.SuspendLayout();
             this.SuspendLayout();
             // 
             // Panel1
@@ -1065,6 +1065,35 @@
             this.tabUnidad4.Text = "Unidad 4";
             this.tabUnidad4.UseVisualStyleBackColor = true;
             // 
+            // panel_tp4
+            // 
+            this.panel_tp4.Controls.Add(this.lbl_rdo_tp4);
+            this.panel_tp4.Controls.Add(this.lbl_mensaje_tp4);
+            this.panel_tp4.Location = new System.Drawing.Point(20, 144);
+            this.panel_tp4.Name = "panel_tp4";
+            this.panel_tp4.Size = new System.Drawing.Size(614, 249);
+            this.panel_tp4.TabIndex = 28;
+            // 
+            // lbl_rdo_tp4
+            // 
+            this.lbl_rdo_tp4.AutoSize = true;
+            this.lbl_rdo_tp4.Location = new System.Drawing.Point(271, 42);
+            this.lbl_rdo_tp4.Name = "lbl_rdo_tp4";
+            this.lbl_rdo_tp4.Size = new System.Drawing.Size(41, 13);
+            this.lbl_rdo_tp4.TabIndex = 1;
+            this.lbl_rdo_tp4.Text = "label17";
+            this.lbl_rdo_tp4.Visible = false;
+            // 
+            // lbl_mensaje_tp4
+            // 
+            this.lbl_mensaje_tp4.AutoSize = true;
+            this.lbl_mensaje_tp4.Location = new System.Drawing.Point(51, 42);
+            this.lbl_mensaje_tp4.Name = "lbl_mensaje_tp4";
+            this.lbl_mensaje_tp4.Size = new System.Drawing.Size(41, 13);
+            this.lbl_mensaje_tp4.TabIndex = 0;
+            this.lbl_mensaje_tp4.Text = "label17";
+            this.lbl_mensaje_tp4.Visible = false;
+            // 
             // gpb_tp4
             // 
             this.gpb_tp4.Controls.Add(this.btn_obtener_tp4);
@@ -1204,35 +1233,6 @@
             this.label28.TabIndex = 11;
             this.label28.Text = "f (x) =";
             // 
-            // panel_tp4
-            // 
-            this.panel_tp4.Controls.Add(this.lbl_rdo_tp4);
-            this.panel_tp4.Controls.Add(this.lbl_mensaje_tp4);
-            this.panel_tp4.Location = new System.Drawing.Point(20, 144);
-            this.panel_tp4.Name = "panel_tp4";
-            this.panel_tp4.Size = new System.Drawing.Size(614, 249);
-            this.panel_tp4.TabIndex = 28;
-            // 
-            // lbl_mensaje_tp4
-            // 
-            this.lbl_mensaje_tp4.AutoSize = true;
-            this.lbl_mensaje_tp4.Location = new System.Drawing.Point(51, 42);
-            this.lbl_mensaje_tp4.Name = "lbl_mensaje_tp4";
-            this.lbl_mensaje_tp4.Size = new System.Drawing.Size(41, 13);
-            this.lbl_mensaje_tp4.TabIndex = 0;
-            this.lbl_mensaje_tp4.Text = "label17";
-            this.lbl_mensaje_tp4.Visible = false;
-            // 
-            // lbl_rdo_tp4
-            // 
-            this.lbl_rdo_tp4.AutoSize = true;
-            this.lbl_rdo_tp4.Location = new System.Drawing.Point(271, 42);
-            this.lbl_rdo_tp4.Name = "lbl_rdo_tp4";
-            this.lbl_rdo_tp4.Size = new System.Drawing.Size(41, 13);
-            this.lbl_rdo_tp4.TabIndex = 1;
-            this.lbl_rdo_tp4.Text = "label17";
-            this.lbl_rdo_tp4.Visible = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1271,10 +1271,10 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvXeY)).EndInit();
             this.tabUnidad4.ResumeLayout(false);
-            this.gpb_tp4.ResumeLayout(false);
-            this.gpb_tp4.PerformLayout();
             this.panel_tp4.ResumeLayout(false);
             this.panel_tp4.PerformLayout();
+            this.gpb_tp4.ResumeLayout(false);
+            this.gpb_tp4.PerformLayout();
             this.ResumeLayout(false);
 
         }

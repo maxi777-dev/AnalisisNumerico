@@ -709,7 +709,17 @@ namespace AnalisisNumerico1
                         nuevo = Practico4.Un_Tercio_Simple(funcion, a, b);
                         break;
                     case 3:
-                        nuevo = Practico4.Un_Tercio_Multiple(funcion, a, b, n);
+                        if (n % 2 != 0)
+                        {
+                            double h = (b - a) / n;
+                            double Xnmenos3 = b - (3 * h);
+                            nuevo = Practico4.Un_Tercio_Multiple(funcion, a, Xnmenos3, n - 3);
+                            Resultado_4 nuevo2 = Practico4.Tres_Octavos(funcion, Xnmenos3, b);
+                            nuevo.Solucion += nuevo2.Solucion;
+                            
+                        }
+                        else
+                        { nuevo = Practico4.Un_Tercio_Multiple(funcion, a, b, n); }                        
                         break;
                     case 4:
                         nuevo = Practico4.Tres_Octavos(funcion, a, b);

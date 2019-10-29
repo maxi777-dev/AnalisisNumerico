@@ -69,7 +69,6 @@ namespace Logica.Unidad2
         //    }
         //    return matriz;
         //}
-
         public static double[,] Pivoteo_Parcial(double[,] matriz, int incognitas)
         {
             double mayor = 0;
@@ -106,7 +105,6 @@ namespace Logica.Unidad2
             }
             return matriz;
         }
-
         public static double Determinante(double[,] matriz, int incognitas)
         {
             double resultado = 0;

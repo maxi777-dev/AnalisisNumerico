@@ -21,8 +21,7 @@ namespace Logica.Unidad4
             }
             return nuevo;
         }
-
-
+        
         //-------------------------------------------------------    METODOS   ---------------------------------------------------------------//
         public static Resultado_4 Trapecio_Simple(string funcion, double a, double b)
         {

@@ -738,7 +738,7 @@ namespace AnalisisNumerico1
             lbl_rdo_tp4.Size = new System.Drawing.Size(120, 17);
             lbl_rdo_tp4.Font = new Font(lbl_rdo_tp4.Font.Name, 10);
             //lbl_rdo_tp4.Location = new Point(pointX, pointY);
-            lbl_rdo_tp4.Text = Math.Round(rdos.Solucion, 5).ToString() + " V.A";
+            lbl_rdo_tp4.Text = Math.Round(rdos.Solucion, 5).ToString() + " V.A";//Math.Abs(Math.Round(rdos.Solucion, 5)).ToString() + " V.A";
             lbl_rdo_tp4.ForeColor = Color.Red;
             lbl_rdo_tp4.Visible = true;
             panel_tp4.Controls.Add(lbl_rdo_tp4);
